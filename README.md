@@ -1,8 +1,10 @@
-# Lab 3: Custom Acceleration with FPGAs
+# Lab: Custom Acceleration with FPGAs
 
-**Due** Wednesday May 24th at 23:59 via the Catalyst dropbox.
+**Part 1 Due** Wednesday March 21st at 23:59 via the IVLE dropbox.
+**Part 2 Due** Wednesday March 28th at 23:59 via the IVLE dropbox.
+**Part 3 Due** Wednesday April 4th at 23:59 via the IVLE dropbox.
 
-Questions about this assignment should got to the TA, Thierry.
+Questions about this assignment should be sent to the IVLE Project forum.
 
 ### Turnin
 
@@ -61,15 +63,13 @@ In addition, you will need an Ethernet port on your machine to communicate with 
 
 ### Linux 64-bit OS
 
-If you don’t have a 64-bit Linux OS installed on your machine, we recommend [VirtualBox](https://www.virtualbox.org/wiki/VirtualBox) (free), [VMWare](http://www.vmware.com/) (free under [CSE VMWare Academic Program](https://www.cs.washington.edu/lab/software/homeVMs)), or dual booting your machine. 
+If you don’t have a 64-bit Linux OS installed on your machine, we recommend [VirtualBox](https://www.virtualbox.org/wiki/VirtualBox) (free) or dual booting your machine.
 
 Make sure to allocate at least 32GB (or 64GB preferably) of disk drive space for your VM’s main partition. In addition, compilation jobs can be resource-intensive, so allocating 4-8GB of DRAM for your VM would be wise. We’ve tested the tools under Ubuntu 16.04.2 but any of the following OSes or newer should work:
 * Red Hat Enterprise Linux 6.6 64-bit
 * CentOS Linux 6.7
 * SUSE Enterprise Linux 11.4 64-bit
 * Ubuntu Linux 16.04.1 LTS 64-bit
-
-**Note** If you're using VMWare, do not have your source and work directory sit on a shared drive with your host OS. For some reason VMWare directory sharing is slow to update file changes from the host OS to the virtual OS, which can lead to compilation bugs.
 
 ### Vivado HL WebPACK 2017.1
 
