@@ -1,7 +1,7 @@
 # Lab: Custom Acceleration with FPGAs
 
-**Part 1 Due** Wednesday March 21st at 23:59 via the IVLE dropbox.
-**Part 2 Due** Wednesday March 28th at 23:59 via the IVLE dropbox.
+**Part 1 Due** Wednesday March 21st at 23:59 via the IVLE dropbox.<br/>
+**Part 2 Due** Wednesday March 28th at 23:59 via the IVLE dropbox.<br/>
 **Part 3 Due** Wednesday April 4th at 23:59 via the IVLE dropbox.
 
 Questions about this assignment should be sent to the IVLE Project forum.
