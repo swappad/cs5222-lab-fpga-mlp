@@ -125,7 +125,7 @@ Follow the **Getting Started** tutorial to get your Pynq board set up (please re
 
 Try one of the iPython notebook examples available out-of-the-box on your PYNQ board to make sure that it works as intended!
 
-# Part 1: Matrix Multiplication Pipeline Optimization in HLS (50 pts)
+# Part 1: Matrix Multiplication Pipeline Optimization in HLS (40 marks)
 
 This first part will cover fundamentals of high level synthesis. 
 
@@ -325,7 +325,7 @@ This is because a floating point multiplication on the FPGA takes 4 cycles, and 
 
 Let's look at how we can improve this design with pipelining and batching!
 
-## B. Pipelining in HLS (10 pts)
+## B. Pipelining in HLS (8 marks)
 
 The base design has pretty underwhelming performance. But from analyzing the design we can make two observations:
 * We are clearly under-utilizing our resources, so we have room to utilize more memory and logic resources to improve overall throughput.
@@ -346,7 +346,7 @@ Report (1) the design latency in cycles, (2) the overall device utilization (as 
 
 **What to expect**: You should roughly get a 15x improvement in latency over our baseline! This is the power of pipeline-parallelism. HLS has identified parallelism between multiplications of a single dot product, and pipeline parallelism between successive invocations of a dot product. This approach greatly reduces initiation latency of the inner loop.
 
-## C. Increasing Pipeline Parallelism by Repartitioning Memories (10 pts)
+## C. Increasing Pipeline Parallelism by Repartitioning Memories (8 marks)
 
 If you examine the log from HLS in `vivado_hls.log` you will find the following warning message:
 ```
@@ -367,7 +367,7 @@ Gradually increase the partitioning factor by power of 2 increments until you ex
 
 **What to expect**: You should roughly get a 42x improvement in latency over our baseline! All we did there was increasing the amount of pipeline parallelism in the matrix multiply algorithm by exposing more memory ports, thus increasing the capacity to perform more reads in parallel.
 
-## D. Amortizing Iteration Latency with Batching (10 pts)
+## D. Amortizing Iteration Latency with Batching (8 marks)
 
 So far we've really improved our design performance, but we can still do better!
 
@@ -385,7 +385,7 @@ Increase the batch size by power of 2 increments until you exceed the FPGA resou
 **What to expect**: Increasing the batch size will amortize the iteration latency of your overall design. Normalized to the batch size, your current design should now see an 86x latency reduction compared to the baseline design and see roughly a 55% `BRAM_18K` utilization.
 
 
-## E. Extending Batch Size with Tiling (10 pts)
+## E. Extending Batch Size with Tiling (8 marks)
 
 This final optimization step should help us decouple the `BRAM_18K` requirements the and batch size of our algorithm. This will allow us to reduce our normalized total latency even further.
 
@@ -425,7 +425,7 @@ Report (1) the design latency in cycles and (2) the overall device utilization (
 **What to expect**: This optimization will both reduce the overall utilization of BRAM without affecting overall batch normalized latency. Increasing the batch size will amortize the overheads of invoking the FPGA accelerator from the CPU, which in our simple test setup can have high latency.
 
 
-## F. Hardware compilation and FPGA testing on the PYNQ (10 pts)
+## F. Hardware compilation and FPGA testing on the PYNQ (8 marks)
 
 You now have well optimized hardware accelerator, and are ready to take it for a spin!
 
@@ -459,7 +459,7 @@ Report (1) the measured speedup and (2) measured classification accuracy.
 * We are compiling a low frequency (100MHz) which is 1/6.6th of what the CPU is running at. With more frequency optimizations, it's not impossible to clock the FPGA at 250MHz (however this won't be covered during this lab).
 * Lastly we are utilizing less than ~50% of the FPGA resources and only 1/4 of the available memory throughput on the FPGA, so we could potentially improve throughput significantly.
 
-# Part 2: Fixed-Point Optimizations (30 pts)
+# Part 2: Fixed-Point Optimizations (30 marks)
 
 In Part 1 you implemented an accelerator that performs computation on floating-point data. In Part 2 you'll use a fixed-point implementation that is a lot more compact and efficient.
 
@@ -511,7 +511,7 @@ Also report the following:
 
 **What to expect**: In terms of latency as HLS reports, this design should achieve 400-500x improvement in batch-normalized latency over the first naive floating point design. On the board, you should see a roughly 10x improvement over Part 1's  FPGA over CPU speedup.
 
-# Part 3: Open-ended design optimization (20 pts + 20 bonus pts)
+# Part 3: Open-ended design optimization (30 marks)
 
 You have now a mature understanding of the process of optimizing hardware, and adapting learning models to more efficiently execute inference on hardware (e.g. fixed point optimization).
 
@@ -523,7 +523,7 @@ You are given free range over how to improve either performance or the accuracy 
 * You will receive full points if you can both improve performance and accuracy of your classifier by a significant margin (over 85% in accuracy, and achieve less than 4.5ms of FPGA inference time as measured on the board for 8k invocations). You are free to change the classifier algorithm. 
 * You will receive 15 points for achieving either the accuracy target or the performance target (with reasonable performance or accuracy degradation respectively, e.g. you get won't get full credit if you improve performance at the detriment of too much accuracy degradation, or vice versa).
 * Partial grades will be awarded if neither goals are achieved.
-* Bonus points will be awarded to very ambitious classifier implementations (e.g. neural networks).
+* The best projects will include ambitious classifier implementations (e.g. neural networks).
 
 **Hints**
 To provide some guidance, you can implement one of the following optimizations:
