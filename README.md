@@ -23,7 +23,7 @@ You should submit the following files:
 ### Story
 
 You are a successful researcher at Wuugle and your direct supervisor Deff Jean has commissioned you to develop a top-secret prototype hardware accelerator, called the Matrix Processing Unit, or MPU™.
-You've only been given two weeks to implement a successful prototype on an FPGA. You recall that you took an awesome computer architecture class that taught you everything there is to know about hardware design at the F. Phil G. Allan (F.P.G.A) School of Computer Science!
+You've only been given three weeks to implement a successful prototype on an FPGA. You recall that you took an awesome computer architecture class that taught you everything there is to know about hardware design at the F. Phil G. Allan (F.P.G.A) School of Computer Science!
 You go to the drawing board to design an MPU™ prototype that will revolutionize shallow learning.
 
 
