@@ -1,0 +1,183 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{multirow}
+\usepackage{multicol}
+
+\title{CS5222 Project 2}
+\author{Luca Krueger}
+\date{\today}
+
+\renewcommand{\thesubsection}{\Alph{subsection}.}
+
+\begin{document}
+\maketitle
+
+\section{Matrix Multiplication Pipeline Optimization in HLS}
+\subsection{Understanding the baseline matrix multiply}
+
+The non optimized code does not perform very well. The following performance estimates will be taken as reference for further optimizations, see subsection \ref{1-b}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{ccccc}
+		\multicolumn{2}{c}{Latency} & \multicolumn{2}{c}{Interval} & Pipeline\\
+		\hline
+		min  &   max  &   min  &   max  &   Type  \\
+		230331&  230331&  230332&  230332&   none  
+	\end{tabular}
+	\caption{performance: non optimized matrix multiplication algorithm}
+	\label{1-a-perf-table}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{lcccc}
+		Name      & BRAM\_18K& DSP48E&   FF   &  LUT  \\
+		\hline
+		DSP              &        -&      -&       -&      -\\
+		Expression       &        -&      -&       0&    538\\
+		FIFO             &        -&      -&       -&      -\\
+		Instance         &        0&      5&     384&    752\\
+		Memory           &       16&      -&       0&      1\\
+		Multiplexer      &        -&      -&       -&    559\\
+		Register         &        -&      -&     779&      -\\
+		\hline
+		Total            &       16&      5&    1163&   1847\\
+		Available        &      280&    220&  106400&  53201\\
+		\hline
+		Utilization ($\%$)  &        5&      2&       1&      3
+	\end{tabular}
+	\caption{Resource utilization of the non optimized code}
+	\label{1-a-resources}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{lcccc}
+		Module & Number of instances \\
+		floating point adder & 1 \\
+		floating point multiplier & 1
+	\end{tabular}
+	\caption{Utilization of multipliers and adders of the non optimized code}
+	\label{1-a-resources-arithmetic}
+\end{table}
+
+
+\subsection{Pipelining in HLS}
+\label{1-b}
+\begin{enumerate}
+	\item Optimization step: pipeline the most inner loop \\
+		$\Rightarrow$ speedup of $\approx 2.13$ regarding the max latency compared to the non optimizeed code
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{ccccc}
+			\multicolumn{2}{c}{Latency} & \multicolumn{2}{c}{Interval} & Pipeline\\
+			\hline
+			min  &   max  &   min  &   max  &   Type  \\
+			107995&  107995&  107996&  107996&   none  
+		\end{tabular}
+		\caption{performance: most inner loop pipelined}
+		\label{1-b-perf-table-1}
+	\end{table}
+
+	\begin{table}[H]
+	\centering
+	\begin{tabular}{lcccc}
+		Name      & BRAM\_18K& DSP48E&   FF   &  LUT  \\
+		\hline
+		DSP              &        -&      -&       -&      -\\
+		Expression       &        -&      -&       0&    557\\
+		FIFO             &        -&      -&       -&      -\\
+		Instance         &        0&      5&     384&    751\\
+		Memory           &       16&      -&       0&      0\\
+		Multiplexer      &        -&      -&       -&    579\\
+		Register         &        -&      -&     945&     64\\
+		\hline
+		Total            &       16&      5&    1329&   1951\\
+		Available        &      280&    220&  106400&  53200\\
+		\hline
+		Utilization ($\%$)  &        5&      2&       1&      3
+	\end{tabular}
+	\caption{Resource utilization: most inner loop pipelined}
+	\label{1-b-resources-1}
+	\end{table}
+
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{cc}
+			Module & Number of instances \\
+			\hline
+			floating point adder & 1 \\
+			floating point multiplier & 1
+		\end{tabular}
+		\caption{Utilization of multipliers and adders: most inner loop pipelined}
+		\label{1-a-resources-arithmetic-1}
+	\end{table}
+
+
+	\item Optimization step: pipeline the first inner loop \\
+		$\Rightarrow$ speedup of $\approx 14.22 $ regarding the max latency compared to the non optimizeed code
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{ccccc}
+			\multicolumn{2}{c}{Latency} & \multicolumn{2}{c}{Interval} & Pipeline\\
+			\hline
+			min  &   max  &   min  &   max  &   Type  \\
+			16194&  16194&  16195&  16195&   none  
+		\end{tabular}
+		\caption{performance: first inner loop pipelined}
+		\label{1-b-perf-table-2}
+	\end{table}
+
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{lcccc}
+			Name      & BRAM\_18K& DSP48E&   FF   &  LUT  \\
+			\hline
+			DSP              &        -&      -&       -&      -\\
+			Expression       &        -&      -&       0&  26003\\
+			FIFO             &        -&      -&       -&      -\\
+			Instance         &        0&     10&     732&   1462\\
+			Memory           &       16&      -&       0&      0\\
+			Multiplexer      &        -&      -&       -&   4725\\
+			Register         &        -&      -&   24650&   6496\\
+			\hline
+			Total            &       16&     10&   25382&  38686\\
+			Available        &      280&    220&  106400&  53200\\
+			\hline
+			Utilization ($\%$)  &        5&      4&      23&     72
+		\end{tabular}
+		\caption{Resource utilization: first inner loop pipelined}
+		\label{1-b-resources-2}
+	\end{table}
+
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{cc}
+			Module & Number of instances \\
+			\hline
+			floating point adder & 2 \\
+			floating point multiplier & 2
+		\end{tabular}
+		\caption{Utilization of multipliers and adders: first inner loop pipelined}
+		\label{1-b-resources-arithmetic-2}
+	\end{table}
+
+	The \texttt{HLS pipeline} directive for the first inner loop does not completely unroll the most inner loop. The most inner loop can only be parallelized by two units, because the input buffer is stored into two separate BRAM blocks and therefore only provides two separate access channels. The hls tool gives a warning, that there are problems with scheduling the input buffer accesses which is related to this isssue. Optimization of memory accesses will be addressed in subsection \ref{1-c}
+
+\end{enumerate}
+
+
+\subsection{Increasing Pipeline Parallelism by Repartitioning Memories}
+\label{1-c}
+
+	
+
+\end{document}
