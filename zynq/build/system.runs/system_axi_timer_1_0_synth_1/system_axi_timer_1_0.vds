@@ -1,0 +1,90 @@
+#-----------------------------------------------------------
+# Vivado v2017.1 (64-bit)
+# SW Build 1846317 on Fri Apr 14 18:54:47 MDT 2017
+# IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+# Start of session at: Sat Mar 14 16:00:42 2020
+# Process ID: 13983
+# Current directory: /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/system.runs/system_axi_timer_1_0_synth_1
+# Command line: vivado -log system_axi_timer_1_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_axi_timer_1_0.tcl
+# Log file: /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/system.runs/system_axi_timer_1_0_synth_1/system_axi_timer_1_0.vds
+# Journal file: /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/system.runs/system_axi_timer_1_0_synth_1/vivado.jou
+#-----------------------------------------------------------
+source system_axi_timer_1_0.tcl -notrace
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1154.230 ; gain = 53.996 ; free physical = 1632 ; free virtual = 6106
+INFO: [Synth 8-638] synthesizing module 'system_axi_timer_1_0' [/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/system.srcs/sources_1/bd/system/ip/system_axi_timer_1_0/synth/system_axi_timer_1_0.vhd:90]
+INFO: [Synth 8-638] synthesizing module 'axi_timer' [/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/system.srcs/sources_1/bd/system/ipshared/6b95/hdl/axi_timer_v2_0_vh_rfs.vhd:2141]
+INFO: [Synth 8-638] synthesizing module 'tc_core' [/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/system.srcs/sources_1/bd/system/ipshared/6b95/hdl/axi_timer_v2_0_vh_rfs.vhd:1698]
+INFO: [Synth 8-638] synthesizing module 'mux_onehot_f' [/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/system.srcs/sources_1/bd/system/ipshared/6b95/hdl/axi_timer_v2_0_vh_rfs.vhd:365]
+INFO: [Synth 8-638] synthesizing module 'MUXCY' [/home/krueger/vivado-2017-1/Vivado/2017.1/scripts/rt/data/unisim_comp.v:21613]
+INFO: [Synth 8-256] done synthesizing module 'MUXCY' (1#1) [/home/krueger/vivado-2017-1/Vivado/2017.1/scripts/rt/data/unisim_comp.v:21613]
+INFO: [Synth 8-256] done synthesizing module 'mux_onehot_f' (2#1) [/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/system.srcs/sources_1/bd/system/ipshared/6b95/hdl/axi_timer_v2_0_vh_rfs.vhd:365]
+INFO: [Synth 8-638] synthesizing module 'count_module' [/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/system.srcs/sources_1/bd/system/ipshared/6b95/hdl/axi_timer_v2_0_vh_rfs.vhd:1434]
+INFO: [Synth 8-638] synthesizing module 'counter_f' [/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/system.srcs/sources_1/bd/system/ipshared/6b95/hdl/axi_timer_v2_0_vh_rfs.vhd:148]
+INFO: [Synth 8-256] done synthesizing module 'counter_f' (3#1) [/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/system.srcs/sources_1/bd/system/ipshared/6b95/hdl/axi_timer_v2_0_vh_rfs.vhd:148]
+INFO: [Synth 8-256] done synthesizing module 'count_module' (4#1) [/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/system.srcs/sources_1/bd/system/ipshared/6b95/hdl/axi_timer_v2_0_vh_rfs.vhd:1434]
+INFO: [Synth 8-638] synthesizing module 'timer_control' [/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/system.srcs/sources_1/bd/system/ipshared/6b95/hdl/axi_timer_v2_0_vh_rfs.vhd:835]
+INFO: [Synth 8-638] synthesizing module 'cdc_sync' [/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/system.srcs/sources_1/bd/system/ipshared/52cb/hdl/lib_cdc_v1_0_rfs.vhd:106]
+INFO: [Synth 8-256] done synthesizing module 'cdc_sync' (5#1) [/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/system.srcs/sources_1/bd/system/ipshared/52cb/hdl/lib_cdc_v1_0_rfs.vhd:106]
+INFO: [Synth 8-256] done synthesizing module 'timer_control' (6#1) [/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/system.srcs/sources_1/bd/system/ipshared/6b95/hdl/axi_timer_v2_0_vh_rfs.vhd:835]
+INFO: [Synth 8-256] done synthesizing module 'tc_core' (7#1) [/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/system.srcs/sources_1/bd/system/ipshared/6b95/hdl/axi_timer_v2_0_vh_rfs.vhd:1698]
+INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif' [/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/system.srcs/sources_1/bd/system/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2948]
+INFO: [Synth 8-638] synthesizing module 'slave_attachment' [/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/system.srcs/sources_1/bd/system/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2341]
+INFO: [Synth 8-638] synthesizing module 'address_decoder' [/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/system.srcs/sources_1/bd/system/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1775]
+INFO: [Synth 8-638] synthesizing module 'pselect_f' [/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/system.srcs/sources_1/bd/system/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f' (8#1) [/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/system.srcs/sources_1/bd/system/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized0' [/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/system.srcs/sources_1/bd/system/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized0' (8#1) [/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/system.srcs/sources_1/bd/system/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized1' [/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/system.srcs/sources_1/bd/system/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized1' (8#1) [/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/system.srcs/sources_1/bd/system/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized2' [/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/system.srcs/sources_1/bd/system/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized2' (8#1) [/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/system.srcs/sources_1/bd/system/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized3' [/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/system.srcs/sources_1/bd/system/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized3' (8#1) [/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/system.srcs/sources_1/bd/system/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized4' [/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/system.srcs/sources_1/bd/system/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized4' (8#1) [/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/system.srcs/sources_1/bd/system/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized5' [/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/system.srcs/sources_1/bd/system/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized5' (8#1) [/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/system.srcs/sources_1/bd/system/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized6' [/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/system.srcs/sources_1/bd/system/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized6' (8#1) [/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/system.srcs/sources_1/bd/system/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'address_decoder' (9#1) [/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/system.srcs/sources_1/bd/system/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1775]
+INFO: [Synth 8-256] done synthesizing module 'slave_attachment' (10#1) [/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/system.srcs/sources_1/bd/system/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2341]
+INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif' (11#1) [/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/system.srcs/sources_1/bd/system/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2948]
+INFO: [Synth 8-256] done synthesizing module 'axi_timer' (12#1) [/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/system.srcs/sources_1/bd/system/ipshared/6b95/hdl/axi_timer_v2_0_vh_rfs.vhd:2141]
+INFO: [Synth 8-256] done synthesizing module 'system_axi_timer_1_0' (13#1) [/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/system.srcs/sources_1/bd/system/ip/system_axi_timer_1_0/synth/system_axi_timer_1_0.vhd:90]
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1197.730 ; gain = 97.496 ; free physical = 1597 ; free virtual = 6071
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1197.730 ; gain = 97.496 ; free physical = 1501 ; free virtual = 5975
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.04 . Memory (MB): peak = 1536.762 ; gain = 0.000 ; free physical = 1049 ; free virtual = 5523
+Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1536.762 ; gain = 436.527 ; free physical = 1576 ; free virtual = 6052
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1536.762 ; gain = 436.527 ; free physical = 1577 ; free virtual = 6054
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1536.762 ; gain = 436.527 ; free physical = 1577 ; free virtual = 6053
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1536.762 ; gain = 436.527 ; free physical = 1536 ; free virtual = 6012
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1536.762 ; gain = 436.527 ; free physical = 1593 ; free virtual = 6069
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1536.762 ; gain = 436.527 ; free physical = 1153 ; free virtual = 5629
+Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1536.762 ; gain = 436.527 ; free physical = 1116 ; free virtual = 5592
+Finished Technology Mapping : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1544.770 ; gain = 444.535 ; free physical = 1114 ; free virtual = 5590
+Finished IO Insertion : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1544.770 ; gain = 444.535 ; free physical = 1089 ; free virtual = 5565
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1544.770 ; gain = 444.535 ; free physical = 1088 ; free virtual = 5565
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1544.770 ; gain = 444.535 ; free physical = 1085 ; free virtual = 5562
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1544.770 ; gain = 444.535 ; free physical = 1085 ; free virtual = 5561
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1544.770 ; gain = 444.535 ; free physical = 1085 ; free virtual = 5561
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1544.770 ; gain = 444.535 ; free physical = 1085 ; free virtual = 5561
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY4 |    16|
+|2     |LUT1   |     6|
+|3     |LUT2   |    82|
+|4     |LUT3   |    93|
+|5     |LUT4   |    82|
+|6     |LUT5   |    25|
+|7     |LUT6   |    62|
+|8     |MUXCY  |    64|
+|9     |MUXF7  |     2|
+|10    |FDR    |    12|
+|11    |FDRE   |   228|
++------+-------+------+
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1544.770 ; gain = 444.535 ; free physical = 1085 ; free virtual = 5561
+synth_design: Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 1544.777 ; gain = 457.129 ; free physical = 1064 ; free virtual = 5540
