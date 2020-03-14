@@ -1,0 +1,375 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+\subsection{Understanding the baseline matrix multiply}
+
+The baseline code does not perform very well. The following performance estimates will be taken as reference for further optimizations, see subsection \ref{1-b}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{ccccc}
+		\multicolumn{2}{c}{Latency} & \multicolumn{2}{c}{Interval} & Pipeline\\
+		\hline
+		min  &   max  &   min  &   max  &   Type  \\
+		230331&  230331&  230332&  230332&   none  
+	\end{tabular}
+	\caption{Performance: baseline matrix multiplication algorithm}
+	\label{1-a-perf-table}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{lcccc}
+		Name      & BRAM\_18K& DSP48E&   FF   &  LUT  \\
+		\hline
+		DSP              &        -&      -&       -&      -\\
+		Expression       &        -&      -&       0&    538\\
+		FIFO             &        -&      -&       -&      -\\
+		Instance         &        0&      5&     384&    752\\
+		Memory           &       16&      -&       0&      1\\
+		Multiplexer      &        -&      -&       -&    559\\
+		Register         &        -&      -&     779&      -\\
+		\hline
+		Total            &       16&      5&    1163&   1847\\
+		Available        &      280&    220&  106400&  53201\\
+		\hline
+		Utilization ($\%$)  &        5&      2&       1&      3
+	\end{tabular}
+	\caption{Resource utilization of the baseline code}
+	\label{1-a-resources}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{lcccc}
+		Module & Number of instances \\
+		\hline
+		floating point adder & 1 \\
+		floating point multiplier & 1
+	\end{tabular}
+	\caption{Utilization of multipliers and adders of the baseline code}
+	\label{1-a-resources-arithmetic}
+\end{table}
+
+
+\subsection{Pipelining in HLS}
+\label{1-b}
+\begin{enumerate}
+	\item Optimization attempt: pipeline the most inner loop \\
+		$\Rightarrow$ speedup of $\approx 2.13$ regarding the max latency compared to the baseline code
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{ccccc}
+			\multicolumn{2}{c}{Latency} & \multicolumn{2}{c}{Interval} & Pipeline\\
+			\hline
+			min  &   max  &   min  &   max  &   Type  \\
+			107995&  107995&  107996&  107996&   none  
+		\end{tabular}
+		\caption{Performance: most inner loop pipelined}
+		\label{1-b-perf-table-1}
+	\end{table}
+
+	\begin{table}[H]
+	\centering
+	\begin{tabular}{lcccc}
+		Name      & BRAM\_18K& DSP48E&   FF   &  LUT  \\
+		\hline
+		DSP              &        -&      -&       -&      -\\
+		Expression       &        -&      -&       0&    557\\
+		FIFO             &        -&      -&       -&      -\\
+		Instance         &        0&      5&     384&    751\\
+		Memory           &       16&      -&       0&      0\\
+		Multiplexer      &        -&      -&       -&    579\\
+		Register         &        -&      -&     945&     64\\
+		\hline
+		Total            &       16&      5&    1329&   1951\\
+		Available        &      280&    220&  106400&  53200\\
+		\hline
+		Utilization ($\%$)  &        5&      2&       1&      3
+	\end{tabular}
+	\caption{Resource utilization: most inner loop pipelined}
+	\label{1-b-resources-1}
+	\end{table}
+
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{cc}
+			Module & Number of instances \\
+			\hline
+			floating point adder & 1 \\
+			floating point multiplier & 1
+		\end{tabular}
+		\caption{Utilization of multipliers and adders: most inner loop pipelined}
+		\label{1-a-resources-arithmetic-1}
+	\end{table}
+
+
+	\item Optimization attempt: pipeline the first inner loop \\
+		\label{attempt2}
+		$\Rightarrow$ speedup of $\approx 14.22 $ regarding the max latency compared to the non optimizeed code
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{ccccc}
+			\multicolumn{2}{c}{Latency} & \multicolumn{2}{c}{Interval} & Pipeline\\
+			\hline
+			min  &   max  &   min  &   max  &   Type  \\
+			16194&  16194&  16195&  16195&   none  
+		\end{tabular}
+		\caption{Performance: first inner loop pipelined}
+		\label{1-b-perf-table-2}
+	\end{table}
+
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{lcccc}
+			Name      & BRAM\_18K& DSP48E&   FF   &  LUT  \\
+			\hline
+			DSP              &        -&      -&       -&      -\\
+			Expression       &        -&      -&       0&  26003\\
+			FIFO             &        -&      -&       -&      -\\
+			Instance         &        0&     10&     732&   1462\\
+			Memory           &       16&      -&       0&      0\\
+			Multiplexer      &        -&      -&       -&   4725\\
+			Register         &        -&      -&   24650&   6496\\
+			\hline
+			Total            &       16&     10&   25382&  38686\\
+			Available        &      280&    220&  106400&  53200\\
+			\hline
+			Utilization ($\%$)  &        5&      4&      23&     72
+		\end{tabular}
+		\caption{Resource utilization: first inner loop pipelined}
+		\label{1-b-resources-2}
+	\end{table}
+
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{cc}
+			Module & Number of instances \\
+			\hline
+			floating point adder & 2 \\
+			floating point multiplier & 2
+		\end{tabular}
+		\caption{Utilization of multipliers and adders: first inner loop pipelined}
+		\label{1-b-resources-arithmetic-2}
+	\end{table}
+
+	The \texttt{HLS pipeline} directive for the first inner loop does not completely unroll the most inner loop. The most inner loop can only be parallelized by two units, because the input buffer is stored into two separate BRAM blocks and therefore only provides two separate access channels. The hls tool gives a warning, that there are problems with scheduling the input buffer accesses which is related to this isssue. Optimization of memory accesses will be addressed in subsection \ref{1-c}
+
+	\item Optimization attempt: Attempt \ref{attempt2} and pipelining of all input functions \\
+		\label{attempt3}
+		$\Rightarrow$ speedup of $\approx 16.64 $ regarding the max latency compared to the baseline code
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{ccccc}
+			\multicolumn{2}{c}{Latency} & \multicolumn{2}{c}{Interval} & Pipeline\\
+			\hline
+			min  &   max  &   min  &   max  &   Type  \\
+			13840&  13840&  13841&  13841&   none
+		\end{tabular}
+		\caption{Performance: first inner loop and input functions pipelined}
+		\label{1-b-perf-table-3}
+	\end{table}
+
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{lcccc}
+			Name      & BRAM\_18K& DSP48E&   FF   &  LUT  \\
+			\hline
+			DSP              &        -&      -&       -&      -    \\
+			Expression       &        -&      -&       0&  26037    \\
+			FIFO             &        -&      -&       -&      -    \\
+			Instance         &        0&     10&     732&   1462    \\
+			Memory           &       16&      -&       0&      0    \\
+			Multiplexer      &        -&      -&       -&   4793    \\
+			Register         &        -&      -&   24611&   6496    \\
+			\hline                                                  
+			Total            &       16&     10&   25343&  38788    \\
+			Available        &      280&    220&  106400&  53200    \\
+			\hline                                                  
+			Utilization ($\%$)  &        5&      4&      23&     72 
+		\end{tabular}
+		\caption{Resource utilization: first inner loop and input functions pipelined}
+		\label{1-b-resources-3}
+	\end{table}
+
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{cc}
+			Module & Number of instances \\
+			\hline
+			floating point adder & 2 \\
+			floating point multiplier & 2
+		\end{tabular}
+		\caption{Utilization of multipliers and adders: first inner loop and input functions pipelined}
+		\label{1-b-resources-arithmetic-3}
+	\end{table}
+
+\end{enumerate}
+
+\subsection{Increasing Pipeline Parallelism by Repartitioning Memories}
+\label{1-c}
+This optimization step introduces repartitioning of the memories \texttt{in\_buf} and \texttt{weight\_buf}. We group adjacent columns to a total of factor$=8$ blocks. This increases parallelism by a factor 8. Therefore the \texttt{vivado\_hls} tool instantiates eight times more adders and multipliers, which also increases hardware usage. 
+
+$\Rightarrow$ speedup of $\approx 46.14 $ regarding the max latency compared to the baseline code
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{ccccc}
+			\multicolumn{2}{c}{Latency} & \multicolumn{2}{c}{Interval} & Pipeline\\
+			\hline
+			min  &   max  &   min  &   max  &   Type  \\
+			4992&  4992&  4993&  4993&   none 
+		\end{tabular}
+		\caption{Performance:  optimizations as in \ref{1-b} \ref{attempt3} and memory repartitioning}
+		\label{1-c-perf-table}
+	\end{table}
+
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{lcccc}
+			Name      & BRAM\_18K& DSP48E&   FF   &  LUT  \\
+			\hline
+			DSP              &        -&      -&       -&      -\\
+			Expression       &        -&      -&       0&   3309\\
+			FIFO             &        -&      -&       -&      -\\
+			Instance         &        0&     80&    5604&  11416\\
+			Memory           &       36&      -&       0&      0\\
+			Multiplexer      &        -&      -&       -&   6324\\
+			Register         &        -&      -&   32355&  14129\\
+			\hline
+			Total            &       36&     80&   37959&  35178\\
+			Available        &      280&    220&  106400&  53200\\
+			\hline
+			Utilization ($\%$)  &       12&     36&      35&     66
+		\end{tabular}
+		\caption{Resource utilization: optimizations as in \ref{1-b} \ref{attempt3} and memory repartitioning}
+		\label{1-c-resources}
+	\end{table}
+
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{cc}
+			Module & Number of instances \\
+			\hline
+			floating point adder & 16 \\
+			floating point multiplier & 16
+		\end{tabular}
+		\caption{Utilization of multipliers and adders: optimizations as in \ref{1-b} \ref{attempt3} and memory repartitioning}
+		\label{1-c-resources-arithmetic}
+	\end{table}
+
+	As we can see, the hardware usage does not exeed any limits in this configuration. The next step for memory optimization would be a repartitioning into $16$ groups.
+	This allows higher parallelism, but also increases the amount of multipliers and adders by factor $4$. In this configuration, the usage of flipsflops would exeed the maximum by $5\%$. This overhead might be solved by more detailed optimizations during hardware implementation, but here it does not meet our requirements.
+	Intermediate partition steps between $8-16$ result in a significant increase of latency, most likely caused by the misaligned memory groupings, which causes additional control hardware.
+
+	\subsection{Amortizing Iteration Latency with Batching}
+	The optimization step exploits that initialization overhead does not increase proportionally with increasing batch size. The batch size is now $256$, the largest possible value, as power to two, for given hardware resources.
+
+$\Rightarrow$ speedup of $\approx 92.84 $ regarding the max latency compared to the baseline code and normalized to batch size
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{ccccc}
+			\multicolumn{2}{c}{Latency} & \multicolumn{2}{c}{Interval} & Pipeline\\
+			\hline
+			min  &   max  &   min  &   max  &   Type  \\
+			79392&  79392&  79393&  79393&   none  
+		\end{tabular}
+		\caption{Performance:  batch size increased to $256$ and optimizations as in \ref{1-c}}
+		\label{1-d-perf-table}
+	\end{table}
+
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{lcccc}
+			Name      & BRAM\_18K& DSP48E&   FF   &  LUT  \\
+			\hline
+			DSP              &        -&      -&       -&      -\\
+			Expression       &        -&      -&       0&   3704\\
+			FIFO             &        -&      -&       -&      -\\
+			Instance         &        0&     80&    5604&  11416\\
+			Memory           &      154&      -&       0&      0\\
+			Multiplexer      &        -&      -&       -&   6324\\
+			Register         &        -&      -&   32591&  14129\\
+			\hline
+			Total            &      154&     80&   38195&  35573\\
+			Available        &      280&    220&  106400&  53200\\
+			\hline
+			Utilization ($\%$)  &       55&     36&      35&     66
+		\end{tabular}
+		\caption{Resource utilization: batch size increased to $256$ and optimizations as in \ref{1-c}}
+		\label{1-d-resources}
+	\end{table}
+
+
+\subsection{Extending Batch Size with Tiling}
+	Now the batch size increased to $2048$, but the batch is separated into tiles of size $128$. The usage of \texttt{BRAM\_18K} Blocks is now lower, whereas the normalized speedup increased a lot.
+
+	$\Rightarrow$ speedup of $\approx 11507.26 $ regarding the max latency compared to the baseline code and normalized to batch size
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{ccccc}
+			\multicolumn{2}{c}{Latency} & \multicolumn{2}{c}{Interval} & Pipeline\\
+			\hline
+			min  &   max  &   min  &   max  &   Type  \\
+			655889&  655889&  655890&  655890&   none  
+		\end{tabular}
+		\caption{Performance: tiling and optimizations as in \ref{1-c}}
+		\label{1-e-perf-table}
+	\end{table}
+
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{lcccc}
+			Name      & BRAM\_18K& DSP48E&   FF   &  LUT  \\
+			\hline
+			DSP              &        -&      -&       -&      -\\
+			Expression       &        -&      -&       0&   3632\\
+			FIFO             &        -&      -&       -&      -\\
+			Instance         &        0&     80&    5604&  11416\\
+			Memory           &       86&      -&       0&      0\\
+			Multiplexer      &        -&      -&       -&   6319\\
+			Register         &        -&      -&   32542&  14129\\
+			\hline                                              \\
+			Total            &       86&     80&   38146&  35496\\
+			Available        &      280&    220&  106400&  53200\\
+			\hline                                              \\
+			Utilization ($\%$)  &       30&     36&      35&     66
+		\end{tabular}
+		\caption{Resource utilization:tiling and optimizations as in \ref{1-c}}
+		\label{1-e-resources}
+	\end{table}
+
+	\subsection{Hardware compilation and FPGA testing on the PYNQ}
+	Uploading and execution of the Jupyther notebook unfortunately gives the following error:
+	\begin{lstlisting}[basicstyle=\tiny]
+	TimeoutError                              Traceback (most recent call last)
+<ipython-input-3-28b2e4095493> in <module>()
+      7 start_t = time()
+      8 dma1.transfer((CLASSES+CLASSES*FEAT+BATCH*FEAT)*4, direction=0)
+----> 9 dma2.wait()
+     10 fpga_time = time()-start_t
+     11
+
+/opt/python3.6/lib/python3.6/site-packages/pynq/drivers/dma.py in wait(self, wait_timeout)
+    439         with timeout(seconds = wait_timeout, error_message = Error):
+    440             while True:
+--> 441                 if libdma.XAxiDma_Busy(self.DMAengine,self.direction) == 0:
+    442                     break
+    443
+
+/opt/python3.6/lib/python3.6/site-packages/pynq/drivers/dma.py in handle_timeout(self, signum, frame)
+    173
+    174     def handle_timeout(self, signum, frame):
+--> 175         raise TimeoutError(self.error_message)
+    176
+    177     def __enter__(self):
+
+TimeoutError: DMA wait timed out.
+	\end{lstlisting}
+
+	\paragraph{\textit{UPDATE: }} This problem is now fixed. The FPGA was programmed in order to receive the offset values and the full weight matrix in each iteration, whereas this is only required once in the beginning. 
+	The implementation on the FPGA gives a speedup of $6.74$. The validation error $14.79\%$ is as good as on the CPU.
+
+
+\end{document}
+
+
+
