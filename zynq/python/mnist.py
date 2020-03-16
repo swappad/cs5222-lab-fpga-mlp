@@ -140,7 +140,7 @@ if __name__ == '__main__':
 
     # Fixed point computation
     # CSE 548: Todo: tweak the SCALE to get less than 20% classification error
-    SCALE = 0
+    SCALE = 100000
     # CSE 548 - Change me
     offset = reg.intercept_
     weight = reg.coef_
