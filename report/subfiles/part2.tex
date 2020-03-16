@@ -1,0 +1,107 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+\begin{enumerate}[label=(\arabic*)]
+	\item After setting the \texttt{SCALE} factor in \texttt{mnist.py} to $100000$, a fixed-point validation accuracy of $19.76\%$ can be achieved.
+		\lstset{
+			language=bash,
+			basicstyle=\ttfamily
+		}
+		\begin{lstlisting}
+Misclassifications (float) = 13.77%
+Misclassifications (fixed) = 19.76%
+		\end{lstlisting}
+
+	\item Design latencies:
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{ccccc}
+		\multicolumn{2}{c}{Latency} & \multicolumn{2}{c}{Interval} & Pipeline\\
+		\hline
+		min  &   max  &   min  &   max  &   Type  \\
+		444135&  444135&  444136&  444136&   none  
+	\end{tabular}
+	\caption{Latencies: fixed point}
+	\label{2-perf-table}
+\end{table}
+
+\item Overall design utilization:
+\begin{table}[H]
+	\centering
+	\begin{tabular}{lcccc}
+		Name      & BRAM\_18K& DSP48E&   FF   &  LUT  \\
+		\hline
+		DSP              &        -&    129&       -&      -\\
+		Expression       &        -&      -&       0&   3993\\
+		FIFO             &        -&      -&       -&      -\\
+		Instance         &        0&      0&    8672&   9184\\
+		Memory           &        4&      -&    8192&   2560\\
+		Multiplexer      &        -&      -&       -&   8252\\
+		Register         &        -&      -&    6580&     96\\
+		\hline
+		Total            &        4&    129&   23444&  24085\\
+		Available        &      280&    220&  106400&  53200\\
+		\hline
+		Utilization ($\%$)  &        1&     58&      22&     45
+	\end{tabular}
+	\caption{Resource utilization: fixed point}
+	\label{2-resources}
+\end{table}
+
+\item The measured system speedup over the CPU fixed point computation is $74.92$.
+\item The measured classification on the 8k MNIST test sample is $20.96\%$.
+	\begin{lstlisting}
+FPGA accuracy: 20.69% validation error
+CPU accuracy:  20.69% validation error
+FPGA has a 74.92x speedup
+	\end{lstlisting}
+
+
+\item Instantiation of multipliers
+	\begin{table}[H]
+	\centering
+	\begin{tabular}{lcccc}
+		Module & Number of instances \\
+		\hline
+		DSP48 & 129 \\
+		HW multiplier modules & 127 \\
+		\hline 
+		\textbf{Total} & 256
+	\end{tabular}
+	\caption{Utilization of multipliers: fixed point}
+	\label{2-resources-arithmetic}
+\end{table}
+
+
+\item The pipelined inner-loop of the matrix multiplication achieves an initiation interval of a single cycle, as shown in table \ref{2-loop-latencies}.
+	\begin{table}[H]
+	\centering
+	\begin{tabular}{l|ccccccc}
+				  &    \multicolumn{2}{c}{Latency}     & Iteration&  \multicolumn{2}{c}{Initiation Interval}  & Trip &           \\
+				Loop Name	 &   min  &   max  &  Latency &  achieved &   target  & Count& Pipelined \\
+			  \hline
+          - LOAD\_OFF\_1    &       5&       5&         2&          1&          1&     5&    yes    \\
+          - LOAD\_W\_1      &     350&     350&        35&          -&          -&    10&    no     \\
+           + LOAD\_W\_2     &      32&      32&         2&          1&          1&    32&    yes    \\
+		   \hline
+          - LT            &  443776&  443776&      3467&          -&          -&   128&    no     \\
+           + LOAD\_I\_1     &    2240&    2240&        35&          -&          -&    64&    no     \\
+            ++ LOAD\_I\_2   &      32&      32&         2&          1&          1&    32&    yes    \\
+           + L1\_L2        &     646&     646&         8&          1&          1&   640&    yes    \\
+		   \hline
+           + STORE\_O\_1    &     576&     576&         9&          -&          -&    64&    no     \\
+            ++ STORE\_O\_2  &       6&       6&         3&          1&          1&     5&    yes    
+	\end{tabular}
+	\caption{Snapshot of the loop latency table}
+	\label{2-loop-latencies}
+\end{table}
+
+\item Regarding the loop latency table (table \ref{2-loop-latencies}), the loading the tiled set of input values requires $\approx 3.5x$ more cycles than the actual matrix multiplication. Hence we can say that this design is bandwidth limited by the bandwidth of the AXI port.
+
+\end{enumerate}
+
+\end{document}
+
+
+
