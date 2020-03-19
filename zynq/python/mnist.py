@@ -5,6 +5,14 @@ import random
 import numpy as np
 from sklearn import linear_model
 from scipy.misc import imresize
+from sklearn.neural_network import MLPClassifier
+from CrossSLP import SLP
+import sys
+np.set_printoptions(threshold=sys.maxsize)
+
+RATE = 0.008
+COEFF = 0.1
+SCALE = 10
 
 # File names
 TRAIN_DAT = 'train-images-idx3-ubyte'
@@ -131,28 +139,47 @@ if __name__ == '__main__':
     # Extract the training dataset
     test_data, test_labels = getDataSet(args, 'test')
 
-    # Linear regression
-    reg = linear_model.Ridge()
-    reg.fit(train_data, train_labels)
 
-    # Perform prediction with model
-    float_labels = reg.predict(test_data)
+#    # Linear regression
+#    reg = linear_model.Ridge()
+#    reg.fit(train_data, train_labels)
+#
+#    # Perform prediction with model
+#    float_labels = reg.predict(test_data)
+#
+#
+#    # Fixed point computation
+#    # CSE 548: Todo: tweak the SCALE to get less than 20% classification error
+#    SCALE = 100000
+#    # CSE 548 - Change me
+#    offset = reg.intercept_
+#    weight = reg.coef_
+#    offset = np.clip(offset*SCALE, -128, 127)
+#    offset = offset.astype(np.int32)
+#    weight = np.clip(weight*SCALE, -128, 127)
+#    weight = weight.astype(np.int8)
+#    # Perform fixed-point classification
+#    ones = np.ones(len(test_data)).reshape((len(test_data),1))
+#    i_p = np.append(ones, test_data, axis=1)
+#    w_p = np.append(offset.reshape(10,1), weight, axis=1)
+#    fixed_labels = np.dot(i_p, w_p.T)
 
-    # Fixed point computation
-    # CSE 548: Todo: tweak the SCALE to get less than 20% classification error
-    SCALE = 100000
-    # CSE 548 - Change me
-    offset = reg.intercept_
-    weight = reg.coef_
-    offset = np.clip(offset*SCALE, -128, 127)
-    offset = offset.astype(np.int32)
-    weight = np.clip(weight*SCALE, -128, 127)
+    network = SLP(256, 10, COEFF, RATE)
+    data_norm = np.true_divide(train_data, 256.0)
+    network.fit(train_data, train_labels)
+
+    weight = network.weightsT
+    offset = network.biases
+    weight = np.clip(weight*SCALE, -128,127)
     weight = weight.astype(np.int8)
+    offset = np.clip(offset*SCALE, -128,127)
+    offset = offset.astype(np.int32)
     # Perform fixed-point classification
     ones = np.ones(len(test_data)).reshape((len(test_data),1))
     i_p = np.append(ones, test_data, axis=1)
     w_p = np.append(offset.reshape(10,1), weight, axis=1)
     fixed_labels = np.dot(i_p, w_p.T)
+    float_labels = network.predict(test_data)
 
     # Measure Validation Errors
     float_errors = 0
@@ -169,15 +196,15 @@ if __name__ == '__main__':
             fixed_errors += 1.
 
     # Produce stats
-    print 'Min/Max of coefficient values [{}, {}]'.format(reg.coef_.min(), reg.coef_.max())
-    print 'Min/Max of intersect values [{}, {}]'.format(reg.intercept_.min(),reg.intercept_.max())
+    print 'Min/Max of coefficient values [{}, {}]'.format(network.weightsT.min(), network.weightsT.max())
+    print 'Min/Max of intersect values [{}, {}]'.format(network.biases.min(),network.biases.max())
     print 'Misclassifications (float) = {0:.2f}%'.format(float_errors/len(test_labels)*100)
     print 'Misclassifications (fixed) = {0:.2f}%'.format(fixed_errors/len(test_labels)*100)
 
     # Dump the model and test data
     np.save('test_data', test_data)
     np.save('test_labels', test_labels)
-    np.save('model_weights', reg.coef_)
-    np.save('model_offsets', reg.intercept_)
+    np.save('model_weights', network.weightsT)
+    np.save('model_offsets', network.biases)
     np.save('model_weights_fixed', weight)
     np.save('model_offsets_fixed', offset)
