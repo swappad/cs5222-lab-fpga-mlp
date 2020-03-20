@@ -4,6 +4,8 @@
 
 #include "mmult.h"
 
+
+
 // --------------------------------------------------------------------
 // function to be accelerated in HW wrapped with AXI4-Stream interface
 void mmult_hw (AXI_VAL in_stream[IS_SIZE], AXI_VAL out_stream[OS_SIZE])
@@ -19,7 +21,7 @@ void mmult_hw (AXI_VAL in_stream[IS_SIZE], AXI_VAL out_stream[OS_SIZE])
 	assert((BATCH*CLASSES)%OUT_WIDTH_RATIO==0);
 
 	union {
-		axi_T packet;
+	axi_T packet;
 		int8_t int8_arr[8];
 		uint8_t uint8_arr[8];
 		int32_t int32_arr[2];
@@ -30,11 +32,12 @@ void mmult_hw (AXI_VAL in_stream[IS_SIZE], AXI_VAL out_stream[OS_SIZE])
 	// FEAT 265
 	// TILING 64
 	out_T offset_buf[CLASSES];
-	w_T weight_buf[CLASSES][FEAT];
-#pragma HLS ARRAY_PARTITION variable=weight_buf block factor=32 dim=2
 	in_T in_buf[TILING][FEAT];
-#pragma HLS ARRAY_PARTITION variable=in_buf block factor=32 dim=2
+#pragma HLS ARRAY_PARTITION variable=in_buf complete dim=2
+	w_T weight_buf[CLASSES][FEAT];
+#pragma HLS ARRAY_PARTITION variable=weight_buf complete dim=2
 	out_T out_buf[TILING][CLASSES];
+#pragma HLS ARRAY_PARTITION variable=out_buf complete dim=2
 
 	// Input and output AXI stream indices
 	int is_idx = 0;
@@ -71,8 +74,8 @@ LOAD_W_1: for(int i=0; i < CLASSES; i++) {
 
 		// Stream in input tile
 		// CSE548 TODO
-LOAD_I_1: for(int i=0; i < TILING; i++) {
-	LOAD_I_2: for(int j=0; j < FEAT; j+=IN_WIDTH_RATIO) {
+/*		LOAD_I_1: for(int i=0; i < TILING; i++) {
+			LOAD_I_2: for(int j=0; j < FEAT; j+=IN_WIDTH_RATIO) {
 #pragma HLS pipeline II=1
 				  converter.packet = pop_stream(in_stream[is_idx++]);
 				  in_buf[i][j+0] = (in_T) converter.uint8_arr[0];
@@ -83,21 +86,35 @@ LOAD_I_1: for(int i=0; i < TILING; i++) {
 				  in_buf[i][j+5] = (in_T) converter.uint8_arr[5];
 				  in_buf[i][j+6] = (in_T) converter.uint8_arr[6];
 				  in_buf[i][j+7] = (in_T) converter.uint8_arr[7];
-			  }
-		  }
-
+			}
+		}
+*/
 
 		// Perform matrix multiplication
 		L1: for (int i = 0; i < TILING; i++) {
+#pragma HLS pipeline II=1
+			LOAD_I_2: for(int h=0; h < FEAT; h+=IN_WIDTH_RATIO) {
+#pragma HLS pipeline II=1
+				converter.packet = pop_stream(in_stream[is_idx++]);
+				in_buf[i][h+0] = (in_T) converter.uint8_arr[0];
+				in_buf[i][h+1] = (in_T) converter.uint8_arr[1];
+				in_buf[i][h+2] = (in_T) converter.uint8_arr[2];
+				in_buf[i][h+3] = (in_T) converter.uint8_arr[3];
+				in_buf[i][h+4] = (in_T) converter.uint8_arr[4];
+				in_buf[i][h+5] = (in_T) converter.uint8_arr[5];
+				in_buf[i][h+6] = (in_T) converter.uint8_arr[6];
+				in_buf[i][h+7] = (in_T) converter.uint8_arr[7];
+			}
+
 			// Iterate over output classes
 			L2: for (int j = 0; j < CLASSES; j++) {
-				// Perform the dot product
-#pragma HLS pipeline II=1
+			// Perform the dot product
 				out_T tmp = offset_buf[j];
+
+#pragma HLS pipeline II=1
 				L3: for(int k = 0; k < FEAT; k++) {
-//					#pragma HLS unroll factor=32
+#pragma HLS unroll
 					out_T mult =  in_buf[i][k] * weight_buf[j][k];
-					//#pragma HLS RESOURCE variable=mult core=Mul_LUT
 					tmp += mult;
 				}
 				out_buf[i][j] = tmp;
@@ -117,6 +134,8 @@ STORE_O_1: for(int i=0; i < TILING; i++) {
 
 	}
 }
+
+
 
 
 // --------------------------------------------------------
