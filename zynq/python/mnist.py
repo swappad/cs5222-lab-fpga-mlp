@@ -7,12 +7,15 @@ from sklearn import linear_model
 from scipy.misc import imresize
 from sklearn.neural_network import MLPClassifier
 from CrossSLP import SLP
-import sys
-np.set_printoptions(threshold=sys.maxsize)
+import matplotlib
+import matplotlib.pyplot as plt
 
-RATE = 0.008
-COEFF = 0.1
-SCALE = 10
+
+RATE = 0.002
+COEFF = 0.01
+SCALE = 100
+LAMBDA = 1.0507009873554804934193349852946
+ALPHA = 1.6732632423543772848170429916717
 
 # File names
 TRAIN_DAT = 'train-images-idx3-ubyte'
@@ -129,6 +132,7 @@ def parse_args():
                         help='height and width of mnist dataset to resize to')
     parser.add_argument('--debug', action='store_true',
                         help='debug mode')
+    parser.add_argument('--errorplot', action='store_true', help='plot error over time')
     return parser.parse_args()
 
 if __name__ == '__main__':
@@ -139,32 +143,7 @@ if __name__ == '__main__':
     # Extract the training dataset
     test_data, test_labels = getDataSet(args, 'test')
 
-
-#    # Linear regression
-#    reg = linear_model.Ridge()
-#    reg.fit(train_data, train_labels)
-#
-#    # Perform prediction with model
-#    float_labels = reg.predict(test_data)
-#
-#
-#    # Fixed point computation
-#    # CSE 548: Todo: tweak the SCALE to get less than 20% classification error
-#    SCALE = 100000
-#    # CSE 548 - Change me
-#    offset = reg.intercept_
-#    weight = reg.coef_
-#    offset = np.clip(offset*SCALE, -128, 127)
-#    offset = offset.astype(np.int32)
-#    weight = np.clip(weight*SCALE, -128, 127)
-#    weight = weight.astype(np.int8)
-#    # Perform fixed-point classification
-#    ones = np.ones(len(test_data)).reshape((len(test_data),1))
-#    i_p = np.append(ones, test_data, axis=1)
-#    w_p = np.append(offset.reshape(10,1), weight, axis=1)
-#    fixed_labels = np.dot(i_p, w_p.T)
-
-    network = SLP(256, 10, COEFF, RATE)
+    network = SLP(256, 10, COEFF, RATE, ALPHA, LAMBDA, args)
     data_norm = np.true_divide(train_data, 256.0)
     network.fit(train_data, train_labels)
 
@@ -179,7 +158,9 @@ if __name__ == '__main__':
     i_p = np.append(ones, test_data, axis=1)
     w_p = np.append(offset.reshape(10,1), weight, axis=1)
     fixed_labels = np.dot(i_p, w_p.T)
-    float_labels = network.predict(test_data)
+    float_labels = network.predict(test_data, debug=True)[1]
+    print(np.shape(float_labels))
+    print(np.shape(fixed_labels))
 
     # Measure Validation Errors
     float_errors = 0
