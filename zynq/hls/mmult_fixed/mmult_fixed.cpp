@@ -6,6 +6,15 @@
 
 
 void inner_mult(in_T in[FEAT], out_T out[CLASSES], out_T offset[CLASSES], w_T[CLASSES][FEAT]); 
+typedef	union myconv {
+	axi_T packet;
+		int8_t int8_arr[8];
+		uint8_t uint8_arr[8];
+		int32_t int32_arr[2];
+} CONV;
+
+void in_load(in_T in[FEAT], AXI_VAL stream[IS_SIZE], int* is_idx, CONV* conv);
+
 
 // --------------------------------------------------------------------
 // function to be accelerated in HW wrapped with AXI4-Stream interface
@@ -21,12 +30,6 @@ void mmult_hw (AXI_VAL in_stream[IS_SIZE], AXI_VAL out_stream[OS_SIZE])
 	assert(FEAT%IN_WIDTH_RATIO==0);
 	assert((BATCH*CLASSES)%OUT_WIDTH_RATIO==0);
 
-	union {
-	axi_T packet;
-		int8_t int8_arr[8];
-		uint8_t uint8_arr[8];
-		int32_t int32_arr[2];
-	} converter;
 
 	// Hardware memory buffers
 	// CLASSES 10
@@ -45,6 +48,7 @@ void mmult_hw (AXI_VAL in_stream[IS_SIZE], AXI_VAL out_stream[OS_SIZE])
 	int is_idx = 0;
 	int os_idx = 0;
 
+	CONV converter;
 	// Stream in offset vector
 	// CSE548 TODO
 LOAD_OFF_1: for(int i=0; i < CLASSES; i+=OUT_WIDTH_RATIO) {
@@ -94,8 +98,7 @@ LOAD_W_1: for(int i=0; i < CLASSES; i++) {
 
 		// Perform matrix multiplication
 		L1: for (int i = 0; i < TILING; i++) {
-#pragma HLS pipeline II=1
-			LOAD_I_2: for(int h=0; h < FEAT; h+=IN_WIDTH_RATIO) {
+/*			LOAD_I_2: for(int h=0; h < FEAT; h+=IN_WIDTH_RATIO) {
 #pragma HLS pipeline II=1
 				converter.packet = pop_stream(in_stream[is_idx++]);
 				in_buf[i][h+0] = (in_T) converter.uint8_arr[0];
@@ -107,6 +110,9 @@ LOAD_W_1: for(int i=0; i < CLASSES; i++) {
 				in_buf[i][h+6] = (in_T) converter.uint8_arr[6];
 				in_buf[i][h+7] = (in_T) converter.uint8_arr[7];
 			}
+*/
+
+			in_load(in_buf[i], in_stream, &is_idx, &converter);
 
 			inner_mult(in_buf[i], out_buf[i], offset_buf, weight_buf);
 /*			// Iterate over output classes
@@ -139,16 +145,31 @@ STORE_O_1: for(int i=0; i < TILING; i++) {
 	}
 }
 
+void in_load(in_T in[FEAT], AXI_VAL stream[IS_SIZE], int* is_idx, CONV* converter) {
+#pragma HLS INLINE OFF
+			LOAD_I_2: for(int h=0; h < FEAT; h+=IN_WIDTH_RATIO) {
+#pragma HLS pipeline II=1
+				converter->packet = pop_stream(stream[(*is_idx)++]);
+				in[h+0] = (in_T) converter->uint8_arr[0];
+				in[h+1] = (in_T) converter->uint8_arr[1];
+				in[h+2] = (in_T) converter->uint8_arr[2];
+				in[h+3] = (in_T) converter->uint8_arr[3];
+				in[h+4] = (in_T) converter->uint8_arr[4];
+				in[h+5] = (in_T) converter->uint8_arr[5];
+				in[h+6] = (in_T) converter->uint8_arr[6];
+				in[h+7] = (in_T) converter->uint8_arr[7];
+			}
+
+}
 
 void inner_mult(in_T in[FEAT], out_T out[CLASSES], out_T offset[CLASSES], w_T weight[CLASSES][FEAT]) {
+#pragma HLS INLINE OFF
 	// Iterate over output classes
 	L2: for (int j = 0; j < CLASSES; j++) {
 	// Perform the dot product
 		out_T tmp = offset[j];
-
 #pragma HLS pipeline II=1
 		L3: for(int k = 0; k < FEAT; k++) {
-#pragma HLS unroll
 			out_T mult =  in[k] * weight[j][k];
 		tmp += mult;
 		}
