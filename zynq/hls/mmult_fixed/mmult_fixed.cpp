@@ -5,6 +5,7 @@
 #include "mmult.h"
 
 
+void inner_mult(in_T in[FEAT], out_T out[CLASSES], out_T offset[CLASSES], w_T[CLASSES][FEAT]); 
 
 // --------------------------------------------------------------------
 // function to be accelerated in HW wrapped with AXI4-Stream interface
@@ -32,6 +33,7 @@ void mmult_hw (AXI_VAL in_stream[IS_SIZE], AXI_VAL out_stream[OS_SIZE])
 	// FEAT 265
 	// TILING 64
 	out_T offset_buf[CLASSES];
+#pragma HLS ARRAY_PARTITION variable=offset_buf complete
 	in_T in_buf[TILING][FEAT];
 #pragma HLS ARRAY_PARTITION variable=in_buf complete dim=2
 	w_T weight_buf[CLASSES][FEAT];
@@ -106,7 +108,8 @@ LOAD_W_1: for(int i=0; i < CLASSES; i++) {
 				in_buf[i][h+7] = (in_T) converter.uint8_arr[7];
 			}
 
-			// Iterate over output classes
+			inner_mult(in_buf[i], out_buf[i], offset_buf, weight_buf);
+/*			// Iterate over output classes
 			L2: for (int j = 0; j < CLASSES; j++) {
 			// Perform the dot product
 				out_T tmp = offset_buf[j];
@@ -115,10 +118,11 @@ LOAD_W_1: for(int i=0; i < CLASSES; i++) {
 				L3: for(int k = 0; k < FEAT; k++) {
 #pragma HLS unroll
 					out_T mult =  in_buf[i][k] * weight_buf[j][k];
-					tmp += mult;
+				tmp += mult;
 				}
 				out_buf[i][j] = tmp;
 			}
+*/
 		}
 
 		// Stream out output matrix
@@ -136,6 +140,22 @@ STORE_O_1: for(int i=0; i < TILING; i++) {
 }
 
 
+void inner_mult(in_T in[FEAT], out_T out[CLASSES], out_T offset[CLASSES], w_T weight[CLASSES][FEAT]) {
+	// Iterate over output classes
+	L2: for (int j = 0; j < CLASSES; j++) {
+	// Perform the dot product
+		out_T tmp = offset[j];
+
+#pragma HLS pipeline II=1
+		L3: for(int k = 0; k < FEAT; k++) {
+#pragma HLS unroll
+			out_T mult =  in[k] * weight[j][k];
+		tmp += mult;
+		}
+		out[j] = tmp;
+	}
+
+}
 
 
 // --------------------------------------------------------
