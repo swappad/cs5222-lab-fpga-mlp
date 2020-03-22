@@ -7,25 +7,16 @@ import matplotlib.pyplot as plt
 
 class SLP():
     
-    def __init__(self, input_nodes, output_nodes, softmax_constant=1, learning_rate=0.01, alph=1, l1=1, args=0):
+    def __init__(self, input_nodes, output_nodes, iterations=1, learning_rate=0.01, alph=1, l1=1, args=0):
         self.weightsT = np.random.rand(output_nodes, input_nodes) - 1
         self.biases = np.random.rand(output_nodes) * 2 - 1
         self.input_nodes = input_nodes
         self.output_nodes = output_nodes
-        self.c = softmax_constant
+        self.iterations = iterations
         self.rate = learning_rate
         self.alph = alph
         self.l1 = l1
         self.args = args
-
-    def softmax(self, u_set):
-        out = []
-        for u in u_set:
-            tmp = []
-            for val in u:
-                tmp.append(1 / sum(np.exp(self.c * (u - val)))) # should already contain the 1 in the denomenator
-            out.append(tmp)
-        return out
 
 
     def selu(self, u_set):
@@ -61,7 +52,7 @@ class SLP():
         i = 0
         data = []
         error = 0
-        for ocean in range(10):
+        for ocean in range(self.iterations):
             for x, t in itertools.izip_longest(x_set, t_set):
                 u, y = self.predict(np.reshape(x,(1, self.input_nodes)))
                 if(self.args.errorplot and i % 100 == 0 ):
@@ -70,7 +61,7 @@ class SLP():
                 elif(self.args.errorplot and np.argmax(y) != np.argmax(t)):
                     error += 1
                 i += 1
-                delta = np.subtract(y,t) * self.c * self.deriv_selu(u)
+                delta = np.subtract(y,t) * self.deriv_selu(u)
                 self.biases = np.subtract(self.biases, self.rate * delta)
                 for d, diff in enumerate(delta):
                     self.weightsT[d] = np.subtract(self.weightsT[d], self.rate * np.multiply(diff, x)) 

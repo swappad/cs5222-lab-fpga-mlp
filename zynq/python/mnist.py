@@ -11,9 +11,9 @@ import matplotlib
 import matplotlib.pyplot as plt
 
 
-RATE = 0.002
-COEFF = 0.01
-SCALE = 100
+RATE = 0.0002
+ITERATIONS = 1
+SCALE = 30
 LAMBDA = 1.0507009873554804934193349852946
 ALPHA = 1.6732632423543772848170429916717
 
@@ -133,6 +133,7 @@ def parse_args():
     parser.add_argument('--debug', action='store_true',
                         help='debug mode')
     parser.add_argument('--errorplot', action='store_true', help='plot error over time')
+    parser.add_argument('--plotweights', action='store_true', help='plot weigths')
     return parser.parse_args()
 
 if __name__ == '__main__':
@@ -143,7 +144,7 @@ if __name__ == '__main__':
     # Extract the training dataset
     test_data, test_labels = getDataSet(args, 'test')
 
-    network = SLP(256, 10, COEFF, RATE, ALPHA, LAMBDA, args)
+    network = SLP(256, 10, ITERATIONS, RATE, ALPHA, LAMBDA, args)
     data_norm = np.true_divide(train_data, 256.0)
     network.fit(train_data, train_labels)
 
@@ -175,6 +176,15 @@ if __name__ == '__main__':
         actual_label = np.argmax(label)
         if (guess_label!=actual_label):
             fixed_errors += 1.
+
+    if(args.plotweights):
+        plt.figure(figsize=(16,16))
+        for i in range(10):
+            plt.subplot(4,3,i+1)
+            plt.imshow(np.reshape(weight[i],(16,16)), cmap = 'viridis', interpolation='nearest')
+            plt.title(i, y=1.02, fontsize=12)
+
+    plt.savefig('weight-masks.png')
 
     # Produce stats
     print 'Min/Max of coefficient values [{}, {}]'.format(network.weightsT.min(), network.weightsT.max())
