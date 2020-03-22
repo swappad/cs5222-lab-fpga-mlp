@@ -4,8 +4,6 @@
 
 #include "mmult.h"
 
-
-void inner_mult(in_T in[FEAT], out_T out[CLASSES], out_T offset[CLASSES], w_T[CLASSES][FEAT]); 
 typedef	union myconv {
 	axi_T packet;
 		int8_t int8_arr[8];
@@ -13,7 +11,52 @@ typedef	union myconv {
 		int32_t int32_arr[2];
 } CONV;
 
+
+void inner_mult(in_T in[FEAT], out_T out[CLASSES], out_T offset[CLASSES], w_T[CLASSES][FEAT]); 
 void in_load(in_T in[FEAT], AXI_VAL stream[IS_SIZE], int* is_idx, CONV* conv);
+
+
+void in_load(in_T in[FEAT], AXI_VAL stream[IS_SIZE], int* is_idx, CONV* converter) {
+#pragma HLS INLINE off
+			LOAD_I_2: for(int h=0; h < FEAT; h+=IN_WIDTH_RATIO) {
+#pragma HLS pipeline II=1
+				converter->packet = pop_stream(stream[(*is_idx)++]);
+				in[h+0] = (in_T) converter->uint8_arr[0];
+				in[h+1] = (in_T) converter->uint8_arr[1];
+				in[h+2] = (in_T) converter->uint8_arr[2];
+				in[h+3] = (in_T) converter->uint8_arr[3];
+				in[h+4] = (in_T) converter->uint8_arr[4];
+				in[h+5] = (in_T) converter->uint8_arr[5];
+				in[h+6] = (in_T) converter->uint8_arr[6];
+				in[h+7] = (in_T) converter->uint8_arr[7];
+			}
+
+}
+
+void inner_mult(in_T in[FEAT], out_T out[CLASSES], out_T offset[CLASSES], w_T weight[CLASSES][FEAT]) {
+#pragma HLS INLINE off
+	// Iterate over output classes
+	L2: for (int j = 0; j < CLASSES; j++) {
+	// Perform the dot product
+		out_T tmp1[FEAT] ;
+#pragma HLS ARRAY_PARTITION variable=tmp1 complete 
+		out_T tmp;
+#pragma HLS RESOURCE variable=tmp core=Mul_LUT
+#pragma HLS pipeline II=10
+		L3: for(int k = 0; k < FEAT; k++) {
+			tmp = in[k] * weight[j][k];
+			tmp1[k] = tmp;
+
+		}
+			out_T tmp2 = offset[j];
+			for(int t=0; t < FEAT;t++) {
+				tmp2 = tmp2 + tmp1[t];
+			}
+		out[j] = tmp2;
+	}
+
+}
+
 
 
 // --------------------------------------------------------------------
@@ -37,8 +80,10 @@ void mmult_hw (AXI_VAL in_stream[IS_SIZE], AXI_VAL out_stream[OS_SIZE])
 	// TILING 64
 	out_T offset_buf[CLASSES];
 #pragma HLS ARRAY_PARTITION variable=offset_buf complete
-	in_T in_buf[TILING][FEAT];
-#pragma HLS ARRAY_PARTITION variable=in_buf complete dim=2
+	in_T in_buf[FEAT];
+#pragma HLS ARRAY_PARTITION variable=in_buf complete 
+	in_T in_tmp[FEAT];
+#pragma HLS ARRAY_PARTITION variable=in_tmp complete 
 	w_T weight_buf[CLASSES][FEAT];
 #pragma HLS ARRAY_PARTITION variable=weight_buf complete dim=2
 	out_T out_buf[TILING][CLASSES];
@@ -51,33 +96,32 @@ void mmult_hw (AXI_VAL in_stream[IS_SIZE], AXI_VAL out_stream[OS_SIZE])
 	CONV converter;
 	// Stream in offset vector
 	// CSE548 TODO
-LOAD_OFF_1: for(int i=0; i < CLASSES; i+=OUT_WIDTH_RATIO) {
+	LOAD_OFF_1: for(int i=0; i < CLASSES; i+=OUT_WIDTH_RATIO) {
 #pragma HLS pipeline II=1
 				converter.packet = pop_stream(in_stream[is_idx++]);
 				offset_buf[i+0] = (out_T) converter.int32_arr[0];
 				offset_buf[i+1] = (out_T) converter.int32_arr[1];
-			}
+	}
 
 	// Stream in weight matrix
 	// CSE548 TODO
-LOAD_W_1: for(int i=0; i < CLASSES; i++) {
-	LOAD_W_2: for(int j=0; j < FEAT; j+=W_WIDTH_RATIO) {
+	LOAD_W_1: for(int i=0; i < CLASSES; i++) {
+		LOAD_W_2: for(int j=0; j < FEAT; j+=W_WIDTH_RATIO) {
 #pragma HLS pipeline II=1
-				  converter.packet = pop_stream(in_stream[is_idx++]);
-				  weight_buf[i][j+0] = (w_T) converter.int8_arr[0];
-				  weight_buf[i][j+1] = (w_T) converter.int8_arr[1];
-				  weight_buf[i][j+2] = (w_T) converter.int8_arr[2];
-				  weight_buf[i][j+3] = (w_T) converter.int8_arr[3];
-				  weight_buf[i][j+4] = (w_T) converter.int8_arr[4];
-				  weight_buf[i][j+5] = (w_T) converter.int8_arr[5];
-				  weight_buf[i][j+6] = (w_T) converter.int8_arr[6];
-				  weight_buf[i][j+7] = (w_T) converter.int8_arr[7];
+					  converter.packet = pop_stream(in_stream[is_idx++]);
+					  weight_buf[i][j+0] = (w_T) converter.int8_arr[0];
+					  weight_buf[i][j+1] = (w_T) converter.int8_arr[1];
+					  weight_buf[i][j+2] = (w_T) converter.int8_arr[2];
+					  weight_buf[i][j+3] = (w_T) converter.int8_arr[3];
+					  weight_buf[i][j+4] = (w_T) converter.int8_arr[4];
+					  weight_buf[i][j+5] = (w_T) converter.int8_arr[5];
+					  weight_buf[i][j+6] = (w_T) converter.int8_arr[6];
+					  weight_buf[i][j+7] = (w_T) converter.int8_arr[7];
 			  }
-		  }
+	}
 
 	// Iterate over tiles
 	LT: for (int t = 0; t < BATCH; t+=TILING) {
-
 		// Stream in input tile
 		// CSE548 TODO
 /*		LOAD_I_1: for(int i=0; i < TILING; i++) {
@@ -98,6 +142,9 @@ LOAD_W_1: for(int i=0; i < CLASSES; i++) {
 
 		// Perform matrix multiplication
 		L1: for (int i = 0; i < TILING; i++) {
+#pragma HLS DEPENDENCE variable=in_buf inter false
+#pragma HLS DEPENDENCE variable=in_tmp inter false
+#pragma HLS pipeline II=40
 /*			LOAD_I_2: for(int h=0; h < FEAT; h+=IN_WIDTH_RATIO) {
 #pragma HLS pipeline II=1
 				converter.packet = pop_stream(in_stream[is_idx++]);
@@ -112,9 +159,16 @@ LOAD_W_1: for(int i=0; i < CLASSES; i++) {
 			}
 */
 
-			in_load(in_buf[i], in_stream, &is_idx, &converter);
+			in_load(in_buf, in_stream, &is_idx, &converter);
+#pragma HLS ALLOCATION instances=in_load limit=1 function
 
-			inner_mult(in_buf[i], out_buf[i], offset_buf, weight_buf);
+		L_TMP: for(int l=0; l < FEAT; l++) {
+#pragma HLS pipeline II=1
+				in_tmp[l] = in_buf[l];
+			}
+
+			inner_mult(in_tmp, out_buf[i], offset_buf, weight_buf);
+#pragma HLS ALLOCATION instances=inner_mult limit=1 function
 /*			// Iterate over output classes
 			L2: for (int j = 0; j < CLASSES; j++) {
 			// Perform the dot product
@@ -143,39 +197,6 @@ STORE_O_1: for(int i=0; i < TILING; i++) {
 		   }
 
 	}
-}
-
-void in_load(in_T in[FEAT], AXI_VAL stream[IS_SIZE], int* is_idx, CONV* converter) {
-#pragma HLS INLINE OFF
-			LOAD_I_2: for(int h=0; h < FEAT; h+=IN_WIDTH_RATIO) {
-#pragma HLS pipeline II=1
-				converter->packet = pop_stream(stream[(*is_idx)++]);
-				in[h+0] = (in_T) converter->uint8_arr[0];
-				in[h+1] = (in_T) converter->uint8_arr[1];
-				in[h+2] = (in_T) converter->uint8_arr[2];
-				in[h+3] = (in_T) converter->uint8_arr[3];
-				in[h+4] = (in_T) converter->uint8_arr[4];
-				in[h+5] = (in_T) converter->uint8_arr[5];
-				in[h+6] = (in_T) converter->uint8_arr[6];
-				in[h+7] = (in_T) converter->uint8_arr[7];
-			}
-
-}
-
-void inner_mult(in_T in[FEAT], out_T out[CLASSES], out_T offset[CLASSES], w_T weight[CLASSES][FEAT]) {
-#pragma HLS INLINE OFF
-	// Iterate over output classes
-	L2: for (int j = 0; j < CLASSES; j++) {
-	// Perform the dot product
-		out_T tmp = offset[j];
-#pragma HLS pipeline II=1
-		L3: for(int k = 0; k < FEAT; k++) {
-			out_T mult =  in[k] * weight[j][k];
-		tmp += mult;
-		}
-		out[j] = tmp;
-	}
-
 }
 
 

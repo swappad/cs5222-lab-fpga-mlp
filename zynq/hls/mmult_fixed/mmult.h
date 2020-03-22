@@ -49,6 +49,7 @@ typedef ap_axiu<AXI_DATA,AXI_U,AXI_TI,AXI_TD> AXI_VAL;
 // Matrix Multiply prototype
 void mmult_hw (AXI_VAL in_stream[IS_SIZE],AXI_VAL out_stream[OS_SIZE]);
 
+
 // AXI stream push and pop
 axi_T pop_stream(AXI_VAL const &e);
 AXI_VAL push_stream(axi_T const &v, bool last);
