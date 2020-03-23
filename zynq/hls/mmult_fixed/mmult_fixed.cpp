@@ -34,7 +34,7 @@ void mmult_hw (AXI_VAL in_stream[IS_SIZE], AXI_VAL out_stream[OS_SIZE])
 	out_T offset_buf[CLASSES];
 	in_T in_buf[TILING][FEAT];
 #pragma HLS ARRAY_PARTITION variable=in_buf complete dim=2
-	w_T weight_buf[CLASSES][FEAT]complete;
+	w_T weight_buf[CLASSES][FEAT];
 #pragma HLS ARRAY_PARTITION variable=weight_buf complete dim=2
 
 	out_T out_buf[TILING][CLASSES];
