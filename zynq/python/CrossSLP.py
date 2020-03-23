@@ -48,11 +48,18 @@ class SLP():
             return u, y
 
 
+    def shuffle_in_unison(self, a, b):                  # source: https://stackoverflow.com/questions/4601373/better-way-to-shuffle-two-numpy-arrays-in-unison
+        rng_state = np.random.get_state()
+        shuffled_a = np.random.shuffle(a)
+        np.random.set_state(rng_state)
+        shuffled_b = np.random.shuffle(b)
+
     def fit(self, x_set, t_set):
         i = 0
         data = []
         error = 0
         for ocean in range(self.iterations):
+            self.shuffle_in_unison(x_set, t_set)
             for x, t in itertools.izip_longest(x_set, t_set):
                 u, y = self.predict(np.reshape(x,(1, self.input_nodes)))
                 if(self.args.errorplot and i % 100 == 0 ):
