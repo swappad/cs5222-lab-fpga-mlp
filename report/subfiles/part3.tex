@@ -1,0 +1,13 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+This is the last part of this project which covers an open-ended optimization of MNIST dataset classification on an FPGA. 
+For better comparison, the \texttt{Batch size} ($\approx 9k$) of the processed subset is the same as for previous design optimiztations in part 1 and part 2.
+
+First, the learning algorithm will be further optimized by introducing the \textit{cross-entropy} as new errorfunction and the \textit{SeLu} and \textit{softmax} functions as chained transfer function. The goal is to increase classifiction accuracy to at least $85\percent$ without increasing the overall hardware usage.
+Consequently, the network cannot be extended by another layer of neurons. 
+
+\end{document}
+
+
+
