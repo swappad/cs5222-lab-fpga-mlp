@@ -1,6 +1,6 @@
 # Commands to compile your matrix multiply design
 # and package it as an AXI IP for Vivado
-set src_dir "../hls/mmult_fixed"
+set src_dir "../hls/mmult_trunc"
 open_project accel
 set_top mmult_hw
 add_files $src_dir/mmult_fixed.cpp
