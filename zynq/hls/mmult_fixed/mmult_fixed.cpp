@@ -1,9 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdint.h>
 
 #include "mmult.h"
-
 
 
 // --------------------------------------------------------------------
@@ -20,23 +18,15 @@ void mmult_hw (AXI_VAL in_stream[IS_SIZE], AXI_VAL out_stream[OS_SIZE])
 	assert(FEAT%IN_WIDTH_RATIO==0);
 	assert((BATCH*CLASSES)%OUT_WIDTH_RATIO==0);
 
-	union {
-	axi_T packet;
-		int8_t int8_arr[8];
-		uint8_t uint8_arr[8];
-		int32_t int32_arr[2];
-	} converter;
-
 	// Hardware memory buffers
 	// CLASSES 10
 	// FEAT 265
 	// TILING 64
 	out_T offset_buf[CLASSES];
 	in_T in_buf[TILING][FEAT];
-#pragma HLS ARRAY_PARTITION variable=in_buf complete dim=2
+#pragma HLS ARRAY_PARTITION variable=in_buf block factor=32 dim=2
 	w_T weight_buf[CLASSES][FEAT];
-#pragma HLS ARRAY_PARTITION variable=weight_buf complete dim=2
-
+#pragma HLS ARRAY_PARTITION variable=weight_buf block factor=32 dim=2
 	out_T out_buf[TILING][CLASSES];
 
 	// Input and output AXI stream indices
@@ -47,9 +37,10 @@ void mmult_hw (AXI_VAL in_stream[IS_SIZE], AXI_VAL out_stream[OS_SIZE])
 	// CSE548 TODO
 LOAD_OFF_1: for(int i=0; i < CLASSES; i+=OUT_WIDTH_RATIO) {
 #pragma HLS pipeline II=1
-				converter.packet = pop_stream(in_stream[is_idx++]);
-				offset_buf[i+0] = (out_T) converter.int32_arr[0];
-				offset_buf[i+1] = (out_T) converter.int32_arr[1];
+				ap_int<64> tmp = pop_stream(in_stream[is_idx++]);
+				offset_buf[i+0] =  tmp.range(31,0);
+				offset_buf[i+1] =  tmp.range(63,32);
+				
 			}
 
 	// Stream in weight matrix
@@ -57,15 +48,18 @@ LOAD_OFF_1: for(int i=0; i < CLASSES; i+=OUT_WIDTH_RATIO) {
 LOAD_W_1: for(int i=0; i < CLASSES; i++) {
 	LOAD_W_2: for(int j=0; j < FEAT; j+=W_WIDTH_RATIO) {
 #pragma HLS pipeline II=1
-				  converter.packet = pop_stream(in_stream[is_idx++]);
-				  weight_buf[i][j+0] = (w_T) converter.int8_arr[0];
-				  weight_buf[i][j+1] = (w_T) converter.int8_arr[1];
-				  weight_buf[i][j+2] = (w_T) converter.int8_arr[2];
-				  weight_buf[i][j+3] = (w_T) converter.int8_arr[3];
-				  weight_buf[i][j+4] = (w_T) converter.int8_arr[4];
-				  weight_buf[i][j+5] = (w_T) converter.int8_arr[5];
-				  weight_buf[i][j+6] = (w_T) converter.int8_arr[6];
-				  weight_buf[i][j+7] = (w_T) converter.int8_arr[7];
+				  
+				  axi_T packet = pop_stream(in_stream[is_idx++]);
+				  ap_int<64> tmp = packet;
+				  weight_buf[i][j+0] = (w_T) tmp.range(7,0);    // tmp.range(63,56);
+				  weight_buf[i][j+1] = (w_T) tmp.range(15,8);   // tmp.range(55,48);
+				  weight_buf[i][j+2] = (w_T) tmp.range(23,16);  // tmp.range(47,40);
+				  weight_buf[i][j+3] = (w_T) tmp.range(31,24);  // tmp.range(39,32);
+				  weight_buf[i][j+4] = (w_T) tmp.range(39,32);  // tmp.range(31,24);
+				  weight_buf[i][j+5] = (w_T) tmp.range(47,40);  // tmp.range(23,16);
+				  weight_buf[i][j+6] = (w_T) tmp.range(55,48);  // tmp.range(15,7);
+				  weight_buf[i][j+7] = (w_T) tmp.range(63,56);  // tmp.range(7,0);
+
 			  }
 		  }
 
@@ -77,21 +71,22 @@ LOAD_W_1: for(int i=0; i < CLASSES; i++) {
 		LOAD_I_1: for(int i=0; i < TILING; i++) {
 			LOAD_I_2: for(int j=0; j < FEAT; j+=IN_WIDTH_RATIO) {
 #pragma HLS pipeline II=1
-				  converter.packet = pop_stream(in_stream[is_idx++]);
-				  in_buf[i][j+0] = (in_T) converter.uint8_arr[0];
-				  in_buf[i][j+1] = (in_T) converter.uint8_arr[1];
-				  in_buf[i][j+2] = (in_T) converter.uint8_arr[2];
-				  in_buf[i][j+3] = (in_T) converter.uint8_arr[3];
-				  in_buf[i][j+4] = (in_T) converter.uint8_arr[4];
-				  in_buf[i][j+5] = (in_T) converter.uint8_arr[5];
-				  in_buf[i][j+6] = (in_T) converter.uint8_arr[6];
-				  in_buf[i][j+7] = (in_T) converter.uint8_arr[7];
+				  ap_uint<64> tmp= pop_stream(in_stream[is_idx++]);
+				  in_buf[i][j+0] = (in_T) tmp.range(7,0);   // tmp.range(63,56); //
+				  in_buf[i][j+1] = (in_T) tmp.range(15,8);  // tmp.range(55,48); //
+				  in_buf[i][j+2] = (in_T) tmp.range(23,16); // tmp.range(47,40); //
+				  in_buf[i][j+3] = (in_T) tmp.range(31,24); // tmp.range(39,32); //
+				  in_buf[i][j+4] = (in_T) tmp.range(39,32); // tmp.range(31,24); //
+				  in_buf[i][j+5] = (in_T) tmp.range(47,40); // tmp.range(23,16); //
+				  in_buf[i][j+6] = (in_T) tmp.range(55,48); // tmp.range(15,7);  //
+				  in_buf[i][j+7] = (in_T) tmp.range(63,56); // tmp.range(7,0);   //
 			}
+
+
 		}
 
 		// Perform matrix multiplication
 		L1: for (int i = 0; i < TILING; i++) {
-
 			// Iterate over output classes
 			L2: for (int j = 0; j < CLASSES; j++) {
 			// Perform the dot product
@@ -99,7 +94,7 @@ LOAD_W_1: for(int i=0; i < CLASSES; i++) {
 				out_T tmp = offset_buf[j];
 				L3: for(int k = 0; k < FEAT; k++) {
 					out_T mult =  in_buf[i][k] * weight_buf[j][k];
-					tmp += mult;
+					tmp = tmp + mult;
 				}
 				out_buf[i][j] = tmp;
 			}
@@ -110,9 +105,11 @@ LOAD_W_1: for(int i=0; i < CLASSES; i++) {
 STORE_O_1: for(int i=0; i < TILING; i++) {
 	STORE_O_2: for(int j=0; j < CLASSES; j+=OUT_WIDTH_RATIO) {
 #pragma HLS pipeline II=1
-				   converter.int32_arr[0] = (int32_t) out_buf[i][j+0];
-				   converter.int32_arr[1] = (int32_t) out_buf[i][j+1];
-				   out_stream[os_idx++] = push_stream(converter.packet, os_idx == (OS_SIZE));
+				   ap_int<64> tmp;
+				   tmp.range(31,0) = out_buf[i][j+0];
+				   tmp.range(63,32) = out_buf[i][j+1];
+				   axi_T packet = tmp;
+				   out_stream[os_idx++] = push_stream(packet, os_idx == (OS_SIZE));
 			   }
 		   }
 
