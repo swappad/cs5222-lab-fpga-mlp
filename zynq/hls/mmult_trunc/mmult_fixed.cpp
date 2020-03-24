@@ -77,7 +77,7 @@ LOAD_W_1: for(int i=0; i < CLASSES; i++) {
 		LOAD_I_1: for(int i=0; i < TILING; i++) {
 			LOAD_I_2: for(int j=0; j < FEAT; j+=IN_WIDTH_RATIO) {
 #pragma HLS pipeline II=1
-				  ap_uint<64> tmp= pop_stream(in_stream[is_idx++]);
+				  ap_uint<64> tmp = pop_stream(in_stream[is_idx++]);
 				  in_buf[i][j+0] = (in_T) tmp.range(7,0);   // tmp.range(63,56); //
 				  in_buf[i][j+1] = (in_T) tmp.range(15,8);  // tmp.range(55,48); //
 				  in_buf[i][j+2] = (in_T) tmp.range(23,16); // tmp.range(47,40); //
@@ -141,7 +141,7 @@ STORE_O_1: for(int i=0; i < TILING; i+=IN_WIDTH_RATIO) {
 				tmp.range(55,48) = out_buf[i+6];
 				tmp.range(63,56) = out_buf[i+7];
 				axi_T packet = tmp;
-				out_stream[os_idx++] = push_stream(packet, os_idx == (OS_SIZE));
+				out_stream[os_idx++] = push_stream(packet, os_idx == (BATCH - 1)); //(OS_SIZE));
 		   }
 
 	}
