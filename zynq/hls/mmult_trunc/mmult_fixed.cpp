@@ -141,7 +141,7 @@ STORE_O_1: for(int i=0; i < TILING; i+=IN_WIDTH_RATIO) {
 				tmp.range(55,48) = out_buf[i+6];
 				tmp.range(63,56) = out_buf[i+7];
 				axi_T packet = tmp;
-				out_stream[os_idx++] = push_stream(packet, os_idx == (OS_SIZE));
+				out_stream[os_idx++] = push_stream(packet, os_idx == 1023);
 		   }
 
 	}

@@ -35,9 +35,9 @@ typedef unsigned long long axi_T;
 
 // Input/Output Stream Size
 #define IS_SIZE ((CLASSES+OUT_WIDTH_RATIO-1)/OUT_WIDTH_RATIO+CLASSES*FEAT/W_WIDTH_RATIO+BATCH*FEAT/IN_WIDTH_RATIO)
-// #define OS_SIZE (BATCH*((CLASSES+OUT_WIDTH_RATIO-1)/OUT_WIDTH_RATIO))
-// #define OS_SIZE (BATCH*((IN_WIDTH_RATIO-1)/IN_WIDTH_RATIO))
-#define OS_SIZE (BATCH/8)-1
+// #define OS_SIZE (BATCH*((CLASSES+OUT_WIDTH_RATIO-1)/OUT_WIDTH_RATIO)) // 45.056
+//#define OS_SIZE (BATCH*((IN_WIDTH_RATIO-1)/IN_WIDTH_RATIO))
+#define OS_SIZE 1024
 
 // AXI settings (leave it fixed)
 #define AXI_DATA (sizeof(axi_T)*8)
