@@ -1,4 +1,4 @@
-
+#include <ap_int.h>
 #include <assert.h>
 #include <ap_axi_sdata.h>
 
@@ -31,13 +31,13 @@ typedef unsigned long long axi_T;
 
 // Input matrix tiling factor
 // CSE548: TODO
-#define TILING 64
+#define TILING 128
 
 // Input/Output Stream Size
 #define IS_SIZE ((CLASSES+OUT_WIDTH_RATIO-1)/OUT_WIDTH_RATIO+CLASSES*FEAT/W_WIDTH_RATIO+BATCH*FEAT/IN_WIDTH_RATIO)
-// #define OS_SIZE (BATCH*((CLASSES+OUT_WIDTH_RATIO-1)/OUT_WIDTH_RATIO))
-// #define OS_SIZE (BATCH*((IN_WIDTH_RATIO-1)/IN_WIDTH_RATIO))
-#define OS_SIZE (BATCH/8)-1
+// #define OS_SIZE (BATCH*((CLASSES+OUT_WIDTH_RATIO-1)/OUT_WIDTH_RATIO)) // 45.056
+//#define OS_SIZE (BATCH*((IN_WIDTH_RATIO-1)/IN_WIDTH_RATIO))
+#define OS_SIZE 1024
 
 // AXI settings (leave it fixed)
 #define AXI_DATA (sizeof(axi_T)*8)
@@ -55,5 +55,4 @@ void mmult_hw (AXI_VAL in_stream[IS_SIZE],AXI_VAL out_stream[OS_SIZE]);
 axi_T pop_stream(AXI_VAL const &e);
 AXI_VAL push_stream(axi_T const &v, bool last);
 
-out_T absolut(int x);
 
