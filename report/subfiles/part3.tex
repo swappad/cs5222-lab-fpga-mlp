@@ -4,17 +4,16 @@
 This is the last part of this project which covers an open-ended optimization of MNIST dataset classification on an FPGA. 
 For better comparison, the \texttt{Batch size} ($\approx 9k$) of the processed subset is the same as for previous design optimiztations in part 1 and part 2.
 
-First, the learning algorithm will be further optimized by introducing the \textit{cross-entropy} as new error function and the \textit{SeLu} and \textit{softmax} functions as chained transfer function. The goal is to increase classifiction accuracy to at least $85\percent$ without increasing the overall hardware usage.
+First, the learning algorithm will be further optimized by introducing the \textit{cross-entropy} as new error function and the \textit{SeLu} and \textit{softmax} functions as chained transfer function. The goal is to increase classifiction accuracy to at least $85\si{\percent}$ without increasing the overall hardware usage.
 Consequently, the network cannot be extended by another layer of neurons. The output has to be one hot encoded, such that the number of neurons can not be changed either.
 
-Initially the given learning alggorithm uses a quadratic error function to calculate the cost after each prediction. But for this particular classification problem, we have two more contraints on the prediction outcome which are ignored, by the current error function:
+Initially the given learning algorithm uses a quadratic error function to calculate the cost after each prediction. But for this particular classification problem, we have two more contraints on the prediction outcome which are ignored, by the current error function:
 \begin{itemize}
 	\item the prediction outcome should follow the one hot encoding scheme.
 	\item the prediction outcome should be a valid probability distribution.
 \end{itemize}
-Therefore the \textit{cross-entropy} will be used as new error function.
-\begin{align}
-\end{align}
+Therefore the \textit{cross-entropy} will be used as new error function in combination with the \textit{softmax} function as output transfer function.
+
 
 \end{document}
 
