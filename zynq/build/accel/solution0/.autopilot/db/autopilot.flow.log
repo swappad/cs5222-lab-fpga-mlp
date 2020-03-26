@@ -1,0 +1,1640 @@
+INFO: [HLS 200-0] Workspace /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0 opened at Thu Mar 26 07:53:34 UTC 2020
+INFO: [HLS 200-100] Command     open_solution returned 0; 0 sec.
+INFO: [HLS 200-100] Execute     set_part xc7z020clg484-1 
+INFO: [HLS 200-100] Execute       add_library xilinx/zynq/zynq:xc7z020:clg484:-1 
+INFO: [HLS 200-100] Execute         get_default_platform 
+INFO: [HLS 200-100] Command         get_default_platform returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         license_isbetapart xc7z020 
+INFO: [HLS 200-100] Command         license_isbetapart returned 1; 0.01 sec.
+INFO: [HLS 200-100] Execute         open_platform DefaultPlatform 
+INFO: [HLS 200-100] Command         open_platform returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         import_lib /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/zynq/zynq 
+INFO: [HLS 200-100] Execute           source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/common/xilinx.lib 
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/xilinx_interface.lib 
+INFO: [HLS 200-100] Execute               source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/plb46.lib 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute               source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/fsl.lib 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute               source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/axi4.lib 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute               source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/maxi.lib 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute               source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/saxilite.lib 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/common/dsp48.lib 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/ip/dds_compiler.lib 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/ip/xfir.lib 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/ip/xfft.lib 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command           ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute           source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/common/xilinx_old.lib 
+INFO: [HLS 200-100] Command           ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute           source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/common/xilinx_vivado.lib 
+INFO: [HLS 200-100] Command           ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute           source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/common/xilinx.hlp 
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/common/target_info.tcl 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+INFO: [HLS 200-100] Execute               source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/maxi.hlp 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute               source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/saxilite.hlp 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/common/dsp48.hlp 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command           ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute           source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/zynq/dsp48e1.hlp 
+INFO: [HLS 200-100] Command           ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute           get_default_platform 
+INFO: [HLS 200-100] Command           get_default_platform returned 0; 0 sec.
+INFO: [HLS 200-100] Execute           config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+INFO: [HLS 200-100] Command           config_chip_info returned 0; 0 sec.
+INFO: [HLS 200-100] Execute           config_chip_info -quiet -speed medium 
+INFO: [HLS 200-100] Command           config_chip_info returned 0; 0 sec.
+INFO: [HLS 200-100] Execute           source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/common/xilinx.hlp 
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/common/target_info.tcl 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+INFO: [HLS 200-100] Execute               source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/maxi.hlp 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute               source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/saxilite.hlp 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/common/dsp48.hlp 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command           ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command         import_lib returned 0; 0.02 sec.
+INFO: [HLS 200-100] Execute         source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/zynq/zynq.gen 
+INFO: [HLS 200-100] Execute           source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/common/virtex.gen 
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/common/xilinx.gen 
+INFO: [HLS 200-100] Execute               source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/plb46.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute               source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/fsl.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute               source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/axi4.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute               source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/nativeAXI4.gen 
+INFO: [HLS 200-100] Execute                 source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/saxilite.gen 
+INFO: [HLS 200-100] Command                 ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute                 source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/maxi.gen 
+INFO: [HLS 200-100] Command                 ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command               ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute               source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute               source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute               source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/ip/xfft.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0.12 sec.
+INFO: [HLS 200-100] Execute               source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/ip/dds_compiler.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute               source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/ip/util.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute               source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/ip/xfir.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.15 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/common/dsp48.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command           ap_source returned 0; 0.15 sec.
+INFO: [HLS 200-100] Command         ap_source returned 0; 0.15 sec.
+INFO: [HLS 200-100] Execute         get_default_platform 
+INFO: [HLS 200-100] Command         get_default_platform returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+INFO: [HLS 200-100] Command         config_chip_info returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         config_chip_info -quiet -speed slow 
+INFO: [HLS 200-100] Command         config_chip_info returned 0; 0 sec.
+INFO: [HLS 200-100] Command       add_library returned 0; 0.19 sec.
+INFO: [HLS 200-100] Execute       add_library xilinx/zynq/zynq_fpv6 
+INFO: [HLS 200-100] Execute         get_default_platform 
+INFO: [HLS 200-100] Command         get_default_platform returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         open_platform DefaultPlatform 
+INFO: [HLS 200-100] Command         open_platform returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         import_lib /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/zynq/zynq_fpv6 
+INFO: [HLS 200-100] Execute           source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/common/xilinx_fpv7.lib 
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/common/xilinx_hp.lib 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command           ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute           source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/common/xilinx_fpv.hlp 
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/common/xilinx.hlp 
+INFO: [HLS 200-100] Execute               source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/common/target_info.tcl 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute               source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+INFO: [HLS 200-100] Execute                 source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/maxi.hlp 
+INFO: [HLS 200-100] Command                 ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute                 source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/saxilite.hlp 
+INFO: [HLS 200-100] Command                 ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute               source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/common/dsp48.hlp 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command           ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute           source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/zynq/zynq_hp.hlp 
+INFO: [HLS 200-100] Command           ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command         import_lib returned 0; 0.02 sec.
+INFO: [HLS 200-100] Execute         source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/zynq/zynq_fpv6.gen 
+INFO: [HLS 200-100] Execute           source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/common/xilinx_fpv6.gen 
+INFO: [HLS 200-100] Command           ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command       add_library returned 0; 0.02 sec.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg484-1'
+INFO: [HLS 200-100] Execute       get_default_platform 
+INFO: [HLS 200-100] Command       get_default_platform returned 0; 0 sec.
+INFO: [HLS 200-100] Command     set_part returned 0; 0.26 sec.
+INFO: [HLS 200-100] Execute     create_clock -period 10 -name default 
+INFO: [HLS 200-100] Execute       config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-100] Command       config_clock returned 0; 0 sec.
+INFO: [HLS 200-100] Command     create_clock returned 0; 0 sec.
+INFO: [HLS 200-100] Execute     csim_design -clean 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [HLS 200-100] Execute       is_encrypted /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/hls/mmult_trunc/mmult_test.cpp 
+INFO: [HLS 200-100] Command       is_encrypted returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       is_xip /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/hls/mmult_trunc/mmult_test.cpp 
+INFO: [HLS 200-100] Command       is_xip returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       is_encrypted /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/hls/mmult_trunc/mmult_fixed.cpp 
+INFO: [HLS 200-100] Command       is_encrypted returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       is_xip /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/hls/mmult_trunc/mmult_fixed.cpp 
+INFO: [HLS 200-100] Command       is_xip returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source run_sim.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 2.81 sec.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-100] Command     csim_design returned 0; 4.8 sec.
+INFO: [HLS 200-100] Execute     csynth_design 
+INFO: [HLS 200-100] Execute       elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -lm=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 
+INFO: [HLS 200-10] Analyzing design file '../hls/mmult_trunc/mmult_fixed.cpp' ... 
+INFO: [HLS 200-0] Compiling one TU...
+INFO: [HLS 200-100] Execute         is_m_axi_addr64 
+INFO: [HLS 200-100] Command         is_m_axi_addr64 returned 0; 0 sec.
+INFO: [HLS 200-0] Handling ../hls/mmult_trunc/mmult_fixed.cpp as C++
+INFO: [HLS 200-0] Syntax Checking before pre-processing...
+INFO: [HLS 200-100] Execute         clang  -fno-limit-debug-info -gcc-toolchain "/home/krueger/vivado-2017-1/Vivado_HLS/2017.1/lnx64/tools/gcc" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__   -I "/home/krueger/vivado-2017-1/Vivado_HLS/2017.1/lnx64/tools/systemc/include" -I "/home/krueger/vivado-2017-1/Vivado_HLS/2017.1/include" -I "/home/krueger/vivado-2017-1/Vivado_HLS/2017.1/include/ap_sysc" -fexceptions -I "/home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/autopilot" -include etc/autopilot_ssdm_op.h "../hls/mmult_trunc/mmult_fixed.cpp"  -o "/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_fixed.pp.00.o" 
+INFO: [HLS 200-0] exec clang -fno-limit-debug-info -gcc-toolchain /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/lnx64/tools/gcc -hls -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -I /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/lnx64/tools/systemc/include -I /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/include -I /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/include/ap_sysc -fexceptions -I /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/autopilot -include etc/autopilot_ssdm_op.h ../hls/mmult_trunc/mmult_fixed.cpp -o /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_fixed.pp.00.o
+INFO: [HLS 200-100] Command         clang returned 0; 0.83 sec.
+INFO: [HLS 200-100] Execute         is_encrypted /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_fixed.pp.00.o 
+INFO: [HLS 200-100] Command         is_encrypted returned 0; 0 sec.
+INFO: [HLS 200-0] Source preprocessing
+INFO: [HLS 200-100] Execute         clang  -fno-limit-debug-info -gcc-toolchain "/home/krueger/vivado-2017-1/Vivado_HLS/2017.1/lnx64/tools/gcc" -hls -fno-exceptions  -D__llvm__  -CC -E "../hls/mmult_trunc/mmult_fixed.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/autopilot" -I "/home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h  -o "/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_fixed.pp.0.cpp" 
+INFO: [HLS 200-0] exec clang -fno-limit-debug-info -gcc-toolchain /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/lnx64/tools/gcc -hls -fno-exceptions -D__llvm__ -CC -E ../hls/mmult_trunc/mmult_fixed.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/autopilot -I /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -o /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_fixed.pp.0.cpp
+INFO: [HLS 200-100] Command         clang returned 0; 0.12 sec.
+INFO: [HLS 200-0] GCC PP time: 0 seconds per iteration
+INFO: [HLS 200-100] Execute         list_core -type functional_unit 
+INFO: [HLS 200-100] Command         list_core returned 0; 0 sec.
+INFO: [HLS 200-0] CDT Preprocessing...
+INFO: [HLS 200-0] Marker-Pragma convertor: /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_fixed.pp.0.cpp /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_fixed.pp.0.cpp.ap-line.cpp /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_fixed.pp.0.cpp.ap-line.cpp.CXX 1
+INFO: [HLS 200-0] Converting Markers to Pragmas...
+INFO: [HLS 200-100] Execute         cdt  "/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_fixed.pp.0.cpp.ap-line.cpp"  -m "mmult_hw" -o "/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_fixed.pp.0.cpp.ap-cdt.cpp" --pp --directive /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/solution0.directive --source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/../hls/mmult_trunc/mmult_fixed.cpp --error /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db --funcunit "AddSub AddSub_DSP AddSubnS DAddSub_fulldsp DAddSub_nodsp DDiv DExp_fulldsp DExp_meddsp DExp_nodsp DLog_fulldsp DLog_meddsp DLog_nodsp DMul_fulldsp DMul_maxdsp DMul_meddsp DMul_nodsp DRSqrt DRecip DSqrt DivnS FAddSub_fulldsp FAddSub_nodsp FDiv FExp_fulldsp FExp_meddsp FExp_nodsp FLog_fulldsp FLog_meddsp FLog_nodsp FMul_fulldsp FMul_maxdsp FMul_meddsp FMul_nodsp FRSqrt_fulldsp FRSqrt_nodsp FRecip_fulldsp FRecip_nodsp FSqrt HAddSub_fulldsp HAddSub_meddsp HAddSub_nodsp HDiv HMul_fulldsp HMul_maxdsp HMul_nodsp HSqrt Mul Mul2S Mul3S Mul4S Mul5S Mul6S Mul_LUT MulnS MuxnS" --ve --vetcl /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db --ca --es --gf --pd --p2d /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db --sd --scff /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/.systemc_flag --ad 
+INFO: [HLS 200-0] Error:Syntax error in source:for (__decltype(__n + 0) __niter = __n;
+Error:Missing ; in source:t
+Error:Syntax error in source:)
+ *__first = __value;
+Error:Syntax error in source:for (__decltype(__n + 0) __niter = __n;
+Error:Missing ; in source:t
+Error:Syntax error in source:)
+ *__first = __tmp;
+INFO: [HLS 200-100] Command         cdt returned 0; 6.5 sec.
+INFO: [HLS 200-0] Marker-Pragma convertor: /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_fixed.pp.0.cpp.ap-cdt.cpp /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_fixed.pragma.0.cpp /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_fixed.pragma.0.cpp.ap-line.CXX 0
+INFO: [HLS 200-0] Converting Pragmas to Markers...
+INFO: [HLS 200-100] Execute         source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/pragma.status.tcl 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-0] Pragma Handling...
+INFO: [HLS 200-0] Source preprocessing
+INFO: [HLS 200-100] Execute         clang  -fno-limit-debug-info -gcc-toolchain "/home/krueger/vivado-2017-1/Vivado_HLS/2017.1/lnx64/tools/gcc" -hls -fno-exceptions  -D__llvm__  -CC -E "/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_fixed.pragma.1.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/autopilot" -I "/home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h  -o "/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_fixed.pragma.2.cpp" 
+INFO: [HLS 200-0] exec clang -fno-limit-debug-info -gcc-toolchain /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/lnx64/tools/gcc -hls -fno-exceptions -D__llvm__ -CC -E /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_fixed.pragma.1.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/autopilot -I /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -o /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_fixed.pragma.2.cpp
+INFO: [HLS 200-100] Command         clang returned 0; 0.09 sec.
+INFO: [HLS 200-0] Processing labels
+INFO: [HLS 200-100] Execute         clang  -fno-limit-debug-info -gcc-toolchain /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_fixed.pragma.2.cpp"    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/autopilot" -I "/home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -g -o "/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_fixed.g.bc" 
+INFO: [HLS 200-0] exec clang -fno-limit-debug-info -gcc-toolchain /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_fixed.pragma.2.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/autopilot -I /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -g -o /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_fixed.g.bc
+INFO: [HLS 200-100] Command         clang returned 0; 0.74 sec.
+INFO: [HLS 200-100] Execute         source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/ve_warning.tcl 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-10] Validating synthesis directives ...
+INFO: [HLS 200-100] Execute         source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/pragma.status.tcl 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:25 ; elapsed = 00:00:15 . Memory (MB): peak = 355.559 ; gain = 16.719 ; free physical = 4577 ; free virtual = 7540
+INFO: [HLS 200-0] Linking Release ...
+INFO: [HLS 200-100] Execute         llvm-ld /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_fixed.bc -disable-opt -L/home/krueger/vivado-2017-1/Vivado_HLS/2017.1/lnx64/lib -lm_basic -o /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/a.o 
+INFO: [HLS 200-100] Command         llvm-ld returned 0; 0.11 sec.
+INFO: [HLS 200-100] Execute         disassemble /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/a.o /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/a.o 
+INFO: [HLS 200-100] Execute           is_encrypted /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/a.o.bc 
+INFO: [HLS 200-100] Command           is_encrypted returned 0; 0 sec.
+INFO: [HLS 200-100] Command         disassemble returned 0; 0.08 sec.
+INFO: [HLS 200-0] Disassemble time: 0 seconds per iteration
+INFO: [HLS 200-0] Linking Debug ...
+INFO: [HLS 200-100] Execute         llvm-ld /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_fixed.g.bc -disable-opt -L/home/krueger/vivado-2017-1/Vivado_HLS/2017.1/lnx64/lib -lm_basic -o /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/a.g 
+INFO: [HLS 200-100] Command         llvm-ld returned 0; 0.11 sec.
+INFO: [HLS 200-100] Execute         disassemble /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/a.g /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/a.g 
+INFO: [HLS 200-100] Execute           is_encrypted /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/a.g.bc 
+INFO: [HLS 200-100] Command           is_encrypted returned 0; 0 sec.
+INFO: [HLS 200-100] Command         disassemble returned 0; 0.08 sec.
+INFO: [HLS 200-0] Disassemble time: 0 seconds per iteration
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:25 ; elapsed = 00:00:16 . Memory (MB): peak = 355.559 ; gain = 16.719 ; free physical = 4574 ; free virtual = 7540
+INFO: [HLS 200-100] Execute         opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
+INFO: [HLS 200-100] Execute           cleanup_all_models 
+INFO: [HLS 200-100] Command           cleanup_all_models returned 0; 0 sec.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-100] Execute           transform -promote-dbg-pointer /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/a.pp.bc -o /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/a.pp.0.bc -f 
+INFO: [HLS 200-100] Command           transform returned 0; 0.04 sec.
+INFO: [HLS 200-100] Execute           llvm-ld /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/a.pp.0.bc -disable-opt -L/home/krueger/vivado-2017-1/Vivado_HLS/2017.1/lnx64/lib -lfloatconversion -o /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/a.g.0 
+INFO: [HLS 200-100] Command           llvm-ld returned 0; 0.1 sec.
+INFO: [HLS 200-0] Running Standard Transforms...
+INFO: [HLS 200-100] Execute           transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -prune-eh -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top mmult_hw -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -auto-shift-reg-idiom -promote-dbg-pointer -norm-name /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/a.g.0.bc -o /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/a.g.1.bc -f -phase std-opt 
+INFO: [XFORM 203-603] Inlining function 'pop_stream' into 'mmult_hw' (../hls/mmult_trunc/mmult_fixed.cpp:75).
+INFO: [XFORM 203-603] Inlining function 'pop_stream' into 'mmult_hw' (../hls/mmult_trunc/mmult_fixed.cpp:53).
+INFO: [XFORM 203-603] Inlining function 'pop_stream' into 'mmult_hw' (../hls/mmult_trunc/mmult_fixed.cpp:42).
+INFO: [XFORM 203-603] Inlining function 'push_stream' into 'mmult_hw' (../hls/mmult_trunc/mmult_fixed.cpp:133).
+INFO: [HLS 200-100] Command           transform returned 0; 0.13 sec.
+INFO: [HLS 200-100] Execute           disassemble /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/a.g.1 /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/a.g.1 
+INFO: [HLS 200-100] Execute             is_encrypted /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/a.g.1.bc 
+INFO: [HLS 200-100] Command             is_encrypted returned 0; 0 sec.
+INFO: [HLS 200-100] Command           disassemble returned 0; 0.07 sec.
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:25 ; elapsed = 00:00:16 . Memory (MB): peak = 355.996 ; gain = 17.156 ; free physical = 4558 ; free virtual = 7528
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-0] Checking Synthesizability 1/2..
+INFO: [HLS 200-100] Execute           transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -array-normalize -instcombine -dce -warn-fifo-pointer -array-seg-normalize -instcombine -dce -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/a.g.1.bc -o /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/a.g.2.prechk.bc -f 
+INFO: [HLS 200-100] Command           transform returned 0; 0.1 sec.
+INFO: [HLS 200-0] Checking Synthesizability 2/2..
+INFO: [HLS 200-100] Execute           transform -syn-check /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/a.g.2.prechk.bc -o /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/a.g.2.bc -f -phase syn-check 
+INFO: [HLS 200-100] Command           transform returned 0; 0.04 sec.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:26 ; elapsed = 00:00:16 . Memory (MB): peak = 483.555 ; gain = 144.715 ; free physical = 4551 ; free virtual = 7522
+INFO: [HLS 200-0] Compiler optimizing ...
+INFO: [HLS 200-0] Share syncheck's 1.bc for syn flow: copy /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/a.g.1.bc to /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/a.o.1.bc
+INFO: [HLS 200-0] Presyn 1...
+INFO: [HLS 200-100] Execute           transform -hls -tmp /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db -interface-port-rename -type-info -function-uniquify -directive-preproc -mem2reg -dse -dce -disaggr -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -auto-rom-infer -dce -function-uniquify -resource-proc -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -clib-intrinsic-prepare -dce -func-buffer -dce -array-normalize -func-legal -instcombine -gvn -constprop -dce -ptrArgReplace -mem2reg -instcombine -dce -array-seg-normalize -deadargelim -instcombine -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -simplifycfg -find-region -instcombine -auto-loop-pipeline -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -constprop -instcombine -dce -ptrArgReplace -mem2reg -instcombine -simplifycfg -dce -auto-par -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -duplicate-dataflow-processes -globaldce -instcombine -array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -instcombine -dce -global-constprop -deadargelim -mem2reg -instcombine -simplifycfg -dce -globalopt -constprop -dce -array-promote -constprop -instcombine -dce -ptrArgReplace -mem2reg -instcombine -simplifycfg -dce -mem-intrinsic-preproc -dce -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -instcombine -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -inst-simplify -dce -norm-name -function-inline -globaldce -func-inst -constprop -instcombine -simplifycfg -dce -func-legal -dce -loop-bound -arraycheck -bitwidthmin -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -check-dataflow-syntax -legalize-stream-variable -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -deadargelim -annotate-dataflow-channels -scalar-propagation -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -function-uniquify -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -norm-name /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/a.o.1.bc -o /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/a.o.1.tmp.bc -f 
+WARNING: [XFORM 203-1103] Ignored data pack directive on non-struct variable 'out_stream.data.V' (../hls/mmult_trunc/mmult_fixed.cpp:7).
+WARNING: [XFORM 203-1103] Ignored data pack directive on non-struct variable 'in_stream.data.V' (../hls/mmult_trunc/mmult_fixed.cpp:7).
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'L2' (../hls/mmult_trunc/mmult_fixed.cpp:92) in function 'mmult_hw' for pipelining.
+INFO: [XFORM 203-501] Unrolling loop 'L3' (../hls/mmult_trunc/mmult_fixed.cpp:96) in function 'mmult_hw' completely.
+INFO: [XFORM 203-101] Partitioning array 'in_buf.V' (../hls/mmult_trunc/mmult_fixed.cpp:24) in dimension 2 with a block factor 32.
+INFO: [XFORM 203-101] Partitioning array 'weight_buf.V' (../hls/mmult_trunc/mmult_fixed.cpp:26) in dimension 2 with a block factor 32.
+INFO: [XFORM 203-101] Partitioning array 'out_tmp.V' (../hls/mmult_trunc/mmult_fixed.cpp:30) in dimension 1 completely.
+INFO: [XFORM 203-102] Partitioning array 'in_buf.V.0' (../hls/mmult_trunc/mmult_fixed.cpp:24) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'in_buf.V.1' (../hls/mmult_trunc/mmult_fixed.cpp:24) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'in_buf.V.2' (../hls/mmult_trunc/mmult_fixed.cpp:24) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'in_buf.V.3' (../hls/mmult_trunc/mmult_fixed.cpp:24) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'in_buf.V.4' (../hls/mmult_trunc/mmult_fixed.cpp:24) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'in_buf.V.5' (../hls/mmult_trunc/mmult_fixed.cpp:24) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'in_buf.V.6' (../hls/mmult_trunc/mmult_fixed.cpp:24) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'in_buf.V.7' (../hls/mmult_trunc/mmult_fixed.cpp:24) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'in_buf.V.8' (../hls/mmult_trunc/mmult_fixed.cpp:24) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'in_buf.V.9' (../hls/mmult_trunc/mmult_fixed.cpp:24) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'in_buf.V.10' (../hls/mmult_trunc/mmult_fixed.cpp:24) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'in_buf.V.11' (../hls/mmult_trunc/mmult_fixed.cpp:24) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'in_buf.V.12' (../hls/mmult_trunc/mmult_fixed.cpp:24) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'in_buf.V.13' (../hls/mmult_trunc/mmult_fixed.cpp:24) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'in_buf.V.14' (../hls/mmult_trunc/mmult_fixed.cpp:24) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'in_buf.V.15' (../hls/mmult_trunc/mmult_fixed.cpp:24) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'in_buf.V.16' (../hls/mmult_trunc/mmult_fixed.cpp:24) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'in_buf.V.17' (../hls/mmult_trunc/mmult_fixed.cpp:24) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'in_buf.V.18' (../hls/mmult_trunc/mmult_fixed.cpp:24) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'in_buf.V.19' (../hls/mmult_trunc/mmult_fixed.cpp:24) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'in_buf.V.20' (../hls/mmult_trunc/mmult_fixed.cpp:24) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'in_buf.V.21' (../hls/mmult_trunc/mmult_fixed.cpp:24) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'in_buf.V.22' (../hls/mmult_trunc/mmult_fixed.cpp:24) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'in_buf.V.23' (../hls/mmult_trunc/mmult_fixed.cpp:24) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'in_buf.V.24' (../hls/mmult_trunc/mmult_fixed.cpp:24) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'in_buf.V.25' (../hls/mmult_trunc/mmult_fixed.cpp:24) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'in_buf.V.26' (../hls/mmult_trunc/mmult_fixed.cpp:24) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'in_buf.V.27' (../hls/mmult_trunc/mmult_fixed.cpp:24) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'in_buf.V.28' (../hls/mmult_trunc/mmult_fixed.cpp:24) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'in_buf.V.29' (../hls/mmult_trunc/mmult_fixed.cpp:24) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'in_buf.V.30' (../hls/mmult_trunc/mmult_fixed.cpp:24) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'in_buf.V.31' (../hls/mmult_trunc/mmult_fixed.cpp:24) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight_buf.V.0' (../hls/mmult_trunc/mmult_fixed.cpp:26) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight_buf.V.1' (../hls/mmult_trunc/mmult_fixed.cpp:26) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight_buf.V.2' (../hls/mmult_trunc/mmult_fixed.cpp:26) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight_buf.V.3' (../hls/mmult_trunc/mmult_fixed.cpp:26) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight_buf.V.4' (../hls/mmult_trunc/mmult_fixed.cpp:26) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight_buf.V.5' (../hls/mmult_trunc/mmult_fixed.cpp:26) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight_buf.V.6' (../hls/mmult_trunc/mmult_fixed.cpp:26) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight_buf.V.7' (../hls/mmult_trunc/mmult_fixed.cpp:26) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight_buf.V.8' (../hls/mmult_trunc/mmult_fixed.cpp:26) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight_buf.V.9' (../hls/mmult_trunc/mmult_fixed.cpp:26) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight_buf.V.10' (../hls/mmult_trunc/mmult_fixed.cpp:26) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight_buf.V.11' (../hls/mmult_trunc/mmult_fixed.cpp:26) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight_buf.V.12' (../hls/mmult_trunc/mmult_fixed.cpp:26) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight_buf.V.13' (../hls/mmult_trunc/mmult_fixed.cpp:26) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight_buf.V.14' (../hls/mmult_trunc/mmult_fixed.cpp:26) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight_buf.V.15' (../hls/mmult_trunc/mmult_fixed.cpp:26) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight_buf.V.16' (../hls/mmult_trunc/mmult_fixed.cpp:26) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight_buf.V.17' (../hls/mmult_trunc/mmult_fixed.cpp:26) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight_buf.V.18' (../hls/mmult_trunc/mmult_fixed.cpp:26) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight_buf.V.19' (../hls/mmult_trunc/mmult_fixed.cpp:26) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight_buf.V.20' (../hls/mmult_trunc/mmult_fixed.cpp:26) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight_buf.V.21' (../hls/mmult_trunc/mmult_fixed.cpp:26) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight_buf.V.22' (../hls/mmult_trunc/mmult_fixed.cpp:26) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight_buf.V.23' (../hls/mmult_trunc/mmult_fixed.cpp:26) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight_buf.V.24' (../hls/mmult_trunc/mmult_fixed.cpp:26) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight_buf.V.25' (../hls/mmult_trunc/mmult_fixed.cpp:26) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight_buf.V.26' (../hls/mmult_trunc/mmult_fixed.cpp:26) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight_buf.V.27' (../hls/mmult_trunc/mmult_fixed.cpp:26) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight_buf.V.28' (../hls/mmult_trunc/mmult_fixed.cpp:26) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight_buf.V.29' (../hls/mmult_trunc/mmult_fixed.cpp:26) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight_buf.V.30' (../hls/mmult_trunc/mmult_fixed.cpp:26) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight_buf.V.31' (../hls/mmult_trunc/mmult_fixed.cpp:26) in dimension 2 automatically.
+WARNING: [XFORM 203-124] Array  'in_stream.data.V' (../hls/mmult_trunc/mmult_fixed.cpp:7): may have improper streaming access(es), possible reasons: (1) some entries are accessed more than once; (2) some entries are not used; (3) the entries are not accessed in sequential order.
+WARNING: [XFORM 203-124] Array  'in_stream.keep.V' (../hls/mmult_trunc/mmult_fixed.cpp:7): may have improper streaming access(es), possible reasons: (1) some entries are accessed more than once; (2) some entries are not used; (3) the entries are not accessed in sequential order.
+WARNING: [XFORM 203-124] Array  'in_stream.strb.V' (../hls/mmult_trunc/mmult_fixed.cpp:7): may have improper streaming access(es), possible reasons: (1) some entries are accessed more than once; (2) some entries are not used; (3) the entries are not accessed in sequential order.
+WARNING: [XFORM 203-124] Array  'in_stream.user.V' (../hls/mmult_trunc/mmult_fixed.cpp:7): may have improper streaming access(es), possible reasons: (1) some entries are accessed more than once; (2) some entries are not used; (3) the entries are not accessed in sequential order.
+WARNING: [XFORM 203-124] Array  'in_stream.last.V' (../hls/mmult_trunc/mmult_fixed.cpp:7): may have improper streaming access(es), possible reasons: (1) some entries are accessed more than once; (2) some entries are not used; (3) the entries are not accessed in sequential order.
+WARNING: [XFORM 203-124] Array  'in_stream.id.V' (../hls/mmult_trunc/mmult_fixed.cpp:7): may have improper streaming access(es), possible reasons: (1) some entries are accessed more than once; (2) some entries are not used; (3) the entries are not accessed in sequential order.
+WARNING: [XFORM 203-124] Array  'in_stream.dest.V' (../hls/mmult_trunc/mmult_fixed.cpp:7): may have improper streaming access(es), possible reasons: (1) some entries are accessed more than once; (2) some entries are not used; (3) the entries are not accessed in sequential order.
+WARNING: [XFORM 203-124] Array  'out_stream.data.V' (../hls/mmult_trunc/mmult_fixed.cpp:7): may have improper streaming access(es), possible reasons: (1) some entries are accessed more than once; (2) some entries are not used; (3) the entries are not accessed in sequential order.
+WARNING: [XFORM 203-124] Array  'out_stream.keep.V' (../hls/mmult_trunc/mmult_fixed.cpp:7): may have improper streaming access(es), possible reasons: (1) some entries are accessed more than once; (2) some entries are not used; (3) the entries are not accessed in sequential order.
+WARNING: [XFORM 203-124] Array  'out_stream.strb.V' (../hls/mmult_trunc/mmult_fixed.cpp:7): may have improper streaming access(es), possible reasons: (1) some entries are accessed more than once; (2) some entries are not used; (3) the entries are not accessed in sequential order.
+WARNING: [XFORM 203-124] Array  'out_stream.user.V' (../hls/mmult_trunc/mmult_fixed.cpp:7): may have improper streaming access(es), possible reasons: (1) some entries are accessed more than once; (2) some entries are not used; (3) the entries are not accessed in sequential order.
+WARNING: [XFORM 203-124] Array  'out_stream.last.V' (../hls/mmult_trunc/mmult_fixed.cpp:7): may have improper streaming access(es), possible reasons: (1) some entries are accessed more than once; (2) some entries are not used; (3) the entries are not accessed in sequential order.
+WARNING: [XFORM 203-124] Array  'out_stream.id.V' (../hls/mmult_trunc/mmult_fixed.cpp:7): may have improper streaming access(es), possible reasons: (1) some entries are accessed more than once; (2) some entries are not used; (3) the entries are not accessed in sequential order.
+WARNING: [XFORM 203-124] Array  'out_stream.dest.V' (../hls/mmult_trunc/mmult_fixed.cpp:7): may have improper streaming access(es), possible reasons: (1) some entries are accessed more than once; (2) some entries are not used; (3) the entries are not accessed in sequential order.
+INFO: [HLS 200-100] Command           transform returned 0; 2.06 sec.
+INFO: [HLS 200-0] Presyn 2...
+INFO: [HLS 200-100] Execute           transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -auto-burst -norm-name /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/a.o.1.tmp.bc -o /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/a.o.2.bc -f -phase presyn 
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (../hls/mmult_trunc/mmult_fixed.cpp:92:47) to (../hls/mmult_trunc/mmult_fixed.cpp:92:41) in function 'mmult_hw'... converting 11 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (../hls/mmult_trunc/mmult_fixed.cpp:104:12) to (../hls/mmult_trunc/mmult_fixed.cpp:90:32) in function 'mmult_hw'... converting 5 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'mmult_hw' (../hls/mmult_trunc/mmult_fixed.cpp:7)...511 expression(s) balanced.
+INFO: [HLS 200-100] Command           transform returned 0; 0.52 sec.
+INFO: [HLS 200-100] Execute           disassemble /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/a.o.2 /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/a.o.2 
+INFO: [HLS 200-100] Execute             is_encrypted /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/a.o.2.bc 
+INFO: [HLS 200-100] Command             is_encrypted returned 0; 0 sec.
+INFO: [HLS 200-100] Command           disassemble returned 0; 0.08 sec.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:28 ; elapsed = 00:00:19 . Memory (MB): peak = 483.961 ; gain = 145.121 ; free physical = 4504 ; free virtual = 7480
+INFO: [HLS 200-0] Building ssdm...
+INFO: [HLS 200-100] Execute           transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -instcombine -dce -reset-lda -loop-simplify -indvars -licm -loop-dep -loop-bound -licm -loop-simplify -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -axi4-lower -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -bitwidthmin -deadargelim -dce -canonicalize-dataflow -dce -scalar-propagation -deadargelim -globaldce -mem2reg -interface-preproc -interface-gen -deadargelim -directive-preproc -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -bitop-lower -loop-rewind -pointer-simplify -dce -cfgopt -read-loop-dep -dce -bitwidth -loop-dep -norm-name -legalize -validate-dataflow -cdfg-build /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/a.o.2.bc -o /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'LOAD_W_1' (../hls/mmult_trunc/mmult_fixed.cpp:49:38) in function 'mmult_hw' : 
+                         the outer loop is not a perfect loop.
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'LOAD_I_1' (../hls/mmult_trunc/mmult_fixed.cpp:72:41) in function 'mmult_hw' : 
+                         the outer loop is not a perfect loop.
+INFO: [XFORM 203-541] Flattening a loop nest 'L1' (../hls/mmult_trunc/mmult_fixed.cpp:90:38) in function 'mmult_hw'.
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'LT' (../hls/mmult_trunc/mmult_fixed.cpp:68:41) in function 'mmult_hw' : 
+                         more than one sub loop.
+INFO: [HLS 200-100] Command           transform returned 0; 1.74 sec.
+INFO: [HLS 200-100] Execute           disassemble /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/a.o.3 /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/a.o.3 
+INFO: [HLS 200-100] Execute             is_encrypted /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/a.o.3.bc 
+INFO: [HLS 200-100] Command             is_encrypted returned 0; 0 sec.
+INFO: [HLS 200-100] Command           disassemble returned 0; 0.06 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:30 ; elapsed = 00:00:21 . Memory (MB): peak = 483.961 ; gain = 145.121 ; free physical = 4485 ; free virtual = 7462
+INFO: [HLS 200-0] Finish building internal data model.
+INFO: [HLS 200-100] Command         opt_and_import_c returned 0; 4.94 sec.
+INFO: [HLS 200-100] Command       elaborate returned 0; 15.34 sec.
+INFO: [HLS 200-100] Execute       autosyn 
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-0] Synthesizing C/C++ design ...
+INFO: [HLS 200-10] Synthesizing 'mmult_hw' ...
+INFO: [HLS 200-100] Execute         ap_set_top_model mmult_hw 
+INFO: [HLS 200-100] Command         ap_set_top_model returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         get_model_list mmult_hw -filter all-wo-channel -topdown 
+INFO: [HLS 200-100] Command         get_model_list returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         preproc_iomode -model mmult_hw 
+INFO: [HLS 200-100] Command         preproc_iomode returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         get_model_list mmult_hw -filter all-wo-channel 
+INFO: [HLS 200-100] Command         get_model_list returned 0; 0 sec.
+INFO: [HLS 200-0] Model list for configure: mmult_hw
+INFO: [HLS 200-0] Configuring Module : mmult_hw ...
+INFO: [HLS 200-100] Execute         set_default_model mmult_hw 
+INFO: [HLS 200-100] Command         set_default_model returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         apply_spec_resource_limit mmult_hw 
+INFO: [HLS 200-100] Command         apply_spec_resource_limit returned 0; 0.01 sec.
+INFO: [HLS 200-0] Model list for preprocess: mmult_hw
+INFO: [HLS 200-0] Preprocessing Module: mmult_hw ...
+INFO: [HLS 200-100] Execute         set_default_model mmult_hw 
+INFO: [HLS 200-100] Command         set_default_model returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         cdfg_preprocess -model mmult_hw 
+INFO: [HLS 200-100] Command         cdfg_preprocess returned 0; 0.1 sec.
+INFO: [HLS 200-100] Execute         rtl_gen_preprocess mmult_hw 
+INFO: [HLS 200-100] Command         rtl_gen_preprocess returned 0; 0 sec.
+INFO: [HLS 200-0] Model list for synthesis: mmult_hw
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Implementing module 'mmult_hw' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-100] Execute         set_default_model mmult_hw 
+INFO: [HLS 200-100] Command         set_default_model returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         schedule -model mmult_hw 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'LOAD_OFF_1'.
+INFO: [SCHED 204-61] Pipelining result: Target II: 1, Final II: 1, Depth: 2.
+INFO: [SCHED 204-61] Pipelining loop 'LOAD_W_2'.
+INFO: [SCHED 204-61] Pipelining result: Target II: 1, Final II: 1, Depth: 2.
+INFO: [SCHED 204-61] Pipelining loop 'LOAD_I_2'.
+INFO: [SCHED 204-61] Pipelining result: Target II: 1, Final II: 1, Depth: 2.
+INFO: [SCHED 204-61] Pipelining loop 'L1_L2'.
+INFO: [SCHED 204-61] Pipelining result: Target II: 1, Final II: 1, Depth: 14.
+INFO: [SCHED 204-61] Pipelining loop 'STORE_O_1'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('out_buf_V_load_2', ../hls/mmult_trunc/mmult_fixed.cpp:126) on array 'out_buf.V', ../hls/mmult_trunc/mmult_fixed.cpp:28 due to limited memory ports.
+INFO: [SCHED 204-61] Pipelining result: Target II: 1, Final II: 4, Depth: 6.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-100] Command         schedule returned 0; 3.54 sec.
+INFO: [HLS 200-111]  Elapsed time: 24.35 seconds; current allocated memory: 133.316 MB.
+INFO: [HLS 200-100] Execute         report -o /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_hw.verbose.sched.rpt -verbose -f 
+INFO: [HLS 200-100] Command         report returned 0; 0.77 sec.
+INFO: [HLS 200-100] Execute         db_write -o /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_hw.sched.adb -f 
+INFO: [HLS 200-100] Command         db_write returned 0; 0.67 sec.
+INFO: [HLS 200-0] Finish scheduling mmult_hw.
+INFO: [HLS 200-100] Execute         set_default_model mmult_hw 
+INFO: [HLS 200-100] Command         set_default_model returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute         bind -model mmult_hw 
+INFO: [BIND 205-110] clear=
+INFO: [BIND 205-110] debug=
+INFO: [BIND 205-110] drf=
+INFO: [BIND 205-110] effort=
+INFO: [BIND 205-110] fast_refine=
+INFO: [BIND 205-110] fu_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] global_opt=
+INFO: [BIND 205-110] gsearch=
+INFO: [BIND 205-110] help=
+INFO: [BIND 205-110] help-hidden=
+INFO: [BIND 205-110] min_mem_port=
+INFO: [BIND 205-110] min_op=
+INFO: [BIND 205-110] minreg=
+INFO: [BIND 205-110] ml=
+INFO: [BIND 205-110] model=mmult_hw
+INFO: [BIND 205-110] no_false_path=
+INFO: [BIND 205-110] no_min_op=
+INFO: [BIND 205-110] normalize=
+INFO: [BIND 205-110] quiet=
+INFO: [BIND 205-110] refine=
+INFO: [BIND 205-110] reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] search=
+INFO: [BIND 205-110] tight_delay=
+INFO: [BIND 205-110] verbose=
+INFO: [BIND 205-110] wFF=
+INFO: [BIND 205-110] wFU=
+INFO: [BIND 205-110] wMUX=
+INFO: [BIND 205-110] wNET=
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-100] Command         bind returned 0; 4.77 sec.
+INFO: [HLS 200-111]  Elapsed time: 6.22 seconds; current allocated memory: 147.851 MB.
+INFO: [HLS 200-100] Execute         report -o /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_hw.verbose.bind.rpt -verbose -f 
+INFO: [HLS 200-100] Command         report returned 0; 2.35 sec.
+INFO: [HLS 200-100] Execute         db_write -o /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_hw.bind.adb -f 
+INFO: [HLS 200-100] Command         db_write returned 0; 0.73 sec.
+INFO: [HLS 200-0] Finish binding mmult_hw.
+INFO: [HLS 200-100] Execute         get_model_list mmult_hw -filter all-wo-channel 
+INFO: [HLS 200-100] Command         get_model_list returned 0; 0 sec.
+INFO: [HLS 200-0] Preprocessing for RTLGen ...
+INFO: [HLS 200-100] Execute         rtl_gen_preprocess mmult_hw 
+INFO: [HLS 200-100] Command         rtl_gen_preprocess returned 0; 0 sec.
+INFO: [HLS 200-0] Model list for RTL generation: mmult_hw
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mmult_hw' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-100] Execute         create_rtl_model mmult_hw -vendor xilinx -mg_file /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_hw.compgen.tcl 
+INFO: [RTGEN 206-500] Setting interface mode on port 'mmult_hw/in_stream_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'mmult_hw/in_stream_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'mmult_hw/in_stream_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'mmult_hw/in_stream_user_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'mmult_hw/in_stream_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'mmult_hw/in_stream_id_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'mmult_hw/in_stream_dest_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'mmult_hw/out_stream_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'mmult_hw/out_stream_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'mmult_hw/out_stream_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'mmult_hw/out_stream_user_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'mmult_hw/out_stream_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'mmult_hw/out_stream_id_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'mmult_hw/out_stream_dest_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on function 'mmult_hw' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return' to AXI-Lite port CONTROL_BUS.
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_offset_buf_V' to 'mmult_hw_offset_bbkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_0_0_V' to 'mmult_hw_in_buf_0cud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_0_1_V' to 'mmult_hw_in_buf_0dEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_0_2_V' to 'mmult_hw_in_buf_0eOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_0_3_V' to 'mmult_hw_in_buf_0fYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_0_4_V' to 'mmult_hw_in_buf_0g8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_0_5_V' to 'mmult_hw_in_buf_0hbi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_0_6_V' to 'mmult_hw_in_buf_0ibs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_0_7_V' to 'mmult_hw_in_buf_0jbC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_1_0_V' to 'mmult_hw_in_buf_1kbM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_1_1_V' to 'mmult_hw_in_buf_1lbW' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_1_2_V' to 'mmult_hw_in_buf_1mb6' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_1_3_V' to 'mmult_hw_in_buf_1ncg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_1_4_V' to 'mmult_hw_in_buf_1ocq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_1_5_V' to 'mmult_hw_in_buf_1pcA' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_1_6_V' to 'mmult_hw_in_buf_1qcK' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_1_7_V' to 'mmult_hw_in_buf_1rcU' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_2_0_V' to 'mmult_hw_in_buf_2sc4' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_2_1_V' to 'mmult_hw_in_buf_2tde' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_2_2_V' to 'mmult_hw_in_buf_2udo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_2_3_V' to 'mmult_hw_in_buf_2vdy' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_2_4_V' to 'mmult_hw_in_buf_2wdI' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_2_5_V' to 'mmult_hw_in_buf_2xdS' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_2_6_V' to 'mmult_hw_in_buf_2yd2' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_2_7_V' to 'mmult_hw_in_buf_2zec' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_3_0_V' to 'mmult_hw_in_buf_3Aem' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_3_1_V' to 'mmult_hw_in_buf_3Bew' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_3_2_V' to 'mmult_hw_in_buf_3CeG' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_3_3_V' to 'mmult_hw_in_buf_3DeQ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_3_4_V' to 'mmult_hw_in_buf_3Ee0' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_3_5_V' to 'mmult_hw_in_buf_3Ffa' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_3_6_V' to 'mmult_hw_in_buf_3Gfk' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_3_7_V' to 'mmult_hw_in_buf_3Hfu' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_4_0_V' to 'mmult_hw_in_buf_4IfE' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_4_1_V' to 'mmult_hw_in_buf_4JfO' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_4_2_V' to 'mmult_hw_in_buf_4KfY' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_4_3_V' to 'mmult_hw_in_buf_4Lf8' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_4_4_V' to 'mmult_hw_in_buf_4Mgi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_4_5_V' to 'mmult_hw_in_buf_4Ngs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_4_6_V' to 'mmult_hw_in_buf_4OgC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_4_7_V' to 'mmult_hw_in_buf_4PgM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_5_0_V' to 'mmult_hw_in_buf_5QgW' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_5_1_V' to 'mmult_hw_in_buf_5Rg6' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_5_2_V' to 'mmult_hw_in_buf_5Shg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_5_3_V' to 'mmult_hw_in_buf_5Thq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_5_4_V' to 'mmult_hw_in_buf_5UhA' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_5_5_V' to 'mmult_hw_in_buf_5VhK' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_5_6_V' to 'mmult_hw_in_buf_5WhU' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_5_7_V' to 'mmult_hw_in_buf_5Xh4' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_6_0_V' to 'mmult_hw_in_buf_6Yie' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_6_1_V' to 'mmult_hw_in_buf_6Zio' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_6_2_V' to 'mmult_hw_in_buf_60iy' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_6_3_V' to 'mmult_hw_in_buf_61iI' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_6_4_V' to 'mmult_hw_in_buf_62iS' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_6_5_V' to 'mmult_hw_in_buf_63i2' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_6_6_V' to 'mmult_hw_in_buf_64jc' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_6_7_V' to 'mmult_hw_in_buf_65jm' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_7_0_V' to 'mmult_hw_in_buf_76jw' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_7_1_V' to 'mmult_hw_in_buf_77jG' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_7_2_V' to 'mmult_hw_in_buf_78jQ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_7_3_V' to 'mmult_hw_in_buf_79j0' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_7_4_V' to 'mmult_hw_in_buf_7bak' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_7_5_V' to 'mmult_hw_in_buf_7bbk' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_7_6_V' to 'mmult_hw_in_buf_7bck' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_7_7_V' to 'mmult_hw_in_buf_7bdk' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_8_0_V' to 'mmult_hw_in_buf_8bek' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_8_1_V' to 'mmult_hw_in_buf_8bfk' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_8_2_V' to 'mmult_hw_in_buf_8bgk' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_8_3_V' to 'mmult_hw_in_buf_8bhl' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_8_4_V' to 'mmult_hw_in_buf_8bil' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_8_5_V' to 'mmult_hw_in_buf_8bjl' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_8_6_V' to 'mmult_hw_in_buf_8bkl' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_8_7_V' to 'mmult_hw_in_buf_8bll' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_9_0_V' to 'mmult_hw_in_buf_9bml' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_9_1_V' to 'mmult_hw_in_buf_9bnm' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_9_2_V' to 'mmult_hw_in_buf_9bom' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_9_3_V' to 'mmult_hw_in_buf_9bpm' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_9_4_V' to 'mmult_hw_in_buf_9bqm' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_9_5_V' to 'mmult_hw_in_buf_9brm' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_9_6_V' to 'mmult_hw_in_buf_9bsm' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_9_7_V' to 'mmult_hw_in_buf_9btn' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_10_0_V' to 'mmult_hw_in_buf_1bun' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_10_1_V' to 'mmult_hw_in_buf_1bvn' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_10_2_V' to 'mmult_hw_in_buf_1bwn' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_10_3_V' to 'mmult_hw_in_buf_1bxn' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_10_4_V' to 'mmult_hw_in_buf_1byn' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_10_5_V' to 'mmult_hw_in_buf_1bzo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_10_6_V' to 'mmult_hw_in_buf_1bAo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_10_7_V' to 'mmult_hw_in_buf_1bBo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_11_0_V' to 'mmult_hw_in_buf_1bCo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_11_1_V' to 'mmult_hw_in_buf_1bDo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_11_2_V' to 'mmult_hw_in_buf_1bEo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_11_3_V' to 'mmult_hw_in_buf_1bFp' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_11_4_V' to 'mmult_hw_in_buf_1bGp' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_11_5_V' to 'mmult_hw_in_buf_1bHp' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_11_6_V' to 'mmult_hw_in_buf_1bIp' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_11_7_V' to 'mmult_hw_in_buf_1bJp' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_12_0_V' to 'mmult_hw_in_buf_1bKp' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_12_1_V' to 'mmult_hw_in_buf_1bLp' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_12_2_V' to 'mmult_hw_in_buf_1bMq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_12_3_V' to 'mmult_hw_in_buf_1bNq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_12_4_V' to 'mmult_hw_in_buf_1bOq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_12_5_V' to 'mmult_hw_in_buf_1bPq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_12_6_V' to 'mmult_hw_in_buf_1bQq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_12_7_V' to 'mmult_hw_in_buf_1bRq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_13_0_V' to 'mmult_hw_in_buf_1bSr' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_13_1_V' to 'mmult_hw_in_buf_1bTr' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_13_2_V' to 'mmult_hw_in_buf_1bUr' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_13_3_V' to 'mmult_hw_in_buf_1bVr' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_13_4_V' to 'mmult_hw_in_buf_1bWr' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_13_5_V' to 'mmult_hw_in_buf_1bXr' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_13_6_V' to 'mmult_hw_in_buf_1bYs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_13_7_V' to 'mmult_hw_in_buf_1bZs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_14_0_V' to 'mmult_hw_in_buf_1b0s' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_14_1_V' to 'mmult_hw_in_buf_1b1s' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_14_2_V' to 'mmult_hw_in_buf_1b2s' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_14_3_V' to 'mmult_hw_in_buf_1b3s' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_14_4_V' to 'mmult_hw_in_buf_1b4t' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_14_5_V' to 'mmult_hw_in_buf_1b5t' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_14_6_V' to 'mmult_hw_in_buf_1b6t' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_14_7_V' to 'mmult_hw_in_buf_1b7t' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_15_0_V' to 'mmult_hw_in_buf_1b8t' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_15_1_V' to 'mmult_hw_in_buf_1b9t' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_15_2_V' to 'mmult_hw_in_buf_1cau' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_15_3_V' to 'mmult_hw_in_buf_1cbu' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_15_4_V' to 'mmult_hw_in_buf_1ccu' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_15_5_V' to 'mmult_hw_in_buf_1cdu' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_15_6_V' to 'mmult_hw_in_buf_1ceu' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_15_7_V' to 'mmult_hw_in_buf_1cfu' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_16_0_V' to 'mmult_hw_in_buf_1cgu' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_16_1_V' to 'mmult_hw_in_buf_1chv' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_16_2_V' to 'mmult_hw_in_buf_1civ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_16_3_V' to 'mmult_hw_in_buf_1cjv' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_16_4_V' to 'mmult_hw_in_buf_1ckv' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_16_5_V' to 'mmult_hw_in_buf_1clv' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_16_6_V' to 'mmult_hw_in_buf_1cmv' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_16_7_V' to 'mmult_hw_in_buf_1cnw' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_17_0_V' to 'mmult_hw_in_buf_1cow' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_17_1_V' to 'mmult_hw_in_buf_1cpw' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_17_2_V' to 'mmult_hw_in_buf_1cqw' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_17_3_V' to 'mmult_hw_in_buf_1crw' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_17_4_V' to 'mmult_hw_in_buf_1csw' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_17_5_V' to 'mmult_hw_in_buf_1ctx' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_17_6_V' to 'mmult_hw_in_buf_1cux' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_17_7_V' to 'mmult_hw_in_buf_1cvx' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_18_0_V' to 'mmult_hw_in_buf_1cwx' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_18_1_V' to 'mmult_hw_in_buf_1cxx' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_18_2_V' to 'mmult_hw_in_buf_1cyx' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_18_3_V' to 'mmult_hw_in_buf_1czy' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_18_4_V' to 'mmult_hw_in_buf_1cAy' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_18_5_V' to 'mmult_hw_in_buf_1cBy' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_18_6_V' to 'mmult_hw_in_buf_1cCy' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_18_7_V' to 'mmult_hw_in_buf_1cDy' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_19_0_V' to 'mmult_hw_in_buf_1cEy' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_19_1_V' to 'mmult_hw_in_buf_1cFz' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_19_2_V' to 'mmult_hw_in_buf_1cGz' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_19_3_V' to 'mmult_hw_in_buf_1cHz' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_19_4_V' to 'mmult_hw_in_buf_1cIz' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_19_5_V' to 'mmult_hw_in_buf_1cJz' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_19_6_V' to 'mmult_hw_in_buf_1cKz' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_19_7_V' to 'mmult_hw_in_buf_1cLz' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_20_0_V' to 'mmult_hw_in_buf_2cMA' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_20_1_V' to 'mmult_hw_in_buf_2cNA' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_20_2_V' to 'mmult_hw_in_buf_2cOA' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_20_3_V' to 'mmult_hw_in_buf_2cPA' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_20_4_V' to 'mmult_hw_in_buf_2cQA' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_20_5_V' to 'mmult_hw_in_buf_2cRA' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_20_6_V' to 'mmult_hw_in_buf_2cSB' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_20_7_V' to 'mmult_hw_in_buf_2cTB' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_21_0_V' to 'mmult_hw_in_buf_2cUB' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_21_1_V' to 'mmult_hw_in_buf_2cVB' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_21_2_V' to 'mmult_hw_in_buf_2cWB' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_21_3_V' to 'mmult_hw_in_buf_2cXB' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_21_4_V' to 'mmult_hw_in_buf_2cYC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_21_5_V' to 'mmult_hw_in_buf_2cZC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_21_6_V' to 'mmult_hw_in_buf_2c0C' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_21_7_V' to 'mmult_hw_in_buf_2c1C' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_22_0_V' to 'mmult_hw_in_buf_2c2C' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_22_1_V' to 'mmult_hw_in_buf_2c3C' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_22_2_V' to 'mmult_hw_in_buf_2c4D' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_22_3_V' to 'mmult_hw_in_buf_2c5D' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_22_4_V' to 'mmult_hw_in_buf_2c6D' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_22_5_V' to 'mmult_hw_in_buf_2c7D' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_22_6_V' to 'mmult_hw_in_buf_2c8D' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_22_7_V' to 'mmult_hw_in_buf_2c9D' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_23_0_V' to 'mmult_hw_in_buf_2daE' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_23_1_V' to 'mmult_hw_in_buf_2dbE' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_23_2_V' to 'mmult_hw_in_buf_2dcE' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_23_3_V' to 'mmult_hw_in_buf_2ddE' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_23_4_V' to 'mmult_hw_in_buf_2deE' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_23_5_V' to 'mmult_hw_in_buf_2dfE' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_23_6_V' to 'mmult_hw_in_buf_2dgE' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_23_7_V' to 'mmult_hw_in_buf_2dhF' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_24_0_V' to 'mmult_hw_in_buf_2diF' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_24_1_V' to 'mmult_hw_in_buf_2djF' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_24_2_V' to 'mmult_hw_in_buf_2dkF' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_24_3_V' to 'mmult_hw_in_buf_2dlF' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_24_4_V' to 'mmult_hw_in_buf_2dmF' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_24_5_V' to 'mmult_hw_in_buf_2dnG' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_24_6_V' to 'mmult_hw_in_buf_2doG' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_24_7_V' to 'mmult_hw_in_buf_2dpG' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_25_0_V' to 'mmult_hw_in_buf_2dqG' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_25_1_V' to 'mmult_hw_in_buf_2drG' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_25_2_V' to 'mmult_hw_in_buf_2dsG' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_25_3_V' to 'mmult_hw_in_buf_2dtH' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_25_4_V' to 'mmult_hw_in_buf_2duH' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_25_5_V' to 'mmult_hw_in_buf_2dvH' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_25_6_V' to 'mmult_hw_in_buf_2dwH' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_25_7_V' to 'mmult_hw_in_buf_2dxH' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_26_0_V' to 'mmult_hw_in_buf_2dyH' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_26_1_V' to 'mmult_hw_in_buf_2dzI' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_26_2_V' to 'mmult_hw_in_buf_2dAI' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_26_3_V' to 'mmult_hw_in_buf_2dBI' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_26_4_V' to 'mmult_hw_in_buf_2dCI' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_26_5_V' to 'mmult_hw_in_buf_2dDI' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_26_6_V' to 'mmult_hw_in_buf_2dEI' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_26_7_V' to 'mmult_hw_in_buf_2dFJ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_27_0_V' to 'mmult_hw_in_buf_2dGJ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_27_1_V' to 'mmult_hw_in_buf_2dHJ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_27_2_V' to 'mmult_hw_in_buf_2dIJ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_27_3_V' to 'mmult_hw_in_buf_2dJJ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_27_4_V' to 'mmult_hw_in_buf_2dKJ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_27_5_V' to 'mmult_hw_in_buf_2dLJ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_27_6_V' to 'mmult_hw_in_buf_2dMK' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_27_7_V' to 'mmult_hw_in_buf_2dNK' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_28_0_V' to 'mmult_hw_in_buf_2dOK' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_28_1_V' to 'mmult_hw_in_buf_2dPK' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_28_2_V' to 'mmult_hw_in_buf_2dQK' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_28_3_V' to 'mmult_hw_in_buf_2dRK' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_28_4_V' to 'mmult_hw_in_buf_2dSL' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_28_5_V' to 'mmult_hw_in_buf_2dTL' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_28_6_V' to 'mmult_hw_in_buf_2dUL' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_28_7_V' to 'mmult_hw_in_buf_2dVL' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_29_0_V' to 'mmult_hw_in_buf_2dWL' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_29_1_V' to 'mmult_hw_in_buf_2dXL' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_29_2_V' to 'mmult_hw_in_buf_2dYM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_29_3_V' to 'mmult_hw_in_buf_2dZM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_29_4_V' to 'mmult_hw_in_buf_2d0M' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_29_5_V' to 'mmult_hw_in_buf_2d1M' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_29_6_V' to 'mmult_hw_in_buf_2d2M' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_29_7_V' to 'mmult_hw_in_buf_2d3M' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_30_0_V' to 'mmult_hw_in_buf_3d4N' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_30_1_V' to 'mmult_hw_in_buf_3d5N' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_30_2_V' to 'mmult_hw_in_buf_3d6N' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_30_3_V' to 'mmult_hw_in_buf_3d7N' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_30_4_V' to 'mmult_hw_in_buf_3d8N' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_30_5_V' to 'mmult_hw_in_buf_3d9N' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_30_6_V' to 'mmult_hw_in_buf_3eaO' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_30_7_V' to 'mmult_hw_in_buf_3ebO' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_31_0_V' to 'mmult_hw_in_buf_3ecO' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_31_1_V' to 'mmult_hw_in_buf_3edO' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_31_2_V' to 'mmult_hw_in_buf_3eeO' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_31_3_V' to 'mmult_hw_in_buf_3efO' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_31_4_V' to 'mmult_hw_in_buf_3egO' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_31_5_V' to 'mmult_hw_in_buf_3ehP' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_31_6_V' to 'mmult_hw_in_buf_3eiP' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_in_buf_31_7_V' to 'mmult_hw_in_buf_3ejP' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_0_0_V' to 'mmult_hw_weight_bekP' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_0_1_V' to 'mmult_hw_weight_belP' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_0_2_V' to 'mmult_hw_weight_bemP' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_0_3_V' to 'mmult_hw_weight_benQ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_0_4_V' to 'mmult_hw_weight_beoQ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_0_5_V' to 'mmult_hw_weight_bepQ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_0_6_V' to 'mmult_hw_weight_beqQ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_0_7_V' to 'mmult_hw_weight_berQ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_1_0_V' to 'mmult_hw_weight_besQ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_1_1_V' to 'mmult_hw_weight_betR' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_1_2_V' to 'mmult_hw_weight_beuR' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_1_3_V' to 'mmult_hw_weight_bevR' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_1_4_V' to 'mmult_hw_weight_bewR' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_1_5_V' to 'mmult_hw_weight_bexR' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_1_6_V' to 'mmult_hw_weight_beyR' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_1_7_V' to 'mmult_hw_weight_bezS' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_2_0_V' to 'mmult_hw_weight_beAS' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_2_1_V' to 'mmult_hw_weight_beBS' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_2_2_V' to 'mmult_hw_weight_beCS' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_2_3_V' to 'mmult_hw_weight_beDS' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_2_4_V' to 'mmult_hw_weight_beES' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_2_5_V' to 'mmult_hw_weight_beFT' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_2_6_V' to 'mmult_hw_weight_beGT' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_2_7_V' to 'mmult_hw_weight_beHT' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_3_0_V' to 'mmult_hw_weight_beIT' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_3_1_V' to 'mmult_hw_weight_beJT' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_3_2_V' to 'mmult_hw_weight_beKT' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_3_3_V' to 'mmult_hw_weight_beLT' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_3_4_V' to 'mmult_hw_weight_beMU' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_3_5_V' to 'mmult_hw_weight_beNU' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_3_6_V' to 'mmult_hw_weight_beOU' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_3_7_V' to 'mmult_hw_weight_bePU' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_4_0_V' to 'mmult_hw_weight_beQU' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_4_1_V' to 'mmult_hw_weight_beRU' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_4_2_V' to 'mmult_hw_weight_beSV' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_4_3_V' to 'mmult_hw_weight_beTV' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_4_4_V' to 'mmult_hw_weight_beUV' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_4_5_V' to 'mmult_hw_weight_beVV' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_4_6_V' to 'mmult_hw_weight_beWV' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_4_7_V' to 'mmult_hw_weight_beXV' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_5_0_V' to 'mmult_hw_weight_beYW' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_5_1_V' to 'mmult_hw_weight_beZW' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_5_2_V' to 'mmult_hw_weight_be0W' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_5_3_V' to 'mmult_hw_weight_be1W' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_5_4_V' to 'mmult_hw_weight_be2W' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_5_5_V' to 'mmult_hw_weight_be3W' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_5_6_V' to 'mmult_hw_weight_be4X' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_5_7_V' to 'mmult_hw_weight_be5X' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_6_0_V' to 'mmult_hw_weight_be6X' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_6_1_V' to 'mmult_hw_weight_be7X' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_6_2_V' to 'mmult_hw_weight_be8X' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_6_3_V' to 'mmult_hw_weight_be9X' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_6_4_V' to 'mmult_hw_weight_bfaY' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_6_5_V' to 'mmult_hw_weight_bfbY' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_6_6_V' to 'mmult_hw_weight_bfcY' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_6_7_V' to 'mmult_hw_weight_bfdY' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_7_0_V' to 'mmult_hw_weight_bfeY' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_7_1_V' to 'mmult_hw_weight_bffY' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_7_2_V' to 'mmult_hw_weight_bfgY' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_7_3_V' to 'mmult_hw_weight_bfhZ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_7_4_V' to 'mmult_hw_weight_bfiZ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_7_5_V' to 'mmult_hw_weight_bfjZ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_7_6_V' to 'mmult_hw_weight_bfkZ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_7_7_V' to 'mmult_hw_weight_bflZ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_8_0_V' to 'mmult_hw_weight_bfmZ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_8_1_V' to 'mmult_hw_weight_bfn0' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_8_2_V' to 'mmult_hw_weight_bfo0' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_8_3_V' to 'mmult_hw_weight_bfp0' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_8_4_V' to 'mmult_hw_weight_bfq0' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_8_5_V' to 'mmult_hw_weight_bfr0' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_8_6_V' to 'mmult_hw_weight_bfs0' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_8_7_V' to 'mmult_hw_weight_bft1' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_9_0_V' to 'mmult_hw_weight_bfu1' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_9_1_V' to 'mmult_hw_weight_bfv1' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_9_2_V' to 'mmult_hw_weight_bfw1' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_9_3_V' to 'mmult_hw_weight_bfx1' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_9_4_V' to 'mmult_hw_weight_bfy1' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_9_5_V' to 'mmult_hw_weight_bfz2' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_9_6_V' to 'mmult_hw_weight_bfA2' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_9_7_V' to 'mmult_hw_weight_bfB2' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_10_0_V' to 'mmult_hw_weight_bfC2' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_10_1_V' to 'mmult_hw_weight_bfD2' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_10_2_V' to 'mmult_hw_weight_bfE2' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_10_3_V' to 'mmult_hw_weight_bfF3' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_10_4_V' to 'mmult_hw_weight_bfG3' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_10_5_V' to 'mmult_hw_weight_bfH3' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_10_6_V' to 'mmult_hw_weight_bfI3' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_10_7_V' to 'mmult_hw_weight_bfJ3' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_11_0_V' to 'mmult_hw_weight_bfK3' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_11_1_V' to 'mmult_hw_weight_bfL3' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_11_2_V' to 'mmult_hw_weight_bfM4' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_11_3_V' to 'mmult_hw_weight_bfN4' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_11_4_V' to 'mmult_hw_weight_bfO4' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_11_5_V' to 'mmult_hw_weight_bfP4' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_11_6_V' to 'mmult_hw_weight_bfQ4' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_11_7_V' to 'mmult_hw_weight_bfR4' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_12_0_V' to 'mmult_hw_weight_bfS5' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_12_1_V' to 'mmult_hw_weight_bfT5' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_12_2_V' to 'mmult_hw_weight_bfU5' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_12_3_V' to 'mmult_hw_weight_bfV5' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_12_4_V' to 'mmult_hw_weight_bfW5' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_12_5_V' to 'mmult_hw_weight_bfX5' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_12_6_V' to 'mmult_hw_weight_bfY6' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_12_7_V' to 'mmult_hw_weight_bfZ6' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_13_0_V' to 'mmult_hw_weight_bf06' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_13_1_V' to 'mmult_hw_weight_bf16' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_13_2_V' to 'mmult_hw_weight_bf26' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_13_3_V' to 'mmult_hw_weight_bf36' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_13_4_V' to 'mmult_hw_weight_bf47' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_13_5_V' to 'mmult_hw_weight_bf57' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_13_6_V' to 'mmult_hw_weight_bf67' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_13_7_V' to 'mmult_hw_weight_bf77' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_14_0_V' to 'mmult_hw_weight_bf87' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_14_1_V' to 'mmult_hw_weight_bf97' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_14_2_V' to 'mmult_hw_weight_bga8' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_14_3_V' to 'mmult_hw_weight_bgb8' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_14_4_V' to 'mmult_hw_weight_bgc8' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_14_5_V' to 'mmult_hw_weight_bgd8' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_14_6_V' to 'mmult_hw_weight_bge8' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_14_7_V' to 'mmult_hw_weight_bgf8' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_15_0_V' to 'mmult_hw_weight_bgg8' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_15_1_V' to 'mmult_hw_weight_bgh9' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_15_2_V' to 'mmult_hw_weight_bgi9' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_15_3_V' to 'mmult_hw_weight_bgj9' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_15_4_V' to 'mmult_hw_weight_bgk9' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_15_5_V' to 'mmult_hw_weight_bgl9' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_15_6_V' to 'mmult_hw_weight_bgm9' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_15_7_V' to 'mmult_hw_weight_bgnb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_16_0_V' to 'mmult_hw_weight_bgob' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_16_1_V' to 'mmult_hw_weight_bgpb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_16_2_V' to 'mmult_hw_weight_bgqb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_16_3_V' to 'mmult_hw_weight_bgrb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_16_4_V' to 'mmult_hw_weight_bgsb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_16_5_V' to 'mmult_hw_weight_bgtb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_16_6_V' to 'mmult_hw_weight_bgub' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_16_7_V' to 'mmult_hw_weight_bgvb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_17_0_V' to 'mmult_hw_weight_bgwb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_17_1_V' to 'mmult_hw_weight_bgxb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_17_2_V' to 'mmult_hw_weight_bgyb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_17_3_V' to 'mmult_hw_weight_bgzb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_17_4_V' to 'mmult_hw_weight_bgAb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_17_5_V' to 'mmult_hw_weight_bgBb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_17_6_V' to 'mmult_hw_weight_bgCb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_17_7_V' to 'mmult_hw_weight_bgDb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_18_0_V' to 'mmult_hw_weight_bgEb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_18_1_V' to 'mmult_hw_weight_bgFb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_18_2_V' to 'mmult_hw_weight_bgGb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_18_3_V' to 'mmult_hw_weight_bgHb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_18_4_V' to 'mmult_hw_weight_bgIb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_18_5_V' to 'mmult_hw_weight_bgJb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_18_6_V' to 'mmult_hw_weight_bgKb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_18_7_V' to 'mmult_hw_weight_bgLb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_19_0_V' to 'mmult_hw_weight_bgMb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_19_1_V' to 'mmult_hw_weight_bgNb' due to the length limit 20
+WARNING: [RTGEN 206-101] RTL name 'mmult_hw_weight_bgNb' is changed to 'mmult_hw_weight_bgNb_x' due to conflict.
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_19_2_V' to 'mmult_hw_weight_bgOb' due to the length limit 20
+WARNING: [RTGEN 206-101] RTL name 'mmult_hw_weight_bgOb' is changed to 'mmult_hw_weight_bgOb_x' due to conflict.
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_19_3_V' to 'mmult_hw_weight_bgPb' due to the length limit 20
+WARNING: [RTGEN 206-101] RTL name 'mmult_hw_weight_bgPb' is changed to 'mmult_hw_weight_bgPb_x' due to conflict.
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_19_4_V' to 'mmult_hw_weight_bgQb' due to the length limit 20
+WARNING: [RTGEN 206-101] RTL name 'mmult_hw_weight_bgQb' is changed to 'mmult_hw_weight_bgQb_x' due to conflict.
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_19_5_V' to 'mmult_hw_weight_bgRb' due to the length limit 20
+WARNING: [RTGEN 206-101] RTL name 'mmult_hw_weight_bgRb' is changed to 'mmult_hw_weight_bgRb_x' due to conflict.
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_19_6_V' to 'mmult_hw_weight_bgSb' due to the length limit 20
+WARNING: [RTGEN 206-101] RTL name 'mmult_hw_weight_bgSb' is changed to 'mmult_hw_weight_bgSb_x' due to conflict.
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_19_7_V' to 'mmult_hw_weight_bgTb' due to the length limit 20
+WARNING: [RTGEN 206-101] RTL name 'mmult_hw_weight_bgTb' is changed to 'mmult_hw_weight_bgTb_x' due to conflict.
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_20_0_V' to 'mmult_hw_weight_bgUb' due to the length limit 20
+WARNING: [RTGEN 206-101] RTL name 'mmult_hw_weight_bgUb' is changed to 'mmult_hw_weight_bgUb_x' due to conflict.
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_20_1_V' to 'mmult_hw_weight_bgVb' due to the length limit 20
+WARNING: [RTGEN 206-101] RTL name 'mmult_hw_weight_bgVb' is changed to 'mmult_hw_weight_bgVb_x' due to conflict.
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_20_2_V' to 'mmult_hw_weight_bgWb' due to the length limit 20
+WARNING: [RTGEN 206-101] RTL name 'mmult_hw_weight_bgWb' is changed to 'mmult_hw_weight_bgWb_x' due to conflict.
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_20_3_V' to 'mmult_hw_weight_bgXb' due to the length limit 20
+WARNING: [RTGEN 206-101] RTL name 'mmult_hw_weight_bgXb' is changed to 'mmult_hw_weight_bgXb_x' due to conflict.
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_20_4_V' to 'mmult_hw_weight_bgYb' due to the length limit 20
+WARNING: [RTGEN 206-101] RTL name 'mmult_hw_weight_bgYb' is changed to 'mmult_hw_weight_bgYb_x' due to conflict.
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_20_5_V' to 'mmult_hw_weight_bgZb' due to the length limit 20
+WARNING: [RTGEN 206-101] RTL name 'mmult_hw_weight_bgZb' is changed to 'mmult_hw_weight_bgZb_x' due to conflict.
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_20_6_V' to 'mmult_hw_weight_bg0b' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_20_7_V' to 'mmult_hw_weight_bg1b' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_21_0_V' to 'mmult_hw_weight_bg2b' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_21_1_V' to 'mmult_hw_weight_bg3b' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_21_2_V' to 'mmult_hw_weight_bg4b' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_21_3_V' to 'mmult_hw_weight_bg5b' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_21_4_V' to 'mmult_hw_weight_bg6b' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_21_5_V' to 'mmult_hw_weight_bg7b' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_21_6_V' to 'mmult_hw_weight_bg8b' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_21_7_V' to 'mmult_hw_weight_bg9b' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_22_0_V' to 'mmult_hw_weight_bhab' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_22_1_V' to 'mmult_hw_weight_bhbb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_22_2_V' to 'mmult_hw_weight_bhcb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_22_3_V' to 'mmult_hw_weight_bhdb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_22_4_V' to 'mmult_hw_weight_bheb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_22_5_V' to 'mmult_hw_weight_bhfb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_22_6_V' to 'mmult_hw_weight_bhgb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_22_7_V' to 'mmult_hw_weight_bhhb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_23_0_V' to 'mmult_hw_weight_bhib' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_23_1_V' to 'mmult_hw_weight_bhjb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_23_2_V' to 'mmult_hw_weight_bhkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_23_3_V' to 'mmult_hw_weight_bhlb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_23_4_V' to 'mmult_hw_weight_bhmb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_23_5_V' to 'mmult_hw_weight_bhnb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_23_6_V' to 'mmult_hw_weight_bhob' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_23_7_V' to 'mmult_hw_weight_bhpb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_24_0_V' to 'mmult_hw_weight_bhqb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_24_1_V' to 'mmult_hw_weight_bhrb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_24_2_V' to 'mmult_hw_weight_bhsb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_24_3_V' to 'mmult_hw_weight_bhtb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_24_4_V' to 'mmult_hw_weight_bhub' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_24_5_V' to 'mmult_hw_weight_bhvb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_24_6_V' to 'mmult_hw_weight_bhwb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_24_7_V' to 'mmult_hw_weight_bhxb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_25_0_V' to 'mmult_hw_weight_bhyb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_25_1_V' to 'mmult_hw_weight_bhzb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_25_2_V' to 'mmult_hw_weight_bhAb' due to the length limit 20
+WARNING: [RTGEN 206-101] RTL name 'mmult_hw_weight_bhAb' is changed to 'mmult_hw_weight_bhAb_x' due to conflict.
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_25_3_V' to 'mmult_hw_weight_bhBb' due to the length limit 20
+WARNING: [RTGEN 206-101] RTL name 'mmult_hw_weight_bhBb' is changed to 'mmult_hw_weight_bhBb_x' due to conflict.
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_25_4_V' to 'mmult_hw_weight_bhCb' due to the length limit 20
+WARNING: [RTGEN 206-101] RTL name 'mmult_hw_weight_bhCb' is changed to 'mmult_hw_weight_bhCb_x' due to conflict.
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_25_5_V' to 'mmult_hw_weight_bhDb' due to the length limit 20
+WARNING: [RTGEN 206-101] RTL name 'mmult_hw_weight_bhDb' is changed to 'mmult_hw_weight_bhDb_x' due to conflict.
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_25_6_V' to 'mmult_hw_weight_bhEb' due to the length limit 20
+WARNING: [RTGEN 206-101] RTL name 'mmult_hw_weight_bhEb' is changed to 'mmult_hw_weight_bhEb_x' due to conflict.
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_25_7_V' to 'mmult_hw_weight_bhFb' due to the length limit 20
+WARNING: [RTGEN 206-101] RTL name 'mmult_hw_weight_bhFb' is changed to 'mmult_hw_weight_bhFb_x' due to conflict.
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_26_0_V' to 'mmult_hw_weight_bhGb' due to the length limit 20
+WARNING: [RTGEN 206-101] RTL name 'mmult_hw_weight_bhGb' is changed to 'mmult_hw_weight_bhGb_x' due to conflict.
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_26_1_V' to 'mmult_hw_weight_bhHb' due to the length limit 20
+WARNING: [RTGEN 206-101] RTL name 'mmult_hw_weight_bhHb' is changed to 'mmult_hw_weight_bhHb_x' due to conflict.
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_26_2_V' to 'mmult_hw_weight_bhIb' due to the length limit 20
+WARNING: [RTGEN 206-101] RTL name 'mmult_hw_weight_bhIb' is changed to 'mmult_hw_weight_bhIb_x' due to conflict.
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_26_3_V' to 'mmult_hw_weight_bhJb' due to the length limit 20
+WARNING: [RTGEN 206-101] RTL name 'mmult_hw_weight_bhJb' is changed to 'mmult_hw_weight_bhJb_x' due to conflict.
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_26_4_V' to 'mmult_hw_weight_bhKb' due to the length limit 20
+WARNING: [RTGEN 206-101] RTL name 'mmult_hw_weight_bhKb' is changed to 'mmult_hw_weight_bhKb_x' due to conflict.
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_26_5_V' to 'mmult_hw_weight_bhLb' due to the length limit 20
+WARNING: [RTGEN 206-101] RTL name 'mmult_hw_weight_bhLb' is changed to 'mmult_hw_weight_bhLb_x' due to conflict.
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_26_6_V' to 'mmult_hw_weight_bhMb' due to the length limit 20
+WARNING: [RTGEN 206-101] RTL name 'mmult_hw_weight_bhMb' is changed to 'mmult_hw_weight_bhMb_x' due to conflict.
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_26_7_V' to 'mmult_hw_weight_bhNb' due to the length limit 20
+WARNING: [RTGEN 206-101] RTL name 'mmult_hw_weight_bhNb' is changed to 'mmult_hw_weight_bhNb_x' due to conflict.
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_27_0_V' to 'mmult_hw_weight_bhOb' due to the length limit 20
+WARNING: [RTGEN 206-101] RTL name 'mmult_hw_weight_bhOb' is changed to 'mmult_hw_weight_bhOb_x' due to conflict.
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_27_1_V' to 'mmult_hw_weight_bhPb' due to the length limit 20
+WARNING: [RTGEN 206-101] RTL name 'mmult_hw_weight_bhPb' is changed to 'mmult_hw_weight_bhPb_x' due to conflict.
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_27_2_V' to 'mmult_hw_weight_bhQb' due to the length limit 20
+WARNING: [RTGEN 206-101] RTL name 'mmult_hw_weight_bhQb' is changed to 'mmult_hw_weight_bhQb_x' due to conflict.
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_27_3_V' to 'mmult_hw_weight_bhRb' due to the length limit 20
+WARNING: [RTGEN 206-101] RTL name 'mmult_hw_weight_bhRb' is changed to 'mmult_hw_weight_bhRb_x' due to conflict.
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_27_4_V' to 'mmult_hw_weight_bhSb' due to the length limit 20
+WARNING: [RTGEN 206-101] RTL name 'mmult_hw_weight_bhSb' is changed to 'mmult_hw_weight_bhSb_x' due to conflict.
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_27_5_V' to 'mmult_hw_weight_bhTb' due to the length limit 20
+WARNING: [RTGEN 206-101] RTL name 'mmult_hw_weight_bhTb' is changed to 'mmult_hw_weight_bhTb_x' due to conflict.
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_27_6_V' to 'mmult_hw_weight_bhUb' due to the length limit 20
+WARNING: [RTGEN 206-101] RTL name 'mmult_hw_weight_bhUb' is changed to 'mmult_hw_weight_bhUb_x' due to conflict.
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_27_7_V' to 'mmult_hw_weight_bhVb' due to the length limit 20
+WARNING: [RTGEN 206-101] RTL name 'mmult_hw_weight_bhVb' is changed to 'mmult_hw_weight_bhVb_x' due to conflict.
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_28_0_V' to 'mmult_hw_weight_bhWb' due to the length limit 20
+WARNING: [RTGEN 206-101] RTL name 'mmult_hw_weight_bhWb' is changed to 'mmult_hw_weight_bhWb_x' due to conflict.
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_28_1_V' to 'mmult_hw_weight_bhXb' due to the length limit 20
+WARNING: [RTGEN 206-101] RTL name 'mmult_hw_weight_bhXb' is changed to 'mmult_hw_weight_bhXb_x' due to conflict.
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_28_2_V' to 'mmult_hw_weight_bhYb' due to the length limit 20
+WARNING: [RTGEN 206-101] RTL name 'mmult_hw_weight_bhYb' is changed to 'mmult_hw_weight_bhYb_x' due to conflict.
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_28_3_V' to 'mmult_hw_weight_bhZb' due to the length limit 20
+WARNING: [RTGEN 206-101] RTL name 'mmult_hw_weight_bhZb' is changed to 'mmult_hw_weight_bhZb_x' due to conflict.
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_28_4_V' to 'mmult_hw_weight_bh0b' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_28_5_V' to 'mmult_hw_weight_bh1b' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_28_6_V' to 'mmult_hw_weight_bh2b' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_28_7_V' to 'mmult_hw_weight_bh3b' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_29_0_V' to 'mmult_hw_weight_bh4b' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_29_1_V' to 'mmult_hw_weight_bh5b' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_29_2_V' to 'mmult_hw_weight_bh6b' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_29_3_V' to 'mmult_hw_weight_bh7b' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_29_4_V' to 'mmult_hw_weight_bh8b' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_29_5_V' to 'mmult_hw_weight_bh9b' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_29_6_V' to 'mmult_hw_weight_biab' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_29_7_V' to 'mmult_hw_weight_bibb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_30_0_V' to 'mmult_hw_weight_bicb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_30_1_V' to 'mmult_hw_weight_bidb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_30_2_V' to 'mmult_hw_weight_bieb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_30_3_V' to 'mmult_hw_weight_bifb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_30_4_V' to 'mmult_hw_weight_bigb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_30_5_V' to 'mmult_hw_weight_bihb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_30_6_V' to 'mmult_hw_weight_biib' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_30_7_V' to 'mmult_hw_weight_bijb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_31_0_V' to 'mmult_hw_weight_bikb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_31_1_V' to 'mmult_hw_weight_bilb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_31_2_V' to 'mmult_hw_weight_bimb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_31_3_V' to 'mmult_hw_weight_binb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_31_4_V' to 'mmult_hw_weight_biob' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_31_5_V' to 'mmult_hw_weight_bipb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_31_6_V' to 'mmult_hw_weight_biqb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_weight_buf_31_7_V' to 'mmult_hw_weight_birb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_mul_8s_8ns_16_3' to 'mmult_hw_mul_8s_8isb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_mux_164_32_1' to 'mmult_hw_mux_164_itb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_mac_muladd_8s_8ns_16s_17_1' to 'mmult_hw_mac_mulaiub' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_mac_muladd_8s_8ns_17s_18_1' to 'mmult_hw_mac_mulaivb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'mmult_hw_mac_muladd_8s_8ns_32ns_32_1' to 'mmult_hw_mac_mulaiwb' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'mmult_hw_mac_mulaiub': 127 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mmult_hw_mac_mulaivb': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mmult_hw_mac_mulaiwb': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mmult_hw_mul_8s_8isb': 127 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mmult_hw_mux_164_itb': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mmult_hw'.
+INFO: [HLS 200-100] Command         create_rtl_model returned 0; 3.57 sec.
+INFO: [HLS 200-111]  Elapsed time: 6.65 seconds; current allocated memory: 177.671 MB.
+INFO: [HLS 200-100] Execute         source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_hw.rtl_wrap.cfg.tcl 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         gen_rtl mmult_hw -istop -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/syn/systemc/mmult_hw -synmodules mmult_hw 
+INFO: [HLS 200-100] Command         gen_rtl returned 0; 0.06 sec.
+INFO: [HLS 200-100] Execute         gen_rtl mmult_hw -istop -style xilinx -f -lang vhdl -o /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/syn/vhdl/mmult_hw 
+INFO: [HLS 200-100] Command         gen_rtl returned 0; 1.86 sec.
+INFO: [HLS 200-100] Execute         gen_rtl mmult_hw -istop -style xilinx -f -lang vlog -o /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/syn/verilog/mmult_hw 
+INFO: [HLS 200-100] Command         gen_rtl returned 0; 0.96 sec.
+INFO: [HLS 200-100] Execute         export_constraint_db -o /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_hw.constraint.tcl -f -tool general 
+INFO: [HLS 200-100] Command         export_constraint_db returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         report -model mmult_hw -o /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_hw.design.xml -verbose -f -dv 
+INFO: [HLS 200-100] Command         report returned 0; 1.82 sec.
+INFO: [HLS 200-100] Execute         report -model mmult_hw -o /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_hw.sdaccel.xml -verbose -f -sdaccel 
+INFO: [HLS 200-100] Command         report returned 0; 2.8 sec.
+INFO: [HLS 200-100] Execute         gen_tb_info mmult_hw -o /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_hw -p /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db 
+INFO: [HLS 200-100] Command         gen_tb_info returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         report -model mmult_hw -o /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/syn/report/mmult_hw_csynth.rpt -f 
+INFO: [HLS 200-100] Command         report returned 0; 0.97 sec.
+INFO: [HLS 200-100] Execute         report -model mmult_hw -o /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/syn/report/mmult_hw_csynth.xml -f -x 
+INFO: [HLS 200-100] Command         report returned 0; 0.91 sec.
+INFO: [HLS 200-100] Execute         report -model mmult_hw -o /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_hw.verbose.rpt -verbose -f 
+INFO: [HLS 200-100] Command         report returned 0; 3.32 sec.
+INFO: [HLS 200-100] Execute         db_write -model mmult_hw -o /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_hw.adb -f 
+INFO: [HLS 200-100] Command         db_write returned 0; 1.68 sec.
+INFO: [HLS 200-100] Execute         sc_get_clocks mmult_hw 
+INFO: [HLS 200-100] Command         sc_get_clocks returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         sc_get_portdomain mmult_hw 
+INFO: [HLS 200-100] Command         sc_get_portdomain returned 0; 0 sec.
+INFO: [HLS 200-0] Model list for RTL component generation: mmult_hw
+INFO: [HLS 200-0] Handling components in module [mmult_hw] ... 
+INFO: [HLS 200-100] Execute         source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_hw.compgen.tcl 
+INFO: [HLS 200-0] Found component mmult_hw_mul_8s_8isb.
+INFO: [HLS 200-0] Append model mmult_hw_mul_8s_8isb
+INFO: [HLS 200-0] Found component mmult_hw_mux_164_itb.
+INFO: [HLS 200-0] Append model mmult_hw_mux_164_itb
+INFO: [HLS 200-0] Found component mmult_hw_mac_mulaiub.
+INFO: [HLS 200-0] Append model mmult_hw_mac_mulaiub
+INFO: [HLS 200-0] Found component mmult_hw_mac_mulaivb.
+INFO: [HLS 200-0] Append model mmult_hw_mac_mulaivb
+INFO: [HLS 200-0] Found component mmult_hw_mac_mulaiwb.
+INFO: [HLS 200-0] Append model mmult_hw_mac_mulaiwb
+INFO: [HLS 200-0] Found component mmult_hw_offset_bbkb.
+INFO: [HLS 200-0] Append model mmult_hw_offset_bbkb
+INFO: [HLS 200-0] Found component mmult_hw_in_buf_0cud.
+INFO: [HLS 200-0] Append model mmult_hw_in_buf_0cud
+INFO: [HLS 200-0] Found component mmult_hw_weight_bekP.
+INFO: [HLS 200-0] Append model mmult_hw_weight_bekP
+INFO: [HLS 200-0] Found component mmult_hw_out_buf_V.
+INFO: [HLS 200-0] Append model mmult_hw_out_buf_V
+INFO: [HLS 200-0] Found component mmult_hw_CONTROL_BUS_s_axi.
+INFO: [HLS 200-0] Append model mmult_hw_CONTROL_BUS_s_axi
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-0] Append model mmult_hw
+INFO: [HLS 200-0] Generating RTL model list ...
+INFO: [HLS 200-0] All models in this session: mmult_hw_mul_8s_8isb mmult_hw_mux_164_itb mmult_hw_mac_mulaiub mmult_hw_mac_mulaivb mmult_hw_mac_mulaiwb mmult_hw_offset_bbkb mmult_hw_in_buf_0cud mmult_hw_weight_bekP mmult_hw_out_buf_V mmult_hw_CONTROL_BUS_s_axi mmult_hw
+INFO: [HLS 200-0] To file: write model mmult_hw_mul_8s_8isb
+INFO: [HLS 200-0] To file: write model mmult_hw_mux_164_itb
+INFO: [HLS 200-0] To file: write model mmult_hw_mac_mulaiub
+INFO: [HLS 200-0] To file: write model mmult_hw_mac_mulaivb
+INFO: [HLS 200-0] To file: write model mmult_hw_mac_mulaiwb
+INFO: [HLS 200-0] To file: write model mmult_hw_offset_bbkb
+INFO: [HLS 200-0] To file: write model mmult_hw_in_buf_0cud
+INFO: [HLS 200-0] To file: write model mmult_hw_weight_bekP
+INFO: [HLS 200-0] To file: write model mmult_hw_out_buf_V
+INFO: [HLS 200-0] To file: write model mmult_hw_CONTROL_BUS_s_axi
+INFO: [HLS 200-0] To file: write model mmult_hw
+INFO: [HLS 200-0] Finished generating RTL model list.
+
+
+INFO: [HLS 200-0] RTL Generation done.
+INFO: [HLS 200-0] CAS Generation done.
+INFO: [HLS 200-0] CBC Generation done.
+INFO: [HLS 200-100] Execute         export_ssdm /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/a.export.ll 
+INFO: [HLS 200-100] Command         export_ssdm returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/generic/autopilot/common.gen 
+INFO: [HLS 200-100] Execute           source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/generic/autopilot/APCoreGen.gen 
+INFO: [HLS 200-100] Command           ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/generic/autopilot/op.gen 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/generic/autopilot/op_simcore.gen 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/generic/autopilot/interface.gen 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/zynq/zynq.gen 
+INFO: [HLS 200-100] Execute           source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/common/virtex.gen 
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/common/xilinx.gen 
+INFO: [HLS 200-100] Execute               source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/plb46.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute               source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/fsl.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute               source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/axi4.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute               source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/nativeAXI4.gen 
+INFO: [HLS 200-100] Execute                 source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/saxilite.gen 
+INFO: [HLS 200-100] Command                 ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute                 source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/maxi.gen 
+INFO: [HLS 200-100] Command                 ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Command               ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute               source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute               source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute               source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/ip/xfft.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0.1 sec.
+INFO: [HLS 200-100] Execute               source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/ip/dds_compiler.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute               source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/ip/util.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute               source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/ip/xfir.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.15 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/common/dsp48.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command           ap_source returned 0; 0.15 sec.
+INFO: [HLS 200-100] Command         ap_source returned 0; 0.15 sec.
+INFO: [HLS 200-100] Execute         source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/zynq/zynq_fpv6.gen 
+INFO: [HLS 200-100] Execute           source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/common/xilinx_fpv6.gen 
+INFO: [HLS 200-100] Command           ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute         source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_hw.compgen.tcl 
+INFO: [RTMG 210-282] Generating pipelined core: 'mmult_hw_mul_8s_8isb_Mul3S_0'
+INFO: [RTMG 210-278] Implementing memory 'mmult_hw_offset_bbkb_ram' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'mmult_hw_in_buf_0cud_ram' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'mmult_hw_weight_bekP_ram' using distributed RAMs.
+INFO: [RTMG 210-278] Implementing memory 'mmult_hw_out_buf_V_ram' using distributed RAMs.
+INFO: [HLS 200-100] Execute           source ./CONTROL_BUS.slave.tcl 
+INFO: [HLS 200-100] Command           ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command         ap_source returned 0; 0.1 sec.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:56 ; elapsed = 00:00:53 . Memory (MB): peak = 632.414 ; gain = 293.574 ; free physical = 4308 ; free virtual = 7341
+INFO: [SYSC 207-301] Generating SystemC RTL for mmult_hw.
+INFO: [VHDL 208-304] Generating VHDL RTL for mmult_hw.
+INFO: [VLOG 209-307] Generating Verilog RTL for mmult_hw.
+INFO: [HLS 200-100] Command       autosyn returned 0; 32.27 sec.
+INFO: [HLS 200-100] Command     csynth_design returned 0; 47.62 sec.
+INFO: [HLS 200-100] Execute     export_design -evaluate verilog -format ip_catalog 
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/generic/autopilot/common.gen 
+INFO: [HLS 200-100] Execute         source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/generic/autopilot/APCoreGen.gen 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/generic/autopilot/op.gen 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/generic/autopilot/op_simcore.gen 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/generic/autopilot/interface.gen 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/zynq/zynq.gen 
+INFO: [HLS 200-100] Execute         source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/common/virtex.gen 
+INFO: [HLS 200-100] Execute           source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/common/xilinx.gen 
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/plb46.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/fsl.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/axi4.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/nativeAXI4.gen 
+INFO: [HLS 200-100] Execute               source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/saxilite.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute               source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/maxi.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/ip/xfft.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.11 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/ip/dds_compiler.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/ip/util.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/ip/xfir.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Command           ap_source returned 0; 0.15 sec.
+INFO: [HLS 200-100] Execute           source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/common/dsp48.gen 
+INFO: [HLS 200-100] Command           ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command         ap_source returned 0; 0.15 sec.
+INFO: [HLS 200-100] Command       ap_source returned 0; 0.15 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/zynq/zynq_fpv6.gen 
+INFO: [HLS 200-100] Execute         source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/common/xilinx_fpv6.gen 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [IMPL 213-8] Exporting RTL as an IP in IP-XACT.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/generic/autopilot/common.gen 
+INFO: [HLS 200-100] Execute         source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/generic/autopilot/APCoreGen.gen 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/generic/autopilot/op.gen 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/generic/autopilot/op_simcore.gen 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/generic/autopilot/interface.gen 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/zynq/zynq.gen 
+INFO: [HLS 200-100] Execute         source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/common/virtex.gen 
+INFO: [HLS 200-100] Execute           source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/common/xilinx.gen 
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/plb46.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/fsl.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/axi4.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/nativeAXI4.gen 
+INFO: [HLS 200-100] Execute               source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/saxilite.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute               source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/maxi.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/ip/xfft.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.1 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/ip/dds_compiler.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/ip/util.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/ip/xfir.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command           ap_source returned 0; 0.14 sec.
+INFO: [HLS 200-100] Execute           source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/common/dsp48.gen 
+INFO: [HLS 200-100] Command           ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command         ap_source returned 0; 0.15 sec.
+INFO: [HLS 200-100] Command       ap_source returned 0; 0.15 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/zynq/zynq_fpv6.gen 
+INFO: [HLS 200-100] Execute         source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/common/xilinx_fpv6.gen 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_hw.compgen.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_hw.compgen.tcl 
+INFO: [HLS 200-100] Execute         source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_hw.rtl_wrap.cfg.tcl 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute         source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_hw.rtl_wrap.cfg.tcl 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_hw.rtl_wrap.cfg.tcl 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_hw.tbgen.tcl 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_hw.tbgen.tcl 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command       ap_source returned 0; 0.09 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_hw.compgen.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_hw.constraint.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_hw.rtl_wrap.cfg.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_hw.rtl_wrap.cfg.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_hw.rtl_wrap.cfg.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_hw.tbgen.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_hw.tbgen.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_hw.tbgen.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_hw.tbgen.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_hw.tbgen.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_hw.tbgen.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_hw.tbgen.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_hw.tbgen.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_hw.tbgen.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_hw.rtl_wrap.cfg.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_hw.rtl_wrap.cfg.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_hw.tbgen.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_hw.tbgen.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_hw.rtl_wrap.cfg.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_hw.rtl_wrap.cfg.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_hw.tbgen.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_hw.tbgen.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_hw.constraint.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_hw.constraint.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_hw.constraint.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/generic/autopilot/common.gen 
+INFO: [HLS 200-100] Execute         source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/generic/autopilot/APCoreGen.gen 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/generic/autopilot/op.gen 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/generic/autopilot/op_simcore.gen 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/generic/autopilot/interface.gen 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/zynq/zynq.gen 
+INFO: [HLS 200-100] Execute         source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/common/virtex.gen 
+INFO: [HLS 200-100] Execute           source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/common/xilinx.gen 
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/plb46.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/fsl.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/axi4.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/nativeAXI4.gen 
+INFO: [HLS 200-100] Execute               source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/saxilite.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute               source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/maxi.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/ip/xfft.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.11 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/ip/dds_compiler.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/ip/util.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/ip/xfir.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command           ap_source returned 0; 0.14 sec.
+INFO: [HLS 200-100] Execute           source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/common/dsp48.gen 
+INFO: [HLS 200-100] Command           ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command         ap_source returned 0; 0.15 sec.
+INFO: [HLS 200-100] Command       ap_source returned 0; 0.15 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/zynq/zynq_fpv6.gen 
+INFO: [HLS 200-100] Execute         source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/common/xilinx_fpv6.gen 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/generic/autopilot/common.gen 
+INFO: [HLS 200-100] Execute         source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/generic/autopilot/APCoreGen.gen 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/generic/autopilot/op.gen 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/generic/autopilot/op_simcore.gen 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/generic/autopilot/interface.gen 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/zynq/zynq.gen 
+INFO: [HLS 200-100] Execute         source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/common/virtex.gen 
+INFO: [HLS 200-100] Execute           source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/common/xilinx.gen 
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/plb46.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/fsl.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/axi4.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/nativeAXI4.gen 
+INFO: [HLS 200-100] Execute               source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/saxilite.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute               source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/maxi.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.02 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/ip/xfft.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.11 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/ip/dds_compiler.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/ip/util.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/ip/xfir.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command           ap_source returned 0; 0.15 sec.
+INFO: [HLS 200-100] Execute           source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/common/dsp48.gen 
+INFO: [HLS 200-100] Command           ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command         ap_source returned 0; 0.15 sec.
+INFO: [HLS 200-100] Command       ap_source returned 0; 0.15 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/zynq/zynq_fpv6.gen 
+INFO: [HLS 200-100] Execute         source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/common/xilinx_fpv6.gen 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [IMPL 213-8] Starting RTL evaluation using Vivado ...
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/generic/autopilot/common.gen 
+INFO: [HLS 200-100] Execute         source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/generic/autopilot/APCoreGen.gen 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/generic/autopilot/op.gen 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/generic/autopilot/op_simcore.gen 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/generic/autopilot/interface.gen 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/zynq/zynq.gen 
+INFO: [HLS 200-100] Execute         source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/common/virtex.gen 
+INFO: [HLS 200-100] Execute           source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/common/xilinx.gen 
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/plb46.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/fsl.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/axi4.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/nativeAXI4.gen 
+INFO: [HLS 200-100] Execute               source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/saxilite.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute               source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/maxi.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/ip/xfft.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.11 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/ip/dds_compiler.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/ip/util.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/ip/xfir.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command           ap_source returned 0; 0.15 sec.
+INFO: [HLS 200-100] Execute           source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/common/dsp48.gen 
+INFO: [HLS 200-100] Command           ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command         ap_source returned 0; 0.15 sec.
+INFO: [HLS 200-100] Command       ap_source returned 0; 0.15 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/zynq/zynq_fpv6.gen 
+INFO: [HLS 200-100] Execute         source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/common/xilinx_fpv6.gen 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_hw.compgen.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/mmult_hw.constraint.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/generic/autopilot/common.gen 
+INFO: [HLS 200-100] Execute         source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/generic/autopilot/APCoreGen.gen 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/generic/autopilot/op.gen 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/generic/autopilot/op_simcore.gen 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/generic/autopilot/interface.gen 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/zynq/zynq.gen 
+INFO: [HLS 200-100] Execute         source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/common/virtex.gen 
+INFO: [HLS 200-100] Execute           source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/common/xilinx.gen 
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/plb46.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/fsl.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/axi4.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/nativeAXI4.gen 
+INFO: [HLS 200-100] Execute               source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/saxilite.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute               source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/maxi.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/ip/xfft.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.11 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/ip/dds_compiler.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/ip/util.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/ip/xfir.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command           ap_source returned 0; 0.14 sec.
+INFO: [HLS 200-100] Execute           source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/common/dsp48.gen 
+INFO: [HLS 200-100] Command           ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command         ap_source returned 0; 0.15 sec.
+INFO: [HLS 200-100] Command       ap_source returned 0; 0.15 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/zynq/zynq_fpv6.gen 
+INFO: [HLS 200-100] Execute         source /home/krueger/vivado-2017-1/Vivado_HLS/2017.1/common/technology/xilinx/common/xilinx_fpv6.gen 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/accel/solution0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command     export_design returned 0; 465.64 sec.
+INFO: [HLS 200-100] Execute     close_project 
+INFO: [HLS 200-100] Command     close_project returned 0; 0 sec.
+INFO: [HLS 200-100] Execute     cleanup_all 
+INFO: [HLS 200-100] Command     cleanup_all returned 0; 0.09 sec.

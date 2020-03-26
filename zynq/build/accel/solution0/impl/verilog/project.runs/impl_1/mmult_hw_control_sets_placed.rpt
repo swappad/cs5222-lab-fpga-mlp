@@ -1,0 +1,195 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.1 (lin64) Build 1846317 Fri Apr 14 18:54:47 MDT 2017
+| Date         : Thu Mar 26 08:00:14 2020
+| Host         : oceanbalcony running 64-bit Ubuntu 18.04.4 LTS
+| Command      : report_control_sets -verbose -file mmult_hw_control_sets_placed.rpt
+| Design       : mmult_hw
+| Device       : xc7z020
+-------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Flip-Flop Distribution
+3. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |   122 |
+| Unused register locations in slices containing registers |   143 |
++----------------------------------------------------------+-------+
+
+
+2. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |            1045 |          445 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              86 |           58 |
+| Yes          | No                    | No                     |            2986 |         1040 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             100 |           33 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+3. Detailed Control Set Information
+-----------------------------------
+
++--------------+----------------------------------------------------------------------+-------------------------------------------+------------------+----------------+
+| Clock Signal |                             Enable Signal                            |              Set/Reset Signal             | Slice Load Count | Bel Load Count |
++--------------+----------------------------------------------------------------------+-------------------------------------------+------------------+----------------+
+|  ap_clk      | offset_buf_V_U/mmult_hw_offset_bbkb_ram_U/WEA[0]                     | mmult_hw_CONTROL_BUS_s_axi_U/SR[0]        |                1 |              3 |
+|  ap_clk      | exitcond_flatten_reg_21938                                           |                                           |                1 |              4 |
+|  ap_clk      | mmult_hw_CONTROL_BUS_s_axi_U/waddr                                   |                                           |                1 |              4 |
+|  ap_clk      | ap_CS_fsm_state5                                                     |                                           |                2 |              4 |
+|  ap_clk      | out_buf_V_U/mmult_hw_out_buf_V_ram_U/q1[3]_i_1_n_5                   |                                           |                4 |              4 |
+|  ap_clk      | tmp_14_mid2_reg_21966[6]_i_1_n_5                                     | j3_mid2_reg_21947[3]_i_1_n_5              |                2 |              4 |
+|  ap_clk      | out_buf_V_U/mmult_hw_out_buf_V_ram_U/out_buf_V_ce0                   |                                           |                2 |              4 |
+|  ap_clk      | i5_reg_11467[6]_i_2_n_5                                              | i5_reg_11467                              |                3 |              4 |
+|  ap_clk      | p_174_in                                                             |                                           |                4 |              5 |
+|  ap_clk      | mmult_hw_CONTROL_BUS_s_axi_U/ar_hs                                   |                                           |                3 |              5 |
+|  ap_clk      | ap_reg_pp3_iter9_ifzero_reg_23137                                    |                                           |                5 |              5 |
+|  ap_clk      | arrayNo_cast_cast_reg_20603[5]_i_1_n_5                               |                                           |                2 |              6 |
+|  ap_clk      | arrayNo1_cast_cast_reg_21929[5]_i_1_n_5                              |                                           |                1 |              6 |
+|  ap_clk      | is_idx_5_reg_114031                                                  | j2_reg_11413                              |                1 |              6 |
+|  ap_clk      | j_reg_11322[8]_i_2_n_5                                               | j_reg_11322                               |                1 |              6 |
+|  ap_clk      | tmp_14_mid2_reg_21966[6]_i_1_n_5                                     |                                           |                5 |              7 |
+|  ap_clk      | ap_CS_fsm_state28                                                    |                                           |                2 |              7 |
+|  ap_clk      | out_buf_V_load_2_reg_287410                                          |                                           |                4 |              8 |
+|  ap_clk      | out_buf_V_load_reg_28721[3]_i_1_n_5                                  |                                           |                3 |              8 |
+|  ap_clk      | out_buf_V_load_4_reg_287610                                          |                                           |                4 |              8 |
+|  ap_clk      | weight_buf_15_5_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                |                                           |                2 |              8 |
+|  ap_clk      | ap_CS_fsm_state13                                                    | i3_reg_11392[7]_i_1_n_5                   |                2 |              8 |
+|  ap_clk      | ap_CS_fsm_state10                                                    |                                           |                2 |              8 |
+|  ap_clk      | weight_buf_31_7_V_U/mmult_hw_weight_bekP_ram_U/weight_buf_31_7_V_ce0 |                                           |                2 |              8 |
+|  ap_clk      | weight_buf_31_7_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                |                                           |                2 |              8 |
+|  ap_clk      | is_idx_2_reg_11312[8]_i_1_n_5                                        |                                           |                3 |              9 |
+|  ap_clk      | p_1_in2_in                                                           |                                           |                4 |             10 |
+|  ap_clk      | in_buf_31_7_V_U/mmult_hw_in_buf_0cud_ram_U/ram_reg_0                 | ap_NS_fsm1243_out                         |                4 |             11 |
+|  ap_clk      | tmp_14_mid2_v_reg_21961[6]_i_1_n_5                                   | ap_NS_fsm1243_out                         |                4 |             11 |
+|  ap_clk      | os_idx_1_reg_11457[10]_i_1_n_5                                       |                                           |                6 |             11 |
+|  ap_clk      | tmp_14_mid2_v_reg_21961[6]_i_1_n_5                                   |                                           |                7 |             11 |
+|  ap_clk      | i3_reg_11392[7]_i_1_n_5                                              |                                           |                4 |             12 |
+|  ap_clk      | ap_CS_fsm_pp3_stage0                                                 |                                           |                8 |             13 |
+|  ap_clk      | ap_CS_fsm_state8                                                     | ap_CS_fsm_state4                          |                5 |             14 |
+|  ap_clk      | i_4_reg_287160                                                       |                                           |                8 |             15 |
+|  ap_clk      | weight_buf_15_3_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                |                                           |                4 |             16 |
+|  ap_clk      | out_buf_V_U/mmult_hw_out_buf_V_ram_U/p_0_in                          |                                           |                4 |             16 |
+|  ap_clk      | indvars_iv940_in_reg_11381[18]_i_1_n_5                               |                                           |                4 |             17 |
+|  ap_clk      | is_idx_5_reg_11403[0]_i_1_n_5                                        |                                           |                5 |             19 |
+|  ap_clk      | weight_buf_31_4_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                |                                           |                6 |             24 |
+|  ap_clk      | p_1_in8_in                                                           |                                           |                6 |             24 |
+|  ap_clk      | weight_buf_0_2_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                 |                                           |                6 |             24 |
+|  ap_clk      | weight_buf_29_7_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_24_6_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_25_1_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_25_6_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_30_6_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_30_1_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_2_7_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                 |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_2_0_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                 |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_29_6_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_28_6_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_28_1_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_27_6_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_27_1_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_26_6_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_26_1_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_6_0_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                 |                                           |                8 |             32 |
+|  ap_clk      | out_tmp_9_V_8_fu_23760                                               |                                           |                6 |             32 |
+|  ap_clk      | weight_buf_9_7_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                 |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_9_0_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                 |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_8_7_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                 |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_8_0_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                 |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_7_7_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                 |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_7_0_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                 |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_6_7_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                 |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_31_5_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_5_7_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                 |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_5_0_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                 |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_4_7_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                 |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_4_0_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                 |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_3_7_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                 |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_3_0_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                 |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_19_1_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_12_0_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_17_1_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_16_6_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_16_1_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_14_7_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_14_0_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_13_7_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_13_0_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_12_7_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_23_7_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_11_7_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_11_0_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_10_7_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_10_0_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                |                                           |                8 |             32 |
+|  ap_clk      | out_tmp_0_V_reg_28446[31]_i_1_n_5                                    |                                           |                8 |             32 |
+|  ap_clk      | out_stream_data_V_1_payload_A[59]_i_1_n_5                            |                                           |                7 |             32 |
+|  ap_clk      | out_stream_data_V_1_load_B                                           |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_20_1_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_22_6_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_23_6_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_24_1_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_22_1_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_21_6_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_21_1_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_20_6_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_1_7_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                 |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_1_0_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                 |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_19_6_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_18_6_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_18_1_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                |                                           |                8 |             32 |
+|  ap_clk      | weight_buf_17_6_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                |                                           |                8 |             32 |
+|  ap_clk      | ap_CS_fsm_state35                                                    | ap_NS_fsm1248_out                         |               10 |             33 |
+|  ap_clk      | ap_reg_pp3_iter11_ifzero_reg_23137                                   |                                           |               26 |             36 |
+|  ap_clk      | or_cond3_reg_28507[0]_i_1_n_5                                        |                                           |                9 |             37 |
+|  ap_clk      | weight_buf_0_7_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                 |                                           |               10 |             40 |
+|  ap_clk      | weight_buf_15_0_V_U/mmult_hw_weight_bekP_ram_U/p_0_in                |                                           |               10 |             40 |
+|  ap_clk      | out_tmp_9_V_16_fu_23960                                              |                                           |               19 |             64 |
+|  ap_clk      | out_tmp_9_V_3_reg_28656[31]_i_1_n_5                                  |                                           |               13 |             64 |
+|  ap_clk      | in_stream_data_V_0_payload_A[63]_i_1_n_5                             |                                           |               15 |             64 |
+|  ap_clk      | in_stream_data_V_0_payload_B[63]_i_1_n_5                             |                                           |               23 |             64 |
+|  ap_clk      | ap_reg_pp3_iter10_ifzero_reg_23137                                   |                                           |               25 |             68 |
+|  ap_clk      |                                                                      | mmult_hw_CONTROL_BUS_s_axi_U/ap_rst_n_inv |               58 |             86 |
+|  ap_clk      | tmp125_reg_28421[20]_i_1_n_5                                         |                                           |               44 |            159 |
+|  ap_clk      | out_tmp_9_V_10_fu_23800                                              |                                           |               59 |            224 |
+|  ap_clk      | or_cond7_reg_28532[0]_i_1_n_5                                        |                                           |               56 |            225 |
+|  ap_clk      | tmp123_reg_28326[18]_i_1_n_5                                         |                                           |              158 |            603 |
+|  ap_clk      | weight_buf_31_4_V_U/mmult_hw_weight_bekP_ram_U/E[0]                  |                                           |              462 |           1008 |
+|  ap_clk      |                                                                      |                                           |              448 |           1058 |
++--------------+----------------------------------------------------------------------+-------------------------------------------+------------------+----------------+
+
+
++--------+-----------------------+
+| Fanout | Number of ControlSets |
++--------+-----------------------+
+| 3      |                     1 |
+| 4      |                     7 |
+| 5      |                     3 |
+| 6      |                     4 |
+| 7      |                     2 |
+| 8      |                     8 |
+| 9      |                     1 |
+| 10     |                     1 |
+| 11     |                     4 |
+| 12     |                     1 |
+| 13     |                     1 |
+| 14     |                     1 |
+| 15     |                     1 |
+| 16+    |                    87 |
++--------+-----------------------+
+
+

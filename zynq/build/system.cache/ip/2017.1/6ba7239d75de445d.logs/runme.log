@@ -1,0 +1,72 @@
+
+*** Running vivado
+    with args -log system_s00_data_fifo_1.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_s00_data_fifo_1.tcl
+
+
+****** Vivado v2017.1 (64-bit)
+  **** SW Build 1846317 on Fri Apr 14 18:54:47 MDT 2017
+  **** IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source system_s00_data_fifo_1.tcl -notrace
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1151.234 ; gain = 50.996 ; free physical = 2908 ; free virtual = 6041
+INFO: [Synth 8-638] synthesizing module 'system_s00_data_fifo_1' [/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/system.srcs/sources_1/bd/system/ip/system_s00_data_fifo_1/synth/system_s00_data_fifo_1.v:58]
+INFO: [Synth 8-638] synthesizing module 'axi_data_fifo_v2_1_11_axi_data_fifo' [/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/system.srcs/sources_1/bd/system/ipshared/5235/hdl/axi_data_fifo_v2_1_vl_rfs.v:1283]
+INFO: [Synth 8-256] done synthesizing module 'axi_data_fifo_v2_1_11_axi_data_fifo' (30#1) [/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/system.srcs/sources_1/bd/system/ipshared/5235/hdl/axi_data_fifo_v2_1_vl_rfs.v:1283]
+INFO: [Synth 8-256] done synthesizing module 'system_s00_data_fifo_1' (31#1) [/home/krueger/cs5222/projects/project2/cs5222-lab-fpga-mlp/zynq/build/system.srcs/sources_1/bd/system/ip/system_s00_data_fifo_1/synth/system_s00_data_fifo_1.v:58]
+Finished RTL Elaboration : Time (s): cpu = 00:01:05 ; elapsed = 00:01:06 . Memory (MB): peak = 1368.633 ; gain = 268.395 ; free physical = 2750 ; free virtual = 5888
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:06 ; elapsed = 00:01:06 . Memory (MB): peak = 1368.633 ; gain = 268.395 ; free physical = 2743 ; free virtual = 5882
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 1509.648 ; gain = 0.000 ; free physical = 2909 ; free virtual = 6051
+Finished Constraint Validation : Time (s): cpu = 00:01:19 ; elapsed = 00:01:20 . Memory (MB): peak = 1509.648 ; gain = 409.410 ; free physical = 2637 ; free virtual = 5779
+Finished Loading Part and Timing Information : Time (s): cpu = 00:01:19 ; elapsed = 00:01:20 . Memory (MB): peak = 1509.648 ; gain = 409.410 ; free physical = 2637 ; free virtual = 5779
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:19 ; elapsed = 00:01:20 . Memory (MB): peak = 1509.648 ; gain = 409.410 ; free physical = 2638 ; free virtual = 5780
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:20 ; elapsed = 00:01:21 . Memory (MB): peak = 1509.648 ; gain = 409.410 ; free physical = 2652 ; free virtual = 5794
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:21 ; elapsed = 00:01:22 . Memory (MB): peak = 1509.648 ; gain = 409.410 ; free physical = 2520 ; free virtual = 5662
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping  Report (see note below)
++------------------------------+-----------------------------------------------------------------------------------------------------------+----------------+----------------------+---------------+
+|Module Name                   | RTL Object                                                                                                | Inference      | Size (Depth x Width) | Primitives    | 
++------------------------------+-----------------------------------------------------------------------------------------------------------+----------------+----------------------+---------------+
+|inst/\gen_fifo.fifo_gen_inst  | inst_fifo_gen/gaxi_full_lite.gwrite_ch.gwach2.axi_wach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm_gen.dm/RAM_reg | User Attribute | 32 x 60              | RAM32M x 10   | 
++------------------------------+-----------------------------------------------------------------------------------------------------------+----------------+----------------------+---------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:29 ; elapsed = 00:01:31 . Memory (MB): peak = 1510.648 ; gain = 410.410 ; free physical = 2262 ; free virtual = 5404
+Finished Timing Optimization : Time (s): cpu = 00:01:29 ; elapsed = 00:01:32 . Memory (MB): peak = 1511.648 ; gain = 411.410 ; free physical = 2260 ; free virtual = 5402
+Finished Technology Mapping : Time (s): cpu = 00:01:29 ; elapsed = 00:01:32 . Memory (MB): peak = 1532.680 ; gain = 432.441 ; free physical = 2246 ; free virtual = 5388
+Finished IO Insertion : Time (s): cpu = 00:01:30 ; elapsed = 00:01:32 . Memory (MB): peak = 1532.680 ; gain = 432.441 ; free physical = 2241 ; free virtual = 5383
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:30 ; elapsed = 00:01:32 . Memory (MB): peak = 1532.680 ; gain = 432.441 ; free physical = 2240 ; free virtual = 5382
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:30 ; elapsed = 00:01:33 . Memory (MB): peak = 1532.680 ; gain = 432.441 ; free physical = 2239 ; free virtual = 5382
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:30 ; elapsed = 00:01:33 . Memory (MB): peak = 1532.680 ; gain = 432.441 ; free physical = 2239 ; free virtual = 5382
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:30 ; elapsed = 00:01:33 . Memory (MB): peak = 1532.680 ; gain = 432.441 ; free physical = 2240 ; free virtual = 5382
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:30 ; elapsed = 00:01:33 . Memory (MB): peak = 1532.680 ; gain = 432.441 ; free physical = 2240 ; free virtual = 5382
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |CARRY4   |     3|
+|2     |LUT1     |    15|
+|3     |LUT2     |    39|
+|4     |LUT3     |    11|
+|5     |LUT4     |    37|
+|6     |LUT5     |    17|
+|7     |LUT6     |    13|
+|8     |MUXCY    |    20|
+|9     |RAM32M   |    10|
+|10    |RAMB18E1 |     1|
+|11    |RAMB36E1 |     1|
+|12    |FDCE     |    22|
+|13    |FDPE     |    74|
+|14    |FDRE     |   323|
+|15    |FDSE     |     5|
++------+---------+------+
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:30 ; elapsed = 00:01:33 . Memory (MB): peak = 1532.680 ; gain = 432.441 ; free physical = 2240 ; free virtual = 5382
+synth_design: Time (s): cpu = 00:01:32 ; elapsed = 00:01:34 . Memory (MB): peak = 1532.688 ; gain = 445.035 ; free physical = 2195 ; free virtual = 5337

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7z020clg484-1" LaunchTime="1585209450">
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="BG-DRC" Name="mmult_hw.drc"/>
+  <File Type="BG-BGN" Name="mmult_hw.bgn"/>
+  <File Type="BITSTR-SYSDEF" Name="mmult_hw.sysdef"/>
+  <File Type="BITSTR-MMI" Name="mmult_hw.mmi"/>
+  <File Type="BITSTR-BMM" Name="mmult_hw_bd.bmm"/>
+  <File Type="BITSTR-NKY" Name="mmult_hw.nky"/>
+  <File Type="BITSTR-RBT" Name="mmult_hw.rbt"/>
+  <File Type="BITSTR-MSK" Name="mmult_hw.msk"/>
+  <File Type="BG-BIN" Name="mmult_hw.bin"/>
+  <File Type="BG-BIT" Name="mmult_hw.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="mmult_hw_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="mmult_hw_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="mmult_hw_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="mmult_hw_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="mmult_hw_postroute_physopt.dcp"/>
+  <File Type="ROUTE-CLK" Name="mmult_hw_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-SIMILARITY" Name="mmult_hw_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-TIMING-RPX" Name="mmult_hw_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-TIMING-PB" Name="mmult_hw_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="mmult_hw_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="mmult_hw_route_status.pb"/>
+  <File Type="ROUTE-STATUS" Name="mmult_hw_route_status.rpt"/>
+  <File Type="ROUTE-PWR-RPX" Name="mmult_hw_power_routed.rpx"/>
+  <File Type="PLACE-IO" Name="mmult_hw_io_placed.rpt"/>
+  <File Type="PWROPT-TIMING" Name="mmult_hw_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="mmult_hw_placed.dcp"/>
+  <File Type="PLACE-UTIL-PB" Name="mmult_hw_utilization_placed.pb"/>
+  <File Type="PHYSOPT-TIMING" Name="mmult_hw_timing_summary_physopted.rpt"/>
+  <File Type="PWROPT-DRC" Name="mmult_hw_drc_pwropted.rpt"/>
+  <File Type="PWROPT-DCP" Name="mmult_hw_pwropt.dcp"/>
+  <File Type="PLACE-UTIL" Name="mmult_hw_utilization_placed.rpt"/>
+  <File Type="OPT-TIMING" Name="mmult_hw_timing_summary_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="mmult_hw.hwdef"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="mmult_hw_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PA-DCP" Name="mmult_hw.dcp"/>
+  <File Type="OPT-DCP" Name="mmult_hw_opt.dcp"/>
+  <File Type="PLACE-CLK" Name="mmult_hw_clock_utilization_placed.rpt"/>
+  <File Type="RDI-RDI" Name="mmult_hw.vdi"/>
+  <File Type="PLACE-TIMING" Name="mmult_hw_timing_summary_placed.rpt"/>
+  <File Type="INIT-TIMING" Name="mmult_hw_timing_summary_init.rpt"/>
+  <File Type="OPT-DRC" Name="mmult_hw_drc_opted.rpt"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="mmult_hw_methodology_drc_opted.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="mmult_hw_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-CTRL" Name="mmult_hw_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="mmult_hw_incremental_reuse_placed.rpt"/>
+  <File Type="PA-TCL" Name="mmult_hw.tcl"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="mmult_hw_postplace_pwropt.dcp"/>
+  <File Type="PHYSOPT-DCP" Name="mmult_hw_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="mmult_hw_drc_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="mmult_hw_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="mmult_hw_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="mmult_hw_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="mmult_hw_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="mmult_hw_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="mmult_hw_drc_routed.pb"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="mmult_hw_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="mmult_hw_drc_routed.rpx"/>
+  <File Type="ROUTE-PWR" Name="mmult_hw_power_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="mmult_hw_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-PWR-SUM" Name="mmult_hw_power_summary_routed.pb"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/mmult_hw.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/mmult_hw_CONTROL_BUS_s_axi.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/mmult_hw_in_buf_0cud.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/mmult_hw_mac_mulaiub.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/mmult_hw_mac_mulaivb.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/mmult_hw_mac_mulaiwb.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/mmult_hw_mul_8s_8isb.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/mmult_hw_mux_164_itb.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/mmult_hw_offset_bbkb.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/mmult_hw_out_buf_V.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/mmult_hw_weight_bekP.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="mmult_hw"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PPRDIR/mmult_hw.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+      <Desc>Default settings for Implementation.</Desc>
+    </StratHandle>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design" EnableStepBool="1"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>
