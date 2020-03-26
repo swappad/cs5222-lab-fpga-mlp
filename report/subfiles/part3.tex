@@ -1,0 +1,48 @@
+\documentclass[../main.tex]{subfiles}
+		\lstset{
+			language=bash,
+			basicstyle=\ttfamily
+		}
+
+\begin{document}
+This is the last part of this project which covers an open-ended optimization of MNIST dataset classification on an FPGA. 
+For better comparison, the \texttt{Batch size} ($\approx 8k$) of the processed subset is the same as for previous design optimiztations in part 1 and part 2.
+
+\paragraph{Learning}
+First, the learning algorithm will be further optimized by introducing the \textit{cross-entropy} as new error function and the \textit{SELU}(Self-normalizing Linear Unit} and \textit{softmax} functions as chained transfer function. The goal is to increase classifiction accuracy to at least $85\si{\percent}$ without increasing the overall hardware usage.
+Consequently, the network cannot be extended by another layer of neurons. The output has to be one hot encoded, such that the number of neurons can not be changed either.
+
+Initially the given learning algorithm uses a quadratic error function to calculate the cost after each prediction. But for this particular classification problem, we have two more contraints on the prediction outcome which are ignored, by the current error function:
+\begin{itemize}
+	\item the prediction outcome should follow the one hot encoding scheme.
+	\item the prediction outcome should be a valid probability distribution.
+\end{itemize}
+Therefore the \textit{cross-entropy} will be used as new error function in combination with the \textit{softmax} function as output transfer function.
+The \textit{SELU} function and helps to keep the weigths show a self-normalizing behavior. The two distribution parameters $\lambda$ and $\alpha$ are determined in order to gurarantee this behavior for normalized input values. Therefore the inputs now must be scaled to $[0,1]$.
+
+\paragraph{Prediction acceleration}
+Since softmax and \textit{SELU} only scale the denditric potential of the networks neurons, the following equation still holds:
+\begin{align*}
+	\text{argmax}(x) = \text{argmax}(\text{softmax}(\text{SELU}(x)))
+\end{align*}
+In previous implementations in part 1 and 2, we just computed the $\text{argmax}(x)$ of the denditric potentials, which gave us the correct prediction output. 
+This means even with changing the learning algorithm and its transfer function, the hardware does not neccessarily have to change, because the networks structure remains the same. 
+
+Nevertheless the harware is also optimized in part 3. In the previous implementations, the output of the accellerator contained of the whole output vector of the network. We still had to compute the $\text{argmax}(x)$  on the cpu. This is first unnesseccary transmission overhead, which can be avoided, second the computation of this computation can also be offloaded. So the harware design was changed accordingly and now the output is only one byte long indicating the predicted number between 0 and 9. Because the output buffer size is reduced by $90\si{\percent}$ more memory can be used for the input buffer, such that the \texttt{TILING} size can be increased to $128$ samples. This also give a small latency speedup.
+
+\begin{lstlisting}
+FPGA accuracy: 8.15\% validation error
+CPU accuracy:  8.06\% validation error
+FPGA time:  0.004762924000033308
+CPU time:  0.2810866919999171
+FPGA has a 59.02x speedup 
+(* real speedup is slightly higher, because of argmax offloading)
+\end{lstlisting}
+
+
+
+
+\end{document}
+
+
+
