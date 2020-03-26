@@ -19,16 +19,22 @@ Initially the given learning algorithm uses a quadratic error function to calcul
 \end{itemize}
 Therefore the \textit{cross-entropy} will be used as new error function in combination with the \textit{softmax} function as output transfer function.
 The \textit{SELU} function and helps to keep the weigths show a self-normalizing behavior. The two distribution parameters $\lambda$ and $\alpha$ are determined in order to gurarantee this behavior for normalized input values. Therefore the inputs now must be scaled to $[0,1]$.
+To improve accuracy and to better fit the weights, the training algorithm is repeated \texttt{ITERATION} times with random permutations of the training set.
+The file \texttt{mnist.py} had to be slightly changed to integrate the new learning algorithm. Furthermore extra functionality to plot weight representation and error rate over the training period was added for debugging purposes.
+The optimized learning algorithm can be found in the file \texttt{CrossSLP.py}.
 
 \paragraph{Prediction acceleration}
 Since softmax and \textit{SELU} only scale the denditric potential of the networks neurons, the following equation still holds:
 \begin{align*}
 	\text{argmax}(x) = \text{argmax}(\text{softmax}(\text{SELU}(x)))
 \end{align*}
+As we see from the equation above, the transferfunctions are only required for learning, not for prediction.
 In previous implementations in part 1 and 2, we just computed the $\text{argmax}(x)$ of the denditric potentials, which gave us the correct prediction output. 
-This means even with changing the learning algorithm and its transfer function, the hardware does not neccessarily have to change, because the networks structure remains the same. 
+This means even after changing the learning algorithm and its transfer functions, the hardware does not necessarily have to change, because the network structure remains the same. 
 
-Nevertheless the harware is also optimized in part 3. In the previous implementations, the output of the accellerator contained of the whole output vector of the network. We still had to compute the $\text{argmax}(x)$  on the cpu. This is first unnesseccary transmission overhead, which can be avoided, second the computation of this computation can also be offloaded. So the harware design was changed accordingly and now the output is only one byte long indicating the predicted number between 0 and 9. Because the output buffer size is reduced by $90\si{\percent}$ more memory can be used for the input buffer, such that the \texttt{TILING} size can be increased to $128$ samples. This also give a small latency speedup.
+Nevertheless the harware is also optimized in part 3. 
+In the previous implementations, the output of the accellerator transmitted back to the cpu was always the whole output vector of the network. 
+We still had to compute the $\text{argmax}(x)$  on the cpu. First this produces unnecessary transmission overhead, which can be avoided, second the computation of the \textit{argmax} function can also be offloaded. So the harware design was changed accordingly and now the output is only one byte long indicating the predicted number between 0 and 9. Because the output buffer size is reduced by $90\si{\percent}$ more memory can be used for the input buffer, such that the \texttt{TILING} size can be increased to $128$ samples. This also give a small latency speedup.
 
 \begin{lstlisting}
 FPGA accuracy: 8.15\% validation error
@@ -38,6 +44,8 @@ CPU time:  0.2810866919999171
 FPGA has a 59.02x speedup 
 (* real speedup is slightly higher, because of argmax offloading)
 \end{lstlisting}
+
+The simulation, predicts a lower latency of what can be performed on the FPGA.
 
 
 
