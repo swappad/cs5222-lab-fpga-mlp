@@ -97,35 +97,9 @@ LOAD_W_1: for(int i=0; i < CLASSES; i++) {
 					out_T mult =  in_buf[i][k] * weight_buf[j][k];
 					tmp = tmp + mult;
 				}
-				//  ap_uint<32> abs_tmp = abs(tmp[j]);
-				//  bool sig = (abs_tmp > max_val);
-				//  max_pos = sig ? (ap_uint<8>) j : max_pos;
-				//  max_val = sig ? abs_tmp : max_val;
-				//out_tmp[j] = absolute(tmp);
-/*				if(tmp.sign()) {
-					tmp.b_not();
-					out_tmp[j] = tmp + 1;
-				} else {
 					out_tmp[j] = tmp;
-				}
-				*/
-					out_tmp[j] = tmp;
-			/*	if(out_tmp[j] > max_val) {
-					max_val = out_tmp[j];
-					out_buf[i] = j; 
-				}*/
-
 			}
 
-/*				ap_int<32> max_val = 0;
-				out_buf[i] = 0;
-			L2_T: for (unsigned int j = 0; j < CLASSES; j++) {
-					if(out_tmp[j] > max_val) {
-						max_val = out_tmp[j];
-						out_buf[i] = j; 
-					}
-				}
-		*/
 				ap_uint<8> ix0, ix1, ix2, ix3, ix4, ix5, ix6, ix7, ix8;
 				ix0 = (out_tmp[0] < out_tmp[1] ? 1 : 0);
 				ix1 = (out_tmp[2] < out_tmp[3] ? 3 : 2);

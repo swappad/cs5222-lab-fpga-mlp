@@ -19,10 +19,6 @@ void matrix_multiply_ref(out_T offsets[CLASSES], w_T weights[CLASSES][FEAT],  in
 			for (int k = 0; k < FEAT; ++k) {
 				sum += in[i][k] * weights[j][k];
 			}
-			//ap_uint<32> abs_sum = abs(sum);
-			//bool sig = (abs_sum > max_val);
-			//out[i] = sig ? (ap_uint<8>) j : out[i];
-			//max_val = sig ? abs_sum : max_val;
 			out_tmp[j] = sum;
 
 			if(out_tmp[j] > max_val) {
@@ -30,24 +26,6 @@ void matrix_multiply_ref(out_T offsets[CLASSES], w_T weights[CLASSES][FEAT],  in
 				out[i] = j;
 			}
 		}
-
-		
-
-/*			ap_uint<8> ix0, ix1, ix2, ix3, ix4, ix5, ix6, ix7, ix8;
-			ix0 = (out_tmp[0] > out_tmp[1] ? 0 : 1);
-			ix1 = (out_tmp[2] > out_tmp[3] ? 2 : 3);
-			ix2 = (out_tmp[4] > out_tmp[5] ? 4 : 5);
-			ix3 = (out_tmp[6] > out_tmp[7] ? 6 : 7);
-			ix4 = (out_tmp[8] > out_tmp[9] ? 8 : 9);
-
-			ix5 = (out_tmp[ix0] > out_tmp[ix1] ? ix0 : ix1);
-			ix6 = (out_tmp[ix2] > out_tmp[ix3] ? ix2 : ix3);
-
-			ix7 = (out_tmp[ix5] > out_tmp[ix6] ? ix5 : ix6);
-			ix8 = (out_tmp[ix7] > out_tmp[ix4] ? ix7 : ix4);
-			out[i] = ix8;
-			*/
-
 	}
 	return;
 }
