@@ -1,4 +1,4 @@
-
+#include <ap_int.h>
 #include <assert.h>
 #include <ap_axi_sdata.h>
 
@@ -55,5 +55,4 @@ void mmult_hw (AXI_VAL in_stream[IS_SIZE],AXI_VAL out_stream[OS_SIZE]);
 axi_T pop_stream(AXI_VAL const &e);
 AXI_VAL push_stream(axi_T const &v, bool last);
 
-out_T absolut(int x);
 
