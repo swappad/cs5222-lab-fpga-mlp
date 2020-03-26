@@ -4,7 +4,8 @@
 This is the last part of this project which covers an open-ended optimization of MNIST dataset classification on an FPGA. 
 For better comparison, the \texttt{Batch size} ($\approx 9k$) of the processed subset is the same as for previous design optimiztations in part 1 and part 2.
 
-First, the learning algorithm will be further optimized by introducing the \textit{cross-entropy} as new error function and the \textit{SeLu} and \textit{softmax} functions as chained transfer function. The goal is to increase classifiction accuracy to at least $85\si{\percent}$ without increasing the overall hardware usage.
+\paragraph{Learning}
+First, the learning algorithm will be further optimized by introducing the \textit{cross-entropy} as new error function and the \textit{SELU}(Self-normalizing Linear Unit} and \textit{softmax} functions as chained transfer function. The goal is to increase classifiction accuracy to at least $85\si{\percent}$ without increasing the overall hardware usage.
 Consequently, the network cannot be extended by another layer of neurons. The output has to be one hot encoded, such that the number of neurons can not be changed either.
 
 Initially the given learning algorithm uses a quadratic error function to calculate the cost after each prediction. But for this particular classification problem, we have two more contraints on the prediction outcome which are ignored, by the current error function:
@@ -13,6 +14,18 @@ Initially the given learning algorithm uses a quadratic error function to calcul
 	\item the prediction outcome should be a valid probability distribution.
 \end{itemize}
 Therefore the \textit{cross-entropy} will be used as new error function in combination with the \textit{softmax} function as output transfer function.
+The \textit{SELU} function and helps to keep the weigths show a self-normalizing behavior. The two distribution parameters $\lambda$ and $\alpha$ are determined in order to gurarantee this behavior for normalized input values. Therefore the inputs now must be scaled to $[0,1]$.
+
+\paragraph{Prediction acceleration}
+Since softmax and \textit{SELU} only scale the denditric potential of the networks neurons, the following equation still holds:
+\begin{align*}
+	\text{argmax}(x) = \text{argmax}(\text{softmax}(\text{SELU}(x)))
+\end{align*}
+In previous implementations in part 1 and 2, we just computed the $\text{argmax}(x)$ of the denditric potentials, which gave us the correct prediction output. 
+This means even with changing the learning algorithm and its transfer function, the hardware does not neccessarily have to change, because the networks structure remains the same. 
+
+
+
 
 
 \end{document}
