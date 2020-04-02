@@ -1,0 +1,152 @@
+\documentclass{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage[binary-units=true]{siunitx}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{amssymb}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{listings}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+
+\lstset{
+            language=bash,
+            basicstyle=\ttfamily \small
+        }
+
+
+%Information to be included in the title page:
+\title{Part 3 Open End Optimization}
+\author{Luca Krueger}
+\institute{CS5222 Project 2}
+\date{\today}
+
+\usetheme{Berlin}
+\usecolortheme{beaver}
+
+
+\begin{document}
+
+%\frame{\titlepage}
+
+\begin{frame}
+\frametitle{Learning Algorithm}
+\tikzset{%
+   neuron missing/.style={
+    draw=none, 
+    scale=2,
+    text height=0.333cm,
+    execute at begin node=\color{black}$\vdots$
+  },
+}
+
+\begin{tikzpicture}[scale=0.9, >=stealth]
+
+\foreach \m/\l [count=\y] in {1,2,3}
+{
+ \node [circle,fill=green!50,minimum size=0.5cm] (input-\m) at (0,2.5-\y) {};
+}
+\foreach \m/\l [count=\y] in {4}
+{
+ \node [circle,fill=green!50,minimum size=0.5cm ] (input-\m) at (0,-2.5) {};
+}
+ 
+ \node [neuron missing]  at (0,-1.5) {};
+ 
+
+\foreach \m [count=\y] in {1}
+  \node [circle,fill=red!50,minimum size=0.5cm ] (hidden-\m) at (2,0.75) {};
+  
+\foreach \m [count=\y] in {2}
+  \node [circle,fill=red!50,minimum size=0.5cm ] (hidden-\m) at (2,-1.85) {};
+  
+ \node [neuron missing]  at (2,-0.3) {};
+
+
+%\foreach \m [count=\y] in {1}
+%  \node [circle,fill=blue!50,minimum size=1cm ] (output-\m) at (4,1.5-\y) {};
+%  
+%\foreach \m [count=\y] in {2}
+%  \node [circle,fill=blue!50,minimum size=1cm ] (output-\m) at (4,-0.5-\y) {};
+
+% \node [neuron missing]  at (4,-0.4) {};
+
+\foreach \l [count=\i] in {1,2,3,256}
+  \draw [<-] (input-\i) -- ++(-1,0)
+    node [above, midway] {$I_{\l}$};
+
+\foreach \l [count=\i] in {1,10}
+  \node [above] at (hidden-\i.north) {$H_{\l}$};
+
+%\foreach \l [count=\i] in {1,16}
+%  \draw [->] (output-\i) -- ++(1,0)
+%    node [above, midway] {$O_{ \l}$};
+
+\foreach \i in {1,...,4}
+  \foreach \j in {1,...,2}
+    \draw [->] (input-\i) -- (hidden-\j);
+
+%\foreach \i in {1,...,2}
+%  \foreach \j in {1,...,2}
+%    \draw [->] (hidden-\i) -- (output-\j);
+
+%\foreach \l [count=\x from 0] in {Input, Hidden, Ouput}
+ % \node [align=center, above] at (\x*2,2) {\l \\ layer};
+
+\end{tikzpicture}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Hardware Improvements}
+New learning algorithm does not require a transferfunction other than argmax for classification:
+\begin{align*}
+		\text{argmax}(x) = \text{argmax}(\text{softmax}(\text{SELU}(x))) \\
+\end{align*}
+	\begin{itemize}
+		\item[-] replaced one-hot encoding of the output with actual output value
+		\item[$\Rightarrow$] FPGA$\rightarrow$CPU transmission reduced by $90\si{\percent}$ to $1\si{\byte}$ per sample. 
+		\item[-] increased \texttt{Tiling value} to $128$ samples
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Speedup and Accuracy}
+	\textbf{On the hardware:}
+\begin{lstlisting}
+FPGA accuracy: 8.15% validation error
+CPU accuracy:  8.06% validation error
+FPGA time: [-] 0.004762924000033308
+CPU time:  0.2810866919999171
+FPGA has a 59.02x speedup 
+\end{lstlisting}
+\textbf{In the simulation:}\\
+\vspace{0.5cm}
+    \begin{tabular}{ccccc}
+        \multicolumn{2}{c}{Latency} & \multicolumn{2}{c}{Interval} & Pipeline\\
+        \hline
+        min  &   max  &   min  &   max  &   Type  \\
+	    374311&  374311&  374312&  374312&   none  
+    \end{tabular}
+
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Problems}
+\begin{itemize}
+	\item[-] Runtime on the hardware appears to be longer than in simulation. Why?
+	\item[-] Vivado HLS $2017.1$ does not reveal, how a loop is actually pipelined. Makes it hard to find further improvements.
+	\item[-] The same mistake in both hls code and testbench is almost impossible to find.
+\end{itemize}
+
+\end{frame}
+
+
+\end{document}
+
